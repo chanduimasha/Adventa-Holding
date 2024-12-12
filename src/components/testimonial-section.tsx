@@ -276,7 +276,7 @@ const TestimonialSection: React.FC = () => {
                 />
 
                 <p className="text-black italic mb-6 text-lg">
-                  "{testimonials[currentIndex].feedback}"
+                  {testimonials[currentIndex].feedback}
                 </p>
 
                 <div>
