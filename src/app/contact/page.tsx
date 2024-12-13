@@ -177,9 +177,12 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import emailjs from "emailjs-com";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { FaEnvelope, FaMapMarkedAlt, FaPhoneAlt } from "react-icons/fa";
+import { useHeaderVisibility } from "@/components/header-visibility";
+import Header from "@/components/navigation-bar";
+import Footer from "@/components/footer-section";
 
 const info = [
   {
@@ -200,6 +203,8 @@ const info = [
 ];
 
 const Contact = () => {
+  const isHeaderVisible = useHeaderVisibility();
+
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -291,13 +296,26 @@ const Contact = () => {
   };
 
   return (
-    // <div className="bg-gradient-to-b from-gray-900 to-blue-800">
+    <div>
+      <AnimatePresence>
+        {isHeaderVisible && (
+          <motion.div
+            className="fixed top-0 left-0 right-0 z-50"
+            initial={{ opacity: 0, y: -100 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -100 }}
+            transition={{ duration: 0.3 }}
+          >
+            <Header />
+          </motion.div>
+        )}
+      </AnimatePresence>
       <motion.section
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5, delay: 0.5 }}
         {...{
-          className: "text-white py-6",
+          className: "text-white py-6 bg-indigo-950 pt-[110px] shadow-2xl",
         }}
       >
         <div className="container mx-auto">
@@ -312,15 +330,15 @@ const Contact = () => {
             >
               <form
                 onSubmit={handleSubmit}
-                className="flex flex-col gap-6 p-10 bg-[#27272c] rounded-xl"
+                className="flex flex-col shadow-2xl gap-6 p-10 bg-gradient-to-b from-gray-900 to-blue-900 rounded-xl overflow-hidden transform transition-transform duration-300 hover:scale-105"
               >
                 <motion.h3
                   variants={itemVariants}
                   {...{
-                    className: "text-4xl text-indigo-500",
+                    className: "text-4xl text-orange-500",
                   }}
                 >
-                  Let us work together
+                  Get in Touch
                 </motion.h3>
                 <motion.p
                   variants={itemVariants}
@@ -334,7 +352,8 @@ const Contact = () => {
                 <motion.div
                   variants={itemVariants}
                   {...{
-                    className: "grid grid-cols-1 md:grid-cols-2 gap-6",
+                    className:
+                      "grid grid-cols-1 md:grid-cols-2 gap-6 text-black",
                   }}
                 >
                   <Input
@@ -368,7 +387,7 @@ const Contact = () => {
                 </motion.div>
                 <motion.div variants={itemVariants}>
                   <Textarea
-                    className="h-[200px]"
+                    className="h-[200px] text-black"
                     name="message"
                     placeholder="Type your message here."
                     value={formData.message}
@@ -379,7 +398,7 @@ const Contact = () => {
                   <Button
                     type="submit"
                     size="md"
-                    className="max-w-40"
+                    className="max-w-40 hover:bg-orange-700"
                     disabled={isSubmitting}
                   >
                     {isSubmitting ? "Sending..." : "Send Message"}
@@ -421,7 +440,7 @@ const Contact = () => {
                       whileTap={{ scale: 0.9 }}
                       {...{
                         className:
-                          "w-[52px] h-[52px] xl:w-[72px] xl:h-[72px] bg-[#27272c] text-indigo-500 rounded-md flex items-center justify-center",
+                          "w-[52px] h-[52px] xl:w-[72px] xl:h-[72px] bg-[#27272c] text-orange-500 rounded-md flex items-center justify-center",
                       }}
                     >
                       <div className="text-[28px]">{item.icon}</div>
@@ -432,18 +451,33 @@ const Contact = () => {
                     </div>
                   </motion.li>
                 ))}
-                <div className="mt-12 mb-2 xl:mb-2 ">
+
+                <motion.div
+                  className="mt-12 mb-2 xl:mb-2"
+                  initial={{ x: 100, opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
+                  transition={{
+                    duration: 1,
+                    delay: 1.2,
+                    type: "spring",
+                    stiffness: 120,
+                    damping: 10,
+                  }}
+                >
                   <Social
                     containerStyles="flex gap-10 justify-center"
-                    iconStyles="xl:w-[50px] xl:h-[50px] w-9 h-9 border border-indigo-500 rounded-full flex justify-center items-center text-indigo-500 text-base hover:bg-indigo-800 hover:text-primary hover:transition-all duration-500"
+                    iconStyles="xl:w-[50px] xl:h-[50px] w-9 h-9 border border-orange-100 rounded-full flex justify-center items-center bg-orange-500 text-orange-100 text-base hover:bg-orange-800 hover:text-primary hover:transition-all duration-500"
                   />
-                </div>
+                </motion.div>
               </ul>
             </motion.div>
           </div>
         </div>
       </motion.section>
-    // </div>
+
+      <Footer />
+
+    </div>
   );
 };
 

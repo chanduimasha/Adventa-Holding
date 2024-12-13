@@ -133,9 +133,9 @@
 // export default TestimonialSection;
 
 "use client";
-import React, { useEffect, useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Star, ChevronLeft, ChevronRight } from 'lucide-react';
+import React, { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Star, ChevronLeft, ChevronRight } from "lucide-react";
 
 interface Testimonial {
   id: string;
@@ -150,51 +150,56 @@ const testimonials: Testimonial[] = [
     id: "jane-doe",
     name: "Jane Doe",
     role: "Chief Financial Officer",
-    feedback: "An exceptional service that transformed our financial strategy with innovative solutions and unparalleled support.",
+    feedback:
+      "An exceptional service that transformed our financial strategy with innovative solutions and unparalleled support.",
     image: "/assets/feedbacks/feedback1.jpeg",
   },
   {
     id: "michael-smith",
-    name: "Michael Smith", 
+    name: "Michael Smith",
     role: "Senior Web Designer",
-    feedback: "The creativity and technical expertise exceeded all our expectations. A truly remarkable team to work with.",
+    feedback:
+      "The creativity and technical expertise exceeded all our expectations. A truly remarkable team to work with.",
     image: "/assets/feedbacks/feedback4.jpeg",
   },
   {
     id: "emily-chen",
     name: "Emily Chen",
     role: "E-commerce Store Owner",
-    feedback: "Revolutionized our online presence with cutting-edge design and strategic insights. Couldn't be happier!",
+    feedback:
+      "Revolutionized our online presence with cutting-edge design and strategic insights. Couldn't be happier!",
     image: "/assets/feedbacks/feedback2.jpeg",
   },
   {
     id: "alex-johnson",
     name: "Alex Johnson",
     role: "Marketing Director",
-    feedback: "Their approach to digital marketing is nothing short of genius. They've truly elevated our brand positioning.",
+    feedback:
+      "Their approach to digital marketing is nothing short of genius. They've truly elevated our brand positioning.",
     image: "/assets/feedbacks/feedback5.jpeg",
   },
   {
     id: "sarah-williams",
     name: "Sarah Williams",
     role: "Product Innovation Lead",
-    feedback: "A collaborative partner that brings fresh perspectives and drives meaningful innovation.",
+    feedback:
+      "A collaborative partner that brings fresh perspectives and drives meaningful innovation.",
     image: "/assets/feedbacks/feedback3.jpeg",
-  }
+  },
 ];
 
 const TestimonialSection: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [direction, setDirection] = useState<'right' | 'left'>('right');
+  const [direction, setDirection] = useState<"right" | "left">("right");
 
   const nextSlide = () => {
-    setDirection('right');
+    setDirection("right");
     setCurrentIndex((prev) => (prev + 1) % testimonials.length);
   };
 
   const prevSlide = () => {
-    setDirection('left');
-    setCurrentIndex((prev) => 
+    setDirection("left");
+    setCurrentIndex((prev) =>
       prev === 0 ? testimonials.length - 1 : prev - 1
     );
   };
@@ -205,30 +210,53 @@ const TestimonialSection: React.FC = () => {
     return () => clearInterval(interval);
   }, []);
 
+  // const slideVariants = {
+  //   initial: (direction: 'left' | 'right') => ({
+  //     opacity: 0,
+  //     x: direction === 'right' ? 100 : -100,
+  //     scale: 0.8
+  //   }),
+  //   animate: {
+  //     opacity: 1,
+  //     x: 0,
+  //     scale: 1,
+  //     transition: {
+  //       duration: 0.6,
+  //       ease: "easeInOut"
+  //     }
+  //   },
+  //   exit: (direction: 'left' | 'right') => ({
+  //     opacity: 0,
+  //     x: direction === 'right' ? -100 : 100,
+  //     scale: 0.8,
+  //     transition: {
+  //       duration: 0.6,
+  //       ease: "easeInOut"
+  //     }
+  //   })
+  // };
+
   const slideVariants = {
-    initial: (direction: 'left' | 'right') => ({
+    initial: (direction: "left" | "right") => ({
       opacity: 0,
-      x: direction === 'right' ? 100 : -100,
-      scale: 0.8
+      x: direction === "right" ? 100 : -100, // Slide in from the side
     }),
     animate: {
       opacity: 1,
-      x: 0,
-      scale: 1,
-      transition: { 
+      x: 0, // Center position
+      transition: {
         duration: 0.6,
-        ease: "easeInOut"
-      }
+        ease: "easeInOut", // Smooth transition
+      },
     },
-    exit: (direction: 'left' | 'right') => ({
+    exit: (direction: "left" | "right") => ({
       opacity: 0,
-      x: direction === 'right' ? -100 : 100,
-      scale: 0.8,
-      transition: { 
+      x: direction === "right" ? -100 : 100, // Slide out to the side
+      transition: {
         duration: 0.6,
-        ease: "easeInOut"
-      }
-    })
+        ease: "easeInOut",
+      },
+    }),
   };
 
   return (
@@ -239,12 +267,13 @@ const TestimonialSection: React.FC = () => {
             What Our Clients Say
           </h2>
           <p className="text-black max-w-xl mx-auto">
-            Hear directly from our valued clients about their transformative experiences.
+            Hear directly from our valued clients about their transformative
+            experiences.
           </p>
         </div>
 
         <div className="relative flex items-center justify-center">
-          <button 
+          <button
             onClick={prevSlide}
             className="absolute left-0 z-20 bg-orange-600 hover:bg-orange-700 text-white p-3 rounded-full shadow-xl transition-all duration-300 ease-in-out transform hover:scale-110"
           >
@@ -269,8 +298,8 @@ const TestimonialSection: React.FC = () => {
                   <Star size={32} fill="currentColor" />
                 </div>
 
-                <img 
-                  src={testimonials[currentIndex].image} 
+                <img
+                  src={testimonials[currentIndex].image}
                   alt={testimonials[currentIndex].name}
                   className="mx-auto mb-6 w-32 h-32 rounded-full object-cover border-4 border-orange-500 shadow-lg"
                 />
@@ -291,7 +320,7 @@ const TestimonialSection: React.FC = () => {
             </AnimatePresence>
           </div>
 
-          <button 
+          <button
             onClick={nextSlide}
             className="absolute right-0 z-20 bg-orange-600 hover:bg-orange-700 text-white p-3 rounded-full shadow-xl transition-all duration-300 ease-in-out transform hover:scale-110"
           >
@@ -305,9 +334,7 @@ const TestimonialSection: React.FC = () => {
               key={index}
               onClick={() => setCurrentIndex(index)}
               className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                index === currentIndex 
-                  ? 'bg-orange-600 w-6' 
-                  : 'bg-orange-300'
+                index === currentIndex ? "bg-orange-600 w-6" : "bg-orange-300"
               }`}
             />
           ))}

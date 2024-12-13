@@ -1,10 +1,14 @@
 "use client";
 import React from "react";
-import { motion, useAnimation } from "framer-motion";
+import { motion, useAnimation, AnimatePresence } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import Stats from "@/components/stats-chart";
+import Footer from "@/components/footer-section";
+import Header from "@/components/navigation-bar";
+import { useHeaderVisibility } from "@/components/header-visibility";
 
 const OurJourney = () => {
+  const isHeaderVisible = useHeaderVisibility();
   const controls = useAnimation();
   const [ref, inView] = useInView();
 
@@ -38,8 +42,21 @@ const OurJourney = () => {
 
   return (
     <div className="bg-black text-white">
+      <AnimatePresence>
+        {isHeaderVisible && (
+          <motion.div
+            className="fixed top-0 left-0 right-0 z-50"
+            initial={{ opacity: 0, y: -100 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -100 }}
+            transition={{ duration: 0.3 }}
+          >
+            <Header />
+          </motion.div>
+        )}
+      </AnimatePresence>
       {/* Hero Section */}
-      <section className="bg-gray-900 text-white ">
+      <section className="bg-gray-900 text-white pt-20">
         <div className="min-h-screen p-8">
           <div className="max-w-6xl mx-auto">
             {/* Heading */}
@@ -296,13 +313,7 @@ const OurJourney = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gradient-to-b from-gray-900 to-blue-800 py-8">
-        <div className="container mx-auto px-4 text-center">
-          <p className="text-lg">
-            © 2024 Aventa Holdings (Pvt) Ltd. All rights reserved.
-          </p>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 };
