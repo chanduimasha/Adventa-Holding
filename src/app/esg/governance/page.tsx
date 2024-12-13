@@ -1,12 +1,13 @@
-import TestimonialSection from "@/components/testimonial-section";
+"use client"
+import ServiceSection from "@/components/services-section";
+import React from "react";
 
-const Governance = () => {
+const page = () => {
   return (
     <div>
-            <TestimonialSection />
-
+      <ServiceSection />
     </div>
   );
 };
 
-export default Governance;
+export default page;
