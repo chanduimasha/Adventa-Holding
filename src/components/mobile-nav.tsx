@@ -162,7 +162,7 @@ const MobileNav = () => {
   return (
     <Sheet>
       <SheetTrigger className="flex justify-center items-center">
-        <CiMenuFries className="text-[32px] text-white" />
+        <CiMenuFries className="text-[32px] text-black" />
       </SheetTrigger>
       <SheetContent className="flex flex-col bg-gradient-to-b from-gray-900 to-blue-800">
         <div className="text-black mt-32 mb-20 text-center text-2xl">
