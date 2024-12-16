@@ -204,11 +204,11 @@ const TestimonialSection: React.FC = () => {
     );
   };
 
-  useEffect(() => {
-    // Changed to 5000 milliseconds (5 seconds)
-    const interval = setInterval(nextSlide, 5000);
-    return () => clearInterval(interval);
-  }, []);
+  // useEffect(() => {
+  //   // Changed to 5000 milliseconds (5 seconds)
+  //   const interval = setInterval(nextSlide, 5000);
+  //   return () => clearInterval(interval);
+  // }, []);
 
   // const slideVariants = {
   //   initial: (direction: 'left' | 'right') => ({
