@@ -133,7 +133,7 @@
 // export default TestimonialSection;
 
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Star, ChevronLeft, ChevronRight } from "lucide-react";
 
@@ -204,11 +204,11 @@ const TestimonialSection: React.FC = () => {
     );
   };
 
-  useEffect(() => {
-    // Changed to 5000 milliseconds (5 seconds)
-    const interval = setInterval(nextSlide, 5000);
-    return () => clearInterval(interval);
-  }, []);
+  // useEffect(() => {
+  //   // Changed to 5000 milliseconds (5 seconds)
+  //   const interval = setInterval(nextSlide, 5000);
+  //   return () => clearInterval(interval);
+  // }, []);
 
   // const slideVariants = {
   //   initial: (direction: 'left' | 'right') => ({
