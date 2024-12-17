@@ -7,7 +7,7 @@ import Image from "next/image";
 
 const Header: React.FC = () => {
   return (
-    <header className="py-2 xl:py-4 text-black bg-white shadow-md">
+    <header className="py-4 xl:py-4 text-black bg-white shadow-md">
       <div className="container mx-auto flex justify-between items-center">
         <Link href="/">
           <div className="flex items-center space-x-2">
