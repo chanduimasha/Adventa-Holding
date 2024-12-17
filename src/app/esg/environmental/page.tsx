@@ -228,10 +228,11 @@
 //   );
 // };
 // export default SlideBar;
+import ImagineSection from "@/components/imagine-section";
 import React from "react";
 
 const page = () => {
-  return <div>page</div>;
+  return <ImagineSection/>
 };
 
 export default page;
