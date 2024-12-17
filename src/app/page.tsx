@@ -1,15 +1,15 @@
 "use client";
 
 import PartnerEcosystem from "@/components/partner-systems";
-import TestimonialSection from "@/components/testimonial-section";
-import Footer from "@/components/footer-section";
-import ContactUs from "@/components/contact-us";
-import CompanyHighlights from "@/components/company-highlights";
-import SubCompanies from "@/components/sub-companies";
 import HeroSection from "@/components/hero-section";
 import NavBar from "@/components/nav-bar";
 import AchievmentSection from "@/components/achievment-section";
 import ServiceSection from "@/components/services-section";
+import ClientSection from "@/components/client-success";
+import FooterNew from "@/components/footer";
+import CompanySummary from "@/components/company-summary";
+import IndustrySection from "@/components/industry-solutions";
+import ContactForm from "@/components/contact-form";
 
 export default function Home() {
   return (
@@ -21,28 +21,40 @@ export default function Home() {
       <HeroSection />
 
       {/* Sub Companies Section */}
-      <SubCompanies />
+      {/* <SubCompanies /> */}
+
+      {/* Slidebar Section */}
+      {/* <SlideBarSection/> */}
 
       {/* Feedback Section */}
-      <TestimonialSection />
+      {/* <TestimonialSection /> */}
 
       {/* Achievment Section */}
-      <AchievmentSection/>
+      <AchievmentSection />
 
-      {/* Company Highlights Section */}
-      <CompanyHighlights />
+      {/* Client Section */}
+      <ClientSection />
+
+      {/* Industry Section */}
+      <IndustrySection/>
 
       {/* Services Section */}
-      <ServiceSection/>
+      <ServiceSection />
 
       {/* Partner Systems */}
       <PartnerEcosystem />
 
+      {/* Company Highlights Section */}
+      {/* <CompanyHighlights /> */}
+      <CompanySummary />
+
       {/* Contact Us Form */}
-      <ContactUs />
+      {/* <ContactUs /> */}
+      <ContactForm/>
 
       {/* Footer Section */}
-      <Footer />
+      {/* <Footer /> */}
+      <FooterNew />
     </div>
   );
 }

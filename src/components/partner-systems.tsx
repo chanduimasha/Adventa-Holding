@@ -1,5 +1,6 @@
 // pages/partner-ecosystem.js
 import React from 'react';
+import { motion } from 'framer-motion';
 
 const PartnerEcosystem = () => {
   const partners = [
@@ -18,31 +19,47 @@ const PartnerEcosystem = () => {
   ];
 
   return (
-    <div className="bg-indigo-900 text-white py-12 px-6">
-      <div className="max-w-7xl mx-auto text-center">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Partner Ecosystem</h2>
-        <p className="mb-8">Bringing together the best of our partner network to create competitive advantage for your business.</p>
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
+    <div className="bg-blue-950 text-white py-12 px-6 relative">
+      <motion.div
+        className="max-w-5xl mx-auto text-left"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+      >
+        <h2 className="xl:text-5xl text-3xl md:text-4xl font-bold mb-4">Our Partner Ecosystem</h2>
+        <p className="mb-8">
+          Bringing together the best of our partner network to create competitive advantage for your business.
+        </p>
+        <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 gap-1">
           {partners.map((partner, index) => (
-            <div
+            <motion.div
               key={index}
-              className="bg-white p-4 rounded-lg shadow-lg hover:bg-orange-600 transform hover:-translate-y-2 hover:scale-105 transition-transform duration-300"
+              className="bg-white p-4 shadow-lg hover:bg-orange-500"
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              viewport={{ once: true }}
             >
               <img
                 src={partner.logo}
                 alt={partner.name}
-                className="w-24 h-24 mx-auto"
+                className="w-24 h-16 mx-auto"
               />
-            </div>
+            </motion.div>
           ))}
         </div>
-        <a
+        <motion.a
           href="/partners"
-          className="mt-8 inline-block bg-orange-500 text-white font-semibold py-3 px-6 rounded-full hover:bg-orange-600 transition duration-300"
+          className="mt-8 inline-block bg-transparent text-orange-500 font-semibold py-3 px-6 rounded-full hover:text-orange-800 transition duration-300"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          viewport={{ once: true }}
         >
-          Explore Partner Ecosystem
-        </a>
-      </div>
+          Explore Partner Ecosystem →
+        </motion.a>
+      </motion.div>
     </div>
   );
 };

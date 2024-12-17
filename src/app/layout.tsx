@@ -1,13 +1,13 @@
-import { JetBrains_Mono } from "next/font/google";
+// import { JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 // import PageTransition from "@/components/PageTransition";
 // import StairTransition from "@/components/StairTransition";
 
-const jetbrainsMono = JetBrains_Mono({
-  subsets: ["latin"],
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800"],
-  variable: "--font-jetbrainsMono",
-});
+// const jetbrainsMono = JetBrains_Mono({
+//   subsets: ["latin"],
+//   weight: ["100", "200", "300", "400", "500", "600", "700", "800"],
+//   variable: "--font-jetbrainsMono",
+// });
 
 export const metadata = {
   title: "Create Next App",
@@ -23,7 +23,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
     <html lang="en">
       <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌎</text></svg>" />
 
-      <body className={jetbrainsMono.variable}>
+      <body>
         {children}
         {/* <StairTransition /> */}
         {/* <PageTransition> {children}</PageTransition> */}

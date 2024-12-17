@@ -1,10 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   body{
-      @apply font-primary bg-primary text-black leading-loose;
+      @apply font-title bg-primary text-black leading-loose;
   }
   .h1 {
       @apply text-[48px] xl:text-[80px] leading-[1.1] font-semibold;
