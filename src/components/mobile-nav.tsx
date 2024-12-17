@@ -164,15 +164,15 @@ const MobileNav = () => {
       <SheetTrigger className="flex justify-center items-center">
         <CiMenuFries className="text-[32px] text-black" />
       </SheetTrigger>
-      <SheetContent className="flex flex-col bg-gradient-to-b from-gray-900 to-blue-800">
-        <div className="text-black mt-32 mb-20 text-center text-2xl">
+      <SheetContent className="flex flex-col bg-white">
+        <div className="text-black mt-16 mb-20 text-center text-2xl">
           <Link href="/">
-            <h1 className="text-3xl font-semibold text-white">
-              Aventa Holdings<span className="text-indigo-600">.</span>
+            <h1 className="text-3xl font-semibold text-black">
+              Aventa <span className="text-orange-500">Holdings</span><span className="text-orange-600">.</span>
             </h1>
           </Link>
         </div>
-        <nav className="text-white flex flex-col justify-center items-center gap-6">
+        <nav className="text-black flex flex-col justify-center items-center gap-4">
           {links.map((link, index) => (
             <div key={index} className="w-full">
               {link.subLinks ? (
@@ -183,12 +183,12 @@ const MobileNav = () => {
                     justify-center 
                     items-center 
                     cursor-pointer 
-                    text-xl 
+                    text-lg 
                     capitalize 
                     pb-2
                     ${pathname.startsWith(link.path)
-                      ? "text-indigo-700 font-semibold"
-                      : "hover:text-indigo-600"
+                      ? "text-orange-500 font-semibold"
+                      : "hover:text-orange-700"
                     }
                     transition-colors 
                     duration-300
@@ -205,7 +205,7 @@ const MobileNav = () => {
                       duration-300 
                       ${openDropdown === link.name ? "rotate-180" : ""}
                       ${pathname.startsWith(link.path)
-                        ? "text-indigo-600"
+                        ? "text-orange-500"
                         : "text-gray-500"
                       }
                     `}
@@ -216,7 +216,7 @@ const MobileNav = () => {
                       layoutId="underline"
                       {...{
                         className:
-                          "absolute bottom-0 left-0 right-0 h-0.5 bg-indigo-600",
+                          "absolute bottom-0 left-0 right-0 h-0.5 bg-orange-600",
                       }}
                       initial={{ scaleX: 0 }}
                       animate={{ scaleX: 1 }}
@@ -263,13 +263,13 @@ const MobileNav = () => {
                   className={`
                     block 
                     text-center 
-                    text-xl 
+                    text-lg 
                     capitalize 
                     pb-2
                     relative
                     ${pathname === link.path
-                      ? "text-indigo-700 font-semibold"
-                      : "hover:text-indigo-600"
+                      ? "text-orange-500 font-semibold"
+                      : "hover:text-orange-700"
                     }
                       transition-colors 
                       duration-300
@@ -279,7 +279,7 @@ const MobileNav = () => {
                   {pathname === link.path && (
                     <motion.div
                       layoutId="underline"
-                      className="absolute bottom-0 left-0 right-0 h-0.5 bg-indigo-600"
+                      className="absolute bottom-0 left-0 right-0 h-0.5 bg-orange-600"
                       initial={{ scaleX: 0 }}
                       animate={{ scaleX: 1 }}
                       transition={{ duration: 0.3 }}
@@ -337,8 +337,8 @@ const MobileNav = () => {
                             w-full
                             relative
                             ${pathname === subLink.path
-                              ? "bg-indigo-50 text-indigo-700 font-medium"
-                              : "text-white hover:text-indigo-500"
+                              ? "bg-indigo-50 text-orange-500 font-medium"
+                              : "text-gray-500 hover:text-orange-700"
                             }
                               transition-colors 
                               duration-200
