@@ -1,169 +1,237 @@
-"use client"
-import { useHeaderVisibility } from '@/components/header-visibility';
-import Header from '@/components/navigation-bar';
-import Social from '@/components/social-media';
-import { AnimatePresence, motion } from 'framer-motion';
-import Image from 'next/image';
+// "use client";
+// import { useState, useEffect } from "react";
+// import { motion } from "framer-motion";
+// import Link from "next/link";
 
-const DeliveringSuperiorServices = () => {
-  const isHeaderVisible = useHeaderVisibility();
+// const SlideBar = () => {
+//   const [activeSection, setActiveSection] = useState("imagine");
+//   const [isVisible, setIsVisible] = useState(false);
 
-  return (
-    <div>
-      <AnimatePresence>
-        {isHeaderVisible && (
-          <motion.div
-            className="fixed top-0 left-0 right-0 z-50"
-            initial={{ opacity: 0, y: -100 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -100 }}
-            transition={{ duration: 0.3 }}
-          >
-            <Header />
-          </motion.div>
-        )}
-      </AnimatePresence>
+//   const cardVariants = {
+//     hidden: { opacity: 0, y: 20 },
+//     visible: { opacity: 1, y: 0 },
+//   };
 
-      <motion.section
-        className="min-h-screen bg-no-repeat bg-cover bg-center relative pt-[80px]"
-        style={{ backgroundImage: "url('/assets/back4.jpg')" }}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1 }}
-      >
-        <div className="absolute inset-0 bg-black opacity-50"></div>
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-white relative z-10">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <motion.div
-              className="relative"
-              initial={{ x: -100, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              transition={{ delay: 0.5, type: "spring", stiffness: 100 }}
-            >
-              <Image
-                src="/assets/back12.png"
-                alt="Cyborg"
-                className="object-cover rounded-full animate-[spin_10s_linear_infinite] mt-12"
-                width={380}
-                height={380}
-              />
-            </motion.div>
-            <motion.div
-            className="mt-12"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.8, duration: 1 }}
-            >
-              <motion.h1
-                className="text-4xl font-bold mb-4"
-                initial={{ x: 100, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-                transition={{
-                  duration: 1.5,
-                  delay: 1,
-                  type: "spring",
-                  stiffness: 120,
-                  damping: 10
-                }}
-              >
-                Delivering Superior Services
-              </motion.h1>
-              <motion.p
-                className="text-lg mb-4"
-                initial={{ scale: 0.5, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                transition={{
-                  delay: 1.3,
-                  type: "spring",
-                  stiffness: 200
-                }}
-              >
-                IT Solutions.
-              </motion.p>
-              <motion.p
-                className="text-lg mb-8"
-                initial={{ rotate: -10, opacity: 0 }}
-                animate={{ rotate: 0, opacity: 1 }}
-                transition={{
-                  delay: 1.6,
-                  type: "spring",
-                  stiffness: 100
-                }}
-              >
-                You can easily change any design to your own. It is also highly customizable SEO friendly template.
-              </motion.p>
-              <motion.div
-                className="mt-12 mb-2 xl:mb-2"
-                initial={{ x: 100, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-                transition={{
-                  duration: 1.5,
-                  delay: 1.9,
-                  type: "spring",
-                  stiffness: 120,
-                  damping: 10
-                }}>
-                <Social
-                  containerStyles="flex gap-10 mb-10"
-                  iconStyles="xl:w-[40px] xl:h-[40px] w-9 h-9 border border-indigo-500 rounded-full flex justify-center items-center text-indigo-500 text-base hover:bg-indigo-800 hover:text-primary hover:transition-all duration-500"
-                />
-              </motion.div>
-              <div className="flex space-x-4">
-                <motion.a
-                  href="/contact"
-                  className="bg-blue-500 hover:bg-blue-800 text-white px-4 py-2 rounded"
-                  initial={{
-                    x: -50,
-                    rotate: -15,
-                    scale: 0.8,
-                    opacity: 0
-                  }}
-                  animate={{
-                    x: 0,
-                    rotate: 0,
-                    scale: 1,
-                    opacity: 1
-                  }}
-                  whileHover={{
-                    scale: 1.1,
-                    boxShadow: "0 0 15px rgba(59, 130, 246, 0.5)"
-                  }}
-                  whileTap={{ scale: 0.95 }}
-                  transition={{
-                    delay: 2.2,
-                    type: "spring",
-                    stiffness: 300,
-                    damping: 10
-                  }}
-                >
-                  Contact Us
-                </motion.a>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </motion.section>
+//   const topicVariants = {
+//     hidden: { opacity: 0, scale: 0.8 },
+//     visible: { opacity: 1, scale: 1 },
+//   };
 
-      {/* Repeat for second section with same fixed header approach */}
-      <motion.section
-        className="min-h-screen bg-no-repeat bg-cover bg-center relative pt-[80px]"
-        style={{ backgroundImage: "url('/assets/back4.jpg')" }}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1 }}
-      >
-        {/* Similar content as first section */}
-        <div className="absolute inset-0 bg-black opacity-50"></div>
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-white relative z-10">
-          {/* Repeat previous section's content */}
-        </div>
-      </motion.section>
+//   const sections = ["imagine", "engineer", "modernize", "manage"];
+//   const backgroundImages = [
+//     "/assets/achievements/1.jpeg", // imagine
+//     "/assets/achievements/2.jpg", // engineer
+//     "/assets/achievements/3.jpeg", // modernize
+//     "/assets/achievements/4.png", // manage
+//   ];
 
-      <motion.section>
-        {/* Placeholder for future content */}
-      </motion.section>
-    </div>
-  );
+//   const sectionData = {
+//     imagine: [
+//       {
+//         topic: "Aventa’s Vision for the Future of Tech",
+//         description: "Exploring the next frontier of digital transformation.",
+//         link: "/vision",
+//       },
+//       {
+//         topic: "Next-Gen AI Solutions",
+//         description: "Leveraging AI for innovative business models.",
+//         link: "/ai-solutions",
+//       },
+//       {
+//         topic: "Revolutionizing Digital Infrastructure",
+//         description: "Building the backbone for the digital world.",
+//         link: "/infrastructure",
+//       },
+//     ],
+//     engineer: [
+//       {
+//         topic: "Aventa’s New Cloud-Native Solutions",
+//         description: "Pushing the boundaries of cloud technologies.",
+//         link: "/cloud-native",
+//       },
+//       {
+//         topic: "Engineering Excellence with AI",
+//         description: "Harnessing AI to deliver precision engineering.",
+//         link: "/ai-engineering",
+//       },
+//       {
+//         topic: "Next-Level Cybersecurity Solutions",
+//         description:
+//           "Safeguarding enterprises with cutting-edge cybersecurity.",
+//         link: "/cybersecurity",
+//       },
+//     ],
+//     modernize: [
+//       {
+//         topic: "Modernizing Legacy Systems",
+//         description: "Bringing old systems into the digital age.",
+//         link: "/legacy-systems",
+//       },
+//       {
+//         topic: "Digital Transformation at Scale",
+//         description: "Achieving business-wide transformation.",
+//         link: "/digital-transformation",
+//       },
+//       {
+//         topic: "Building the Future of Data Analytics",
+//         description: "Leveraging data to make smarter business decisions.",
+//         link: "/data-analytics",
+//       },
+//     ],
+//     manage: [
+//       {
+//         topic: "Aventa’s Strategic Partnerships",
+//         description: "Collaborating for greater business success.",
+//         link: "/partnerships",
+//       },
+//       {
+//         topic: "Driving Organizational Change",
+//         description: "Effective change management in a digital world.",
+//         link: "/change-management",
+//       },
+//       {
+//         topic: "The Future of Business Intelligence",
+//         description: "Redefining how businesses use data for growth.",
+//         link: "/business-intelligence",
+//       },
+//     ],
+//   };
+
+//   useEffect(() => {
+//     const handleScroll = () => {
+//       const sectionElements = sections.map((section) =>
+//         document.getElementById(section)
+//       );
+
+//       const observer = new IntersectionObserver(
+//         (entries) => {
+//           entries.forEach((entry) => {
+//             console.log(entry)
+//             if (entry.isIntersecting) {
+//               setActiveSection(entry.target.id);
+//             }
+//           });
+//         },
+//         { threshold: 0.5 } // Trigger when 50% of the section is visible
+//       );
+
+//       sectionElements.forEach((element) => {
+//         if (element) {
+//           observer.observe(element);
+//         }
+//       });
+
+//       return () => observer.disconnect(); // Cleanup on unmount
+//     };
+
+//     handleScroll();
+//   }, [sections]);
+
+//   return (
+//     <div className="flex">
+//       {/* Sidebar */}
+//       {isVisible && (
+//         <div className="fixed top-0 left-0 h-screen w-48 bg-transparent text-white flex flex-col justify-center">
+//           {sections.map((section) => (
+//             <a
+//               key={section}
+//               href={`#${section}`}
+//               className={`py-4 px-6 ${
+//                 activeSection === section ? "text-orange-500" : "text-gray-400"
+//               } hover:text-orange-500 transition duration-300`}
+//             >
+//               {section.charAt(0).toUpperCase() + section.slice(1)}
+//             </a>
+//           ))}
+//         </div>
+//       )}
+
+//       {/* Content */}
+//       <div className="xl:ml-48 lg:ml-48 md:ml-48 ml-32 w-full">
+//         {sections.map((section, index) => (
+//           <section
+//             id={section}
+//             key={section}
+//             className="relative text-white min-h-screen flex items-center justify-center py-12 px-6 overflow-hidden"
+//           >
+//             {/* Background Image with Zoom Animation */}
+//             <div
+//               className="absolute inset-0 bg-cover bg-center bg-no-repeat animate-zoom"
+//               style={{
+//                 backgroundImage: `url(${backgroundImages[index]})`,
+//               }}
+//             ></div>
+
+//             {/* Content */}
+//             <div className="relative z-10">
+//               {/* Header */}
+//               <motion.div
+//                 className="text-center mb-8"
+//                 initial="hidden"
+//                 animate="visible"
+//                 variants={topicVariants}
+//                 transition={{ duration: 0.8 }}
+//               >
+//                 <h1 className="text-7xl font-bold mb-20">
+//                   {section === "imagine" && "We Imagine"}
+//                   {section === "engineer" && "We Engineer"}
+//                   {section === "modernize" && "We Modernize"}
+//                   {section === "manage" && "We Manage"}
+//                 </h1>
+//                 <p className="text-xl mt-2 mb-20">
+//                   {section === "imagine" &&
+//                     "Explore innovative technologies and strategies that will shape tomorrow."}
+//                   {section === "engineer" &&
+//                     "Harness cutting-edge engineering solutions to power your business."}
+//                   {section === "modernize" &&
+//                     "Transform legacy systems and processes for greater efficiency."}
+//                   {section === "manage" &&
+//                     "Lead your business through change and manage successful transformations."}
+//                 </p>
+//               </motion.div>
+
+//               {/* Cards */}
+//               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
+//                 {sectionData[section as keyof typeof sectionData].map(
+//                   (item, index) => (
+//                     <motion.div
+//                       key={index}
+//                       className="bg-white text-black p-6 rounded-lg shadow-2xl hover:shadow-2xl transition-shadow duration-300 border-b-4 border-orange-500"
+//                       initial="hidden"
+//                       whileInView="visible"
+//                       viewport={{ once: true }}
+//                       variants={cardVariants}
+//                       transition={{ duration: 0.5, delay: index * 0.2 }}
+//                     >
+//                       <motion.h3
+//                         className="text-xl font-semibold mb-2"
+//                         variants={topicVariants}
+//                         transition={{ duration: 0.5, delay: 0.2 }}
+//                       >
+//                         {item.topic}
+//                       </motion.h3>
+//                       <Link
+//                         href={item.link}
+//                         className="text-orange-600 underline hover:text-orange-800"
+//                       >
+//                         Learn More
+//                       </Link>
+//                     </motion.div>
+//                   )
+//                 )}
+//               </div>
+//             </div>
+//           </section>
+//         ))}
+//       </div>
+//     </div>
+//   );
+// };
+// export default SlideBar;
+import React from "react";
+
+const page = () => {
+  return <div>page</div>;
 };
 
-export default DeliveringSuperiorServices;
+export default page;

@@ -209,7 +209,7 @@ const Nav: React.FC = () => {
                   ? "text-black font-semibold"
                   : "text-black hover:text-orange-600"
                 }
-                text-[15px]
+                text-[15px] font-medium
                 transition-colors 
                 duration-300 
                 relative
@@ -246,41 +246,10 @@ const Nav: React.FC = () => {
               )}
             </div>
           ) : (
-            // <Link
-            //   href={link.path}
-            //   className={`
-            //     text-[15px]
-            //     font-medium
-            //     relative
-            //     pb-2
-            //     ${
-            //       pathname === link.path
-            //         ? "text-white font-semibold"
-            //         : "text-white hover:text-indigo-600"
-            //     }
-            //     transition-colors 
-            //     duration-300
-            //     group
-            //   `}
-            // >
-            //   {link.name}
-            //   {pathname === link.path && (
-            //     <motion.div
-            //       layoutId="underline"
-            //       {...{
-            //         className:
-            //           "absolute bottom-0 left-0 right-0 h-0.5 bg-indigo-600",
-            //       }}
-            //       initial={{ scaleX: 0 }}
-            //       animate={{ scaleX: 1 }}
-            //       transition={{ duration: 0.3 }}
-            //     />
-            //   )}
-            // </Link>
             <a
-              href={link.path} // Use the link path as the href
-              target={link.path.startsWith("http") ? "_blank" : undefined} // Open external links in a new tab
-              rel={link.path.startsWith("http") ? "noopener noreferrer" : undefined} // Security for external links
+              href={link.path}
+              target={link.path.startsWith("http") ? "_blank" : undefined}
+              rel={link.path.startsWith("http") ? "noopener noreferrer" : undefined}
               className={`
                 text-[15px]
                 font-medium
@@ -322,79 +291,29 @@ const Nav: React.FC = () => {
               >
                 <div className="py-2">
                   {link.subLinks.map((subLink, subIndex) => (
-                    // <Link
-                    //   key={subIndex}
-                    //   href={subLink.path}
-                    //   className={`
-                    //     block 
-                    //     px-5 
-                    
-                    //     py-3 
-                    //     text-[14px]
-                    //     ${pathname === subLink.path
-                    //       ? "bg-indigo-50 text-indigo-700 font-medium"
-                    //       : "text-gray-700 hover:bg-indigo-300"
-                    //     }
-                    //     transition-colors 
-                    //     duration-200
-                    //     relative
-                    //     group/sublink
-                    //   `}
-                    // >
-                    //   {subLink.name}
-                    //   <span
-                    //     className="
-                    //       absolute 
-                    //       left-2 
-                    //       top-1/2 
-                    //       -translate-y-1/2 
-                    //       w-1.5 
-                    //       h-1.5 
-                    //       bg-indigo-700 
-                    //       rounded-full 
-                    //       opacity-0 
-                    //       group-hover/sublink:opacity-100 
-                    //       transition-all 
-                    //       duration-300
-                    //     "
-                    //   />
-                    // </Link>
                     <a
-                      key={subIndex} // Use a unique key, such as the name or an ID
-                      href={subLink.path} // Set the href attribute for navigation
-                      target={subLink.path.startsWith("http") ? "_blank" : undefined} // Open external links in a new tab
-                      rel={subLink.path.startsWith("http") ? "noopener noreferrer" : undefined} // Ensure external link security
+                      key={subIndex}
+                      href={subLink.path}
+                      target={subLink.path.startsWith("http") ? "_blank" : undefined}
+                      rel={subLink.path.startsWith("http") ? "noopener noreferrer" : undefined}
                       className={`
-                      block 
-                      px-5 
-                      py-3 
-                      text-[14px]
-                      ${pathname === subLink.path
+                        block 
+                        px-5 
+                        py-3 
+                        text-[14px] font-medium
+                        ${pathname === subLink.path
                           ? "bg-white text-black font-medium"
                           : "text-black hover:bg-orange-400"
                         }
-                      transition-colors 
-                      duration-200
-                      relative
-                      group/sublink
-                    `}
+                        transition-colors 
+                        duration-200
+                        relative
+                        group/sublink
+                      `}
                     >
                       {subLink.name}
                       <span
-                        className="
-                        absolute 
-                        left-2 
-                        top-1/2 
-                        -translate-y-1/2 
-                        w-1.5 
-                        h-1.5 
-                        bg-white 
-                        rounded-full 
-                        opacity-0 
-                        group-hover/sublink:opacity-100 
-                        transition-all 
-                        duration-300
-                      "
+                        className="absolute left-2 top-1/2 -translate-y-1/2 w-1.5 h-1.5 bg-white rounded-full opacity-0 group-hover/sublink:opacity-100 transition-all duration-300"
                       />
                     </a>
                   ))}
@@ -409,3 +328,4 @@ const Nav: React.FC = () => {
 };
 
 export default Nav;
+

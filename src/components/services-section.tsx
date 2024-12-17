@@ -168,13 +168,14 @@ const services = [
 
 export default function ServiceSection() {
   return (
-    <div className="bg-indigo-800 text-black py-16 shadow-md">
-      <div className="container mx-auto px-4 relative z-10">
+    <div className="bg-slate-900 text-black py-16 shadow-md relative">
+      <div className="max-w-5xl mx-auto">
         {/* Main Title */}
         <motion.h2
-          className="text-center text-4xl font-bold mb-12 text-white"
+          className="text-center text-3xl xl:text-5xl font-bold mb-4 text-white"
           initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 1 }}
         >
           Our Services
@@ -182,9 +183,10 @@ export default function ServiceSection() {
 
         {/* Description */}
         <motion.p
-          className="text-center max-w-3xl mx-auto mb-16 text-white"
+          className="text-center max-w-5xl text-lg mx-auto mb-16 text-white"
           initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 1, delay: 0.5 }}
         >
           Delivering domain expertise and technology-driven offerings to help
@@ -192,13 +194,14 @@ export default function ServiceSection() {
         </motion.p>
 
         {/* Cards Section */}
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 relative z-10">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 relative z-10 xl:px-4 px-12">
           {services.map((service, index) => (
             <motion.div
               key={index}
-              className="relative group bg-white rounded-lg shadow-lg p-6 flex items-center"
+              className="relative group bg-white shadow-lg p-6 flex items-center"
               initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
               transition={{ delay: index * 0.1 }}
             >
               {/* Left: Title */}
@@ -207,7 +210,7 @@ export default function ServiceSection() {
               </div>
 
               {/* Right: Image */}
-              <div className="w-1/3 h-24 rounded-lg overflow-hidden">
+              <div className="w-1/3 h-24 overflow-hidden">
                 <img
                   src={service.image}
                   alt={service.title}
@@ -218,7 +221,7 @@ export default function ServiceSection() {
               {/* Hover Card */}
               {service.details && (
                 <motion.div
-                  className="absolute top-[-20px] left-0 w-full bg-orange-500 p-6 rounded-lg flex flex-col gap-4 items-start opacity-0 group-hover:opacity-100 group-hover:translate-y-[-110%] transition-all duration-300 shadow-lg z-20"
+                  className="absolute top-[-20px] left-0 w-full bg-orange-300 p-6 flex flex-col gap-4 items-start opacity-0 group-hover:opacity-100 group-hover:translate-y-[-110%] transition-all duration-300 shadow-lg z-20"
                   initial={{ scale: 0.9 }}
                   whileHover={{ scale: 1.1 }}
                 >
@@ -230,7 +233,7 @@ export default function ServiceSection() {
                       key={idx}
                       href={detail.link}
                       passHref
-                      className="text-sm text-white hover:underline hover:text-orange-700"
+                      className="text-sm text-black hover:underline hover:text-orange-700"
                     >
                       {detail.label} →
                     </Link>
