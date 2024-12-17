@@ -140,7 +140,7 @@ export default function HeroSection() {
     <div className="relative bg-zinc-100 min-h-screen flex items-center justify-center">
       <div className="flex flex-col md:flex-row items-center max-w-7xl mx-auto px-6">
         {/* Text Section */}
-        <div className="flex-1 text-center md:text-left mb-10 md:mb-0 xl:order-none order-2 xl:mt-0 mt-[-50px]">
+        <div className="flex-1 text-center md:text-left mb-10 md:mb-0 xl:order-none order-2 xl:mt-0 mt-[-80px]">
           <motion.h1
             className="text-4xl xl:mt-0 mt-28 md:text-5xl xl:text-7xl font-bold text-gray-900 leading-snug"
             initial={{ opacity: 0, x: -50 }}
@@ -182,7 +182,7 @@ export default function HeroSection() {
               alt="Hero Image"
               width={600}
               height={600}
-              className="rounded-lg mt-28 xl:mt-28 order-1 xl:order-none transform transition-transform duration-300 group-hover:scale-125"
+              className="rounded-lg mt-20 xl:mt-28 order-1 xl:order-none transform transition-transform duration-300 group-hover:scale-125"
             />
           </motion.div>
         </div>
