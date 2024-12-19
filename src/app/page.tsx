@@ -77,6 +77,7 @@ import EngineerSection from "@/components/engineer-section";
 import ModernizeSection from "@/components/modernize-section";
 import ManageSection from "@/components/manage-section";
 import { useMediaQuery } from 'react-responsive';
+import BotChat from "@/components/bot-chat";
 
 
 
@@ -269,6 +270,8 @@ export default function Home() {
       <CompanySummary />
       <ContactForm />
       <FooterNew />
+      <BotChat/>
+
     </div>
   );
 }

@@ -1,9 +1,14 @@
+"use client"
+
 import React from "react";
-import ClientSection from "@/components/client-success";
+import IndustriesSection from "@/components/industries";
+
 
 const Social = () => {
   return (
-    <ClientSection/>
+    <main>
+      <IndustriesSection/>
+  </main>
   );
 };
 
