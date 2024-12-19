@@ -53,7 +53,7 @@ const AchievmentSection = () => {
         {cards.map((item, index) => (
           <motion.div
             key={index}
-            className="bg-white text-black p-6 border-b-4 border-orange-600 shadow-lg hover:shadow-2xl transition-shadow duration-300"
+            className="bg-white text-black p-6 border-b-4 rounded-md border-orange-600 shadow-lg hover:shadow-2xl transition-shadow duration-300"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
