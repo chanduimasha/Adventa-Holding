@@ -5,5 +5,5 @@ export interface Blog {
   author: string;
   date: string;
   content: string;
-  image: string;  // Add this line to include the image property
+  image: string;
 }
