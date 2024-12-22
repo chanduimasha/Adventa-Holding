@@ -76,10 +76,15 @@ import ImagineSection from "@/components/imagine-section";
 import EngineerSection from "@/components/engineer-section";
 import ModernizeSection from "@/components/modernize-section";
 import ManageSection from "@/components/manage-section";
-import { useMediaQuery } from 'react-responsive';
+import { useMediaQuery } from "react-responsive";
 import BotChat from "@/components/bot-chat";
-
-
+import BlogSection from "@/components/blogs/blog-section";
+import NewsSection from "@/components/news/news-section";
+import IndustriesSection from "@/components/industries";
+import SubCompanies from "@/components/sub-companies";
+import TestimonialSection from "@/components/testimonial-section";
+import Footer from "@/components/footer-section";
+import FeedbackSection from "@/components/feedback-section";
 
 export default function Home() {
   const [showSlideBar, setShowSlideBar] = useState(false);
@@ -191,61 +196,61 @@ export default function Home() {
       {/* Mobile Slide Bar */}
       {showSlideBar && isMobile && (
         <div className="fixed bottom-0 left-0 right-0 bg-gray-800 text-white px-4 py-4 shadow-lg z-50">
-      <ul className="flex justify-around">
-        <li
-          className="cursor-pointer hover:text-orange-500"
-          onClick={() => {
-            if (imagineRef.current) {
-              imagineRef.current.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start',
-              });
-            }
-          }}
-        >
-          Imagine
-        </li>
-        <li
-          className="cursor-pointer"
-          onClick={() => {
-            if (engineerRef.current) {
-              engineerRef.current.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start',
-              });
-            }
-          }}
-        >
-          Engineer
-        </li>
-        <li
-          className="cursor-pointer"
-          onClick={() => {
-            if (modernizeRef.current) {
-              modernizeRef.current.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start',
-              });
-            }
-          }}
-        >
-          Modernize
-        </li>
-        <li
-          className="cursor-pointer"
-          onClick={() => {
-            if (manageRef.current) {
-              manageRef.current.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start',
-              });
-            }
-          }}
-        >
-          Manage
-        </li>
-      </ul>
-    </div>
+          <ul className="flex justify-around">
+            <li
+              className="cursor-pointer hover:text-orange-500"
+              onClick={() => {
+                if (imagineRef.current) {
+                  imagineRef.current.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start",
+                  });
+                }
+              }}
+            >
+              Imagine
+            </li>
+            <li
+              className="cursor-pointer"
+              onClick={() => {
+                if (engineerRef.current) {
+                  engineerRef.current.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start",
+                  });
+                }
+              }}
+            >
+              Engineer
+            </li>
+            <li
+              className="cursor-pointer"
+              onClick={() => {
+                if (modernizeRef.current) {
+                  modernizeRef.current.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start",
+                  });
+                }
+              }}
+            >
+              Modernize
+            </li>
+            <li
+              className="cursor-pointer"
+              onClick={() => {
+                if (manageRef.current) {
+                  manageRef.current.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start",
+                  });
+                }
+              }}
+            >
+              Manage
+            </li>
+          </ul>
+        </div>
       )}
 
       {/* Target Sections */}
@@ -266,12 +271,18 @@ export default function Home() {
       <ClientSection />
       <IndustrySection />
       <ServiceSection />
+      <TestimonialSection />
+      <FeedbackSection/>
+      <SubCompanies />
+      <IndustriesSection />
       <PartnerEcosystem />
       <CompanySummary />
+      <NewsSection />
+      <BlogSection />
       <ContactForm />
+      <Footer/>
       <FooterNew />
-      <BotChat/>
-
+      <BotChat />
     </div>
   );
 }
