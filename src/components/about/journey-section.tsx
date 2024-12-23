@@ -211,10 +211,10 @@ const JourneySection = () => {
           animate={{ opacity: 1, y: 0 }}
           className="mb-12"
         >
-          <h2 className="text-4xl font-bold text-transparent text-center bg-clip-text bg-gradient-to-r from-orange-600 to-purple-500">
+          <h2 className="text-4xl font-bold text-transparent text-center bg-clip-text bg-gradient-to-r from-[#2056aeff] to-[#50ade5ff]">
             Journey Through Innovation
           </h2>
-          <p className="mt-8 text-center text-gray-400">
+          <p className="mt-8 text-center text-gray-200">
             At Aventa Holdings Pvt Ltd, we are your trusted partner for
             achieving digital success. Our journey is driven by a steadfast
             dedication to delivering cutting-edge technology solutions. We
@@ -228,7 +228,7 @@ const JourneySection = () => {
 
         <div className="relative xl:px-40 px-4">
           {/* Timeline line with gradient */}
-          <div className="absolute xl:ml-40 ml-4 left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-blue-500 via-purple-500 to-pink-500" />
+          <div className="absolute xl:ml-40 ml-4 left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-blue-500 via-[#50ade5ff] to-purple-500" />
 
           <div className="space-y-6">
             {timelineData.map((event, index) => {

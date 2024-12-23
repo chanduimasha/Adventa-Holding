@@ -87,40 +87,40 @@ import Footer from "@/components/footer-section";
 import FeedbackSection from "@/components/feedback-section";
 
 export default function Home() {
-  const [showSlideBar, setShowSlideBar] = useState(false);
-  const isMobile = useMediaQuery({ maxWidth: 767 }); // Assuming mobile devices have a max width of 767px
+  // const [showSlideBar, setShowSlideBar] = useState(false);
+  // const isMobile = useMediaQuery({ maxWidth: 767 }); // Assuming mobile devices have a max width of 767px
 
-  // Refs for the 4 target sections
-  const imagineRef = useRef<HTMLDivElement | null>(null);
-  const engineerRef = useRef<HTMLDivElement | null>(null);
-  const modernizeRef = useRef<HTMLDivElement | null>(null);
-  const manageRef = useRef<HTMLDivElement | null>(null);
+  // // Refs for the 4 target sections
+  // const imagineRef = useRef<HTMLDivElement | null>(null);
+  // const engineerRef = useRef<HTMLDivElement | null>(null);
+  // const modernizeRef = useRef<HTMLDivElement | null>(null);
+  // const manageRef = useRef<HTMLDivElement | null>(null);
 
-  useEffect(() => {
-    const observerCallback = (entries: IntersectionObserverEntry[]) => {
-      const isVisible = entries.some((entry) => entry.isIntersecting); // Check if any section is visible
-      setShowSlideBar(isVisible);
-    };
+  // useEffect(() => {
+  //   const observerCallback = (entries: IntersectionObserverEntry[]) => {
+  //     const isVisible = entries.some((entry) => entry.isIntersecting); // Check if any section is visible
+  //     setShowSlideBar(isVisible);
+  //   };
 
-    // Create an observer instance
-    const observer = new IntersectionObserver(observerCallback, {
-      threshold: 0.5, // 50% of the section is visible
-    });
+  //   // Create an observer instance
+  //   const observer = new IntersectionObserver(observerCallback, {
+  //     threshold: 0.5, // 50% of the section is visible
+  //   });
 
-    // Observe the 4 sections
-    if (imagineRef.current) observer.observe(imagineRef.current);
-    if (engineerRef.current) observer.observe(engineerRef.current);
-    if (modernizeRef.current) observer.observe(modernizeRef.current);
-    if (manageRef.current) observer.observe(manageRef.current);
+  //   // Observe the 4 sections
+  //   if (imagineRef.current) observer.observe(imagineRef.current);
+  //   if (engineerRef.current) observer.observe(engineerRef.current);
+  //   if (modernizeRef.current) observer.observe(modernizeRef.current);
+  //   if (manageRef.current) observer.observe(manageRef.current);
 
-    // Cleanup observer on unmount
-    return () => {
-      if (imagineRef.current) observer.unobserve(imagineRef.current);
-      if (engineerRef.current) observer.unobserve(engineerRef.current);
-      if (modernizeRef.current) observer.unobserve(modernizeRef.current);
-      if (manageRef.current) observer.unobserve(manageRef.current);
-    };
-  }, []);
+  //   // Cleanup observer on unmount
+  //   return () => {
+  //     if (imagineRef.current) observer.unobserve(imagineRef.current);
+  //     if (engineerRef.current) observer.unobserve(engineerRef.current);
+  //     if (modernizeRef.current) observer.unobserve(modernizeRef.current);
+  //     if (manageRef.current) observer.unobserve(manageRef.current);
+  //   };
+  // }, []);
 
   return (
     <div className="relative">
@@ -131,10 +131,10 @@ export default function Home() {
       <HeroSection />
 
       {/* Achievment Section */}
-      <AchievmentSection />
+      {/* <AchievmentSection /> */}
 
       {/* Slide Bar */}
-      {showSlideBar && !isMobile && (
+      {/* {showSlideBar && !isMobile && (
         <div className="fixed top-1/2 left-0 transform -translate-y-1/2 bg-transparent text-white px-4 py-8 rounded-l-lg shadow-lg z-50">
           <ul className="mt-2 space-y-8">
             <li
@@ -191,10 +191,10 @@ export default function Home() {
             </li>
           </ul>
         </div>
-      )}
+      )} */}
 
       {/* Mobile Slide Bar */}
-      {showSlideBar && isMobile && (
+      {/* {showSlideBar && isMobile && (
         <div className="fixed bottom-0 left-0 right-0 bg-gray-800 text-white px-4 py-4 shadow-lg z-50">
           <ul className="flex justify-around">
             <li
@@ -251,10 +251,10 @@ export default function Home() {
             </li>
           </ul>
         </div>
-      )}
+      )} */}
 
       {/* Target Sections */}
-      <div ref={imagineRef}>
+      {/* <div ref={imagineRef}>
         <ImagineSection />
       </div>
       <div ref={engineerRef}>
@@ -265,22 +265,22 @@ export default function Home() {
       </div>
       <div ref={manageRef}>
         <ManageSection />
-      </div>
+      </div> */}
 
       {/* Other Sections */}
-      <ClientSection />
-      <IndustrySection />
-      <ServiceSection />
-      <TestimonialSection />
-      <FeedbackSection/>
-      <SubCompanies />
+      {/* <ClientSection /> */}
+      {/* <IndustrySection /> */}
+      {/* <ServiceSection /> */}
+      {/* <TestimonialSection /> */}
+      {/* <FeedbackSection/> */}
+      {/* <SubCompanies /> */}
       <IndustriesSection />
-      <PartnerEcosystem />
-      <CompanySummary />
+      {/* <PartnerEcosystem /> */}
+      {/* <CompanySummary /> */}
       <NewsSection />
       <BlogSection />
       <ContactForm />
-      <Footer/>
+      {/* <Footer/> */}
       <FooterNew />
       <BotChat />
     </div>

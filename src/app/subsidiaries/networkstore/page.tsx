@@ -246,7 +246,7 @@ const NetworkStorePage = () => {
               Contact us today for a free consultation and discover how we can
               enhance your digital infrastructure.
             </p>
-            <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full font-semibold flex items-center gap-2 mx-auto transition-colors">
+            <button className="bg-[#2056aeff] hover:bg-[#50ade5ff] text-white px-8 py-3 rounded-full font-semibold flex items-center gap-2 mx-auto transition-colors">
               Get Started
               <ChevronRight className="w-5 h-5" />
             </button>

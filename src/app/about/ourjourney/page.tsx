@@ -44,8 +44,9 @@ const OurJourney = () => {
       <NavBar/>
       <JourneySection/>
       <CoValues/>
-      <VisionMissionSection/>
       <CompanyHighlights/>
+
+      <VisionMissionSection/>
       <FooterNew/>
     </div>
     // <div className="bg-black text-white">

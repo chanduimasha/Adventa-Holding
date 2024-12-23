@@ -72,7 +72,7 @@ const EnvironmentalPage = () => {
   return (
     <div>
       <NavBar/>
-      <div className="min-h-screen bg-gradient-to-b from-green-50 to-white p-8 xl:pt-32 pt-24 pb-16">
+      <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white p-8 xl:pt-32 pt-24 pb-16">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial="initial"
@@ -116,8 +116,8 @@ const EnvironmentalPage = () => {
                           {item.title}
                         </h3>
                         <p className="text-gray-600 mb-4">{item.description}</p>
-                        <div className="inline-block bg-green-100 px-4 py-2 rounded-full">
-                          <span className="text-green-800 font-medium">
+                        <div className="inline-block bg-blue-100 px-4 py-2 rounded-full">
+                          <span className="text-[#2056aeff] font-medium">
                             {item.stats}
                           </span>
                         </div>
@@ -143,19 +143,19 @@ const EnvironmentalPage = () => {
             </h2>
             <div className="grid md:grid-cols-3 gap-8">
               <div className="text-center">
-                <div className="text-5xl font-bold text-green-600 mb-2">
+                <div className="text-5xl font-bold text-[#2056aeff] mb-2">
                   75%
                 </div>
                 <p className="text-gray-600">Waste Reduction</p>
               </div>
               <div className="text-center">
-                <div className="text-5xl font-bold text-green-600 mb-2">
+                <div className="text-5xl font-bold text-[#2056aeff] mb-2">
                   100%
                 </div>
                 <p className="text-gray-600">Renewable Energy</p>
               </div>
               <div className="text-center">
-                <div className="text-5xl font-bold text-green-600 mb-2">
+                <div className="text-5xl font-bold text-[#2056aeff] mb-2">
                   50K
                 </div>
                 <p className="text-gray-600">Trees Planted</p>

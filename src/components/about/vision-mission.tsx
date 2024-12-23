@@ -11,7 +11,7 @@ const VisionMissionSection: React.FC = () => {
           transition={{ duration: 0.8 }}
           className="mb-12"
         >
-          <h2 className="text-3xl font-semibold mb-4 text-orange-500">Our Vision</h2>
+          <h2 className="text-3xl font-semibold mb-4 text-[#2056aeff]">Our Vision</h2>
           <p className="text-lg leading-relaxed">
             To be the industry leader in Sri Lanka by 2030, for technology innovations, networking and ICT system
             integration, that helps to enhance the living style of our people.
@@ -32,7 +32,7 @@ const VisionMissionSection: React.FC = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, delay: 0.5 }}
         >
-          <h2 className="text-3xl font-semibold mb-4 text-orange-500">Our Mission</h2>
+          <h2 className="text-3xl font-semibold mb-4 text-[#2056aeff]">Our Mission</h2>
           <p className="text-lg leading-relaxed">
             To be at the forefront of Information and Communication Technology, by empowering people, business, and
             society with cutting-edge technology solutions, that are innovative and creative.

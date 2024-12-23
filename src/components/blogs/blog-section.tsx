@@ -188,8 +188,8 @@ const BlogSection: React.FC = () => {
           onClick={() => handlePageChange(i)}
           className={`w-10 h-10 rounded-full transition-all duration-300
             ${currentPage === i 
-              ? "bg-orange-500 text-white shadow-lg shadow-orange-500/30"
-              : "bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 hover:bg-orange-300 hover:text-white"
+              ? "bg-[#3871c1ff] text-white shadow-xl shadow-[#50ade5ff]"
+              : "bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 hover:bg-[#50ade5ff] hover:text-white"
             }`}
         >
           {i}
@@ -200,18 +200,18 @@ const BlogSection: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-white to-purple-50 shadow-2xl dark:from-gray-900 dark:via-gray-800 dark:to-indigo-900">
+    <div className="min-h-screen bg-gradient-to-br from-indigo-100 via-white to-purple-50 shadow-2xl dark:from-gray-900 dark:via-gray-800 dark:to-indigo-900">
       <div className="relative">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          className="container mx-auto px-4 py-32"
+          className="container mx-auto px-4 py-16"
         >
           <motion.h1
             initial={{ y: -20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.5 }}
-            className="text-5xl font-bold text-center mb-4 bg-gradient-to-r from-yellow-200 to-orange-600 text-transparent bg-clip-text"
+            className="text-5xl font-bold text-center mb-4 bg-gradient-to-r from-[#2056aeff] to-[#50ade5ff] text-transparent bg-clip-text"
           >
             Explore Our Blog
           </motion.h1>
@@ -232,8 +232,8 @@ const BlogSection: React.FC = () => {
               onClick={() => handleCategoryChange(null)}
               className={`px-6 py-1 rounded-full transition-all duration-300 transform
                 ${!selectedCategory
-                  ? "bg-orange-500 text-white shadow-lg shadow-orange-500/30"
-                  : "bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 hover:bg-orange-300 hover:text-white"
+                  ? "bg-[#2056aeff] text-white shadow-lg shadow-[#50ade5ff]"
+                  : "bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 hover:bg-[#50ade5ff] hover:text-white"
                 }`}
             >
               All
@@ -246,8 +246,8 @@ const BlogSection: React.FC = () => {
                 onClick={() => handleCategoryChange(category)}
                 className={`px-6 py-1 rounded-full transition-all duration-300 transform
                   ${selectedCategory === category
-                    ? "bg-orange-500 text-white shadow-lg shadow-orange-500/30"
-                    : "bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 hover:bg-orange-300 hover:text-white"
+                    ? "bg-[#2056aeff] text-white shadow-lg shadow-[#50ade5ff]"
+                    : "bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 hover:bg-[#50ade5ff] hover:text-white"
                   }`}
               >
                 {category}
@@ -273,7 +273,7 @@ const BlogSection: React.FC = () => {
                 whileTap={{ scale: 0.95 }}
                 onClick={() => handlePageChange(Math.max(1, currentPage - 1))}
                 disabled={currentPage === 1}
-                className="w-10 h-10 rounded-full bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 hover:bg-orange-300 hover:text-white disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
+                className="w-10 h-10 rounded-full bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 hover:bg-[#50ade5ff] hover:text-white disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
               >
                 <ChevronLeft className="w-5 h-5" />
               </motion.button>
@@ -285,7 +285,7 @@ const BlogSection: React.FC = () => {
                 whileTap={{ scale: 0.95 }}
                 onClick={() => handlePageChange(Math.min(totalPages, currentPage + 1))}
                 disabled={currentPage === totalPages}
-                className="w-10 h-10 rounded-full bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 hover:bg-orange-300 hover:text-white disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
+                className="w-10 h-10 rounded-full bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 hover:bg-[#50ade5ff] hover:text-white disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
               >
                 <ChevronRight className="w-5 h-5" />
               </motion.button>

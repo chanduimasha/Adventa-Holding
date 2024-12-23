@@ -126,7 +126,7 @@ const LeadershipPage = () => {
         <section className="bg-white">
           <div className="container mx-auto px-4 py-16">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 text-center">
-              Our <span className="text-orange-500">Leadership</span> Team
+              Our <span className="text-[#2056aeff]">Leadership</span> Team
             </h1>
             <p className="text-xl text-gray-600 pt-4 text-center">
               Meet the visionaries and industry experts driving innovation and
@@ -154,7 +154,7 @@ const LeadershipPage = () => {
                     <h3 className="text-xl font-bold text-gray-900 mb-2">
                       {executive.name}
                     </h3>
-                    <p className="text-orange-500 font-medium mb-4">
+                    <p className="text-[#2056aeff] font-medium mb-4">
                       {executive.title}
                     </p>
                     <p className="text-gray-600 mb-6">{executive.bio}</p>
@@ -162,7 +162,7 @@ const LeadershipPage = () => {
                       {executive.linkedIn && (
                         <a
                           href={executive.linkedIn}
-                          className="text-gray-600 hover:text-orange-500"
+                          className="text-gray-600 hover:text-[#2056aeff]"
                         >
                           <LinkedinIcon size={20} />
                         </a>
@@ -170,7 +170,7 @@ const LeadershipPage = () => {
                       {executive.twitter && (
                         <a
                           href={executive.twitter}
-                          className="text-gray-600 hover:text-orange-500"
+                          className="text-gray-600 hover:text-[#2056aeff]"
                         >
                           <TwitterIcon size={20} />
                         </a>
@@ -223,7 +223,7 @@ const LeadershipPage = () => {
                     <h3 className="text-xl font-bold text-center text-gray-900 mb-2">
                       {advisor.name}
                     </h3>
-                    <p className="text-orange-500 text-center font-medium">
+                    <p className="text-[#2056aeff] text-center font-medium">
                       {advisor.expertise}
                     </p>
                   </CardContent>
@@ -246,7 +246,7 @@ const LeadershipPage = () => {
                 creating an inclusive environment where diverse perspectives
                 drive creative solutions.
               </p>
-              <Button className="bg-orange-500 hover:bg-orange-700">
+              <Button className="bg-[#2056aeff] hover:bg-[#50ade5ff]">
                 <PlayCircle className="mr-2" size={20} />
                 Watch Our Story
               </Button>
@@ -319,24 +319,24 @@ const LeadershipPage = () => {
         </section>
 
         {/* Call to Action Section */}
-        <section className="py-16 bg-orange-500">
+        <section className="py-16 bg-white shadow-lg">
           <div className="container mx-auto px-4 text-center">
-            <h2 className="text-3xl font-bold text-white mb-8">
+            <h2 className="text-3xl font-bold text-black mb-8">
               Join Our Journey
             </h2>
-            <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+            <p className="text-xl text-black/90 mb-8 max-w-2xl mx-auto">
               We are always looking for talented individuals to join our team and
               help shape the future of technology.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <Button
-                className="bg-white text-orange-500 hover:bg-orange-600 hover:text-white"
+                className="bg-[#2056aeff] text-white hover:bg-[#50ade5ff] hover:text-white"
                 onClick={() => router.push("/careers")} // Navigate to Contact Us page
               >
                 View Careers
               </Button>
               <Button
-                className="bg-white text-orange-500 hover:bg-orange-600 hover:text-white"
+                className="bg-[#2056aeff] text-white hover:bg-[#50ade5ff] hover:text-white"
                 onClick={() => router.push("/contact")} // Navigate to Contact Us page
               >
                 Contact Us

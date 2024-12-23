@@ -16,7 +16,7 @@ const CoValues = () => {
               "text-black xl:text-5xl text-3xl font-bold mb-16 text-center",
           }}
         >
-          Our <span className="text-orange-500">Core</span> Values
+          Our <span className="text-[#2056aeff]">Core</span> Values
         </motion.h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="text-black cursor-pointer transform transition-transform duration-200 hover:scale-105">
@@ -30,9 +30,9 @@ const CoValues = () => {
               <Image
                 src="/assets/covalues/1.png" // Replace with your image path
                 alt="Hero Image"
-                width={100} // Adjust size to match your design
-                height={100}
-                className="rounded-lg pb-2 mt-[-20px]"
+                width={50} // Adjust size to match your design
+                height={50}
+                className="rounded-lg pb-2 mt-0"
               />
               <h3 className="text-2xl font-bold mb-6 text-center">
                 Innovation
@@ -59,9 +59,9 @@ const CoValues = () => {
               <Image
                 src="/assets/covalues/2.png" // Replace with your image path
                 alt="Hero Image"
-                width={80} // Adjust size to match your design
-                height={80}
-                className="rounded-lg pb-6"
+                width={45} // Adjust size to match your design
+                height={45}
+                className="rounded-lg pb-2"
               />
               <h3 className="text-2xl font-bold mb-6 text-center">
                 Customer Focus
@@ -88,9 +88,9 @@ const CoValues = () => {
               <Image
                 src="/assets/covalues/3.png" // Replace with your image path
                 alt="Hero Image"
-                width={45} // Adjust size to match your design
-                height={45}
-                className="rounded-lg pb-6"
+                width={65} // Adjust size to match your design
+                height={65}
+                className="rounded-lg pb-2"
               />
               <h3 className="text-2xl font-bold mb-6 text-center">
                 Sustainability
@@ -117,9 +117,9 @@ const CoValues = () => {
               <Image
                 src="/assets/covalues/4.png" // Replace with your image path
                 alt="Hero Image"
-                width={45} // Adjust size to match your design
-                height={45}
-                className="rounded-lg pb-6"
+                width={60} // Adjust size to match your design
+                height={60}
+                className="rounded-lg pb-0"
               />
               <h3 className="text-2xl font-bold mb-6 text-center">Teamwork</h3>
               <p className="text-center">

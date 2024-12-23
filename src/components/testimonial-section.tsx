@@ -263,7 +263,7 @@ const TestimonialSection: React.FC = () => {
     <section className="bg-gradient-to-br from-blue-50 to-blue-100 py-14">
       <div className="container mx-auto px-4 max-w-5xl">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-extrabold text-orange-600 mb-4">
+          <h2 className="text-4xl font-extrabold text-[#2056aeff] mb-4">
             What Our Clients Say
           </h2>
           <p className="text-black max-w-xl mx-auto">
@@ -275,7 +275,7 @@ const TestimonialSection: React.FC = () => {
         <div className="relative flex items-center justify-center">
           <button
             onClick={prevSlide}
-            className="absolute left-0 z-20 bg-orange-600 hover:bg-orange-700 text-white p-3 rounded-full shadow-xl transition-all duration-300 ease-in-out transform hover:scale-110"
+            className="absolute left-0 z-20 bg-[#2056aeff] hover:bg-[#50ade5ff] text-white p-3 rounded-full shadow-xl transition-all duration-300 ease-in-out transform hover:scale-110"
           >
             <ChevronLeft size={24} />
           </button>
@@ -291,17 +291,17 @@ const TestimonialSection: React.FC = () => {
                 exit="exit"
                 className="bg-white rounded-xl shadow-2xl p-8 text-center relative overflow-hidden"
               >
-                <div className="absolute top-4 left-4 text-orange-300">
+                <div className="absolute top-4 left-4 text-[#50ade5ff]">
                   <Star size={32} fill="currentColor" />
                 </div>
-                <div className="absolute bottom-4 right-4 text-orange-300">
+                <div className="absolute bottom-4 right-4 text-[#50ade5ff]">
                   <Star size={32} fill="currentColor" />
                 </div>
 
                 <img
                   src={testimonials[currentIndex].image}
                   alt={testimonials[currentIndex].name}
-                  className="mx-auto mb-6 w-32 h-32 rounded-full object-cover border-4 border-orange-500 shadow-lg"
+                  className="mx-auto mb-6 w-32 h-32 rounded-full object-cover border-4 border-[#2056aeff] shadow-lg"
                 />
 
                 <p className="text-black italic mb-6 text-lg">
@@ -309,7 +309,7 @@ const TestimonialSection: React.FC = () => {
                 </p>
 
                 <div>
-                  <h3 className="text-2xl font-bold text-orange-700">
+                  <h3 className="text-2xl font-bold text-[#2056aeff]">
                     {testimonials[currentIndex].name}
                   </h3>
                   <p className="text-gray-500">
@@ -322,7 +322,7 @@ const TestimonialSection: React.FC = () => {
 
           <button
             onClick={nextSlide}
-            className="absolute right-0 z-20 bg-orange-600 hover:bg-orange-700 text-white p-3 rounded-full shadow-xl transition-all duration-300 ease-in-out transform hover:scale-110"
+            className="absolute right-0 z-20 bg-[#2056aeff] hover:bg-[#50ade5ff] text-white p-3 rounded-full shadow-xl transition-all duration-300 ease-in-out transform hover:scale-110"
           >
             <ChevronRight size={24} />
           </button>
@@ -334,7 +334,7 @@ const TestimonialSection: React.FC = () => {
               key={index}
               onClick={() => setCurrentIndex(index)}
               className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                index === currentIndex ? "bg-orange-600 w-6" : "bg-orange-300"
+                index === currentIndex ? "bg-[#2056aeff] w-6" : "bg-[#50ade5ff]"
               }`}
             />
           ))}
