@@ -61,30 +61,30 @@
 
 "use client";
 
-import { useEffect, useState, useRef } from "react";
-import PartnerEcosystem from "@/components/partner-systems";
+// import { useEffect, useState, useRef } from "react";
+// import PartnerEcosystem from "@/components/partner-systems";
 import HeroSection from "@/components/hero-section";
 import NavBar from "@/components/nav-bar";
-import AchievmentSection from "@/components/achievment-section";
-import ServiceSection from "@/components/services-section";
-import ClientSection from "@/components/client-success";
+// import AchievmentSection from "@/components/achievment-section";
+// import ServiceSection from "@/components/services-section";
+// import ClientSection from "@/components/client-success";
 import FooterNew from "@/components/footer";
-import CompanySummary from "@/components/company-summary";
-import IndustrySection from "@/components/industry-solutions";
+// import CompanySummary from "@/components/company-summary";
+// import IndustrySection from "@/components/industry-solutions";
 import ContactForm from "@/components/contact-form";
-import ImagineSection from "@/components/imagine-section";
-import EngineerSection from "@/components/engineer-section";
-import ModernizeSection from "@/components/modernize-section";
-import ManageSection from "@/components/manage-section";
-import { useMediaQuery } from "react-responsive";
+// import ImagineSection from "@/components/imagine-section";
+// import EngineerSection from "@/components/engineer-section";
+// import ModernizeSection from "@/components/modernize-section";
+// import ManageSection from "@/components/manage-section";
+// import { useMediaQuery } from "react-responsive";
 import BotChat from "@/components/bot-chat";
 import BlogSection from "@/components/blogs/blog-section";
 import NewsSection from "@/components/news/news-section";
 import IndustriesSection from "@/components/industries";
-import SubCompanies from "@/components/sub-companies";
-import TestimonialSection from "@/components/testimonial-section";
-import Footer from "@/components/footer-section";
-import FeedbackSection from "@/components/feedback-section";
+// import SubCompanies from "@/components/sub-companies";
+// import TestimonialSection from "@/components/testimonial-section";
+// import Footer from "@/components/footer-section";
+// import FeedbackSection from "@/components/feedback-section";
 
 export default function Home() {
   // const [showSlideBar, setShowSlideBar] = useState(false);
