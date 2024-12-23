@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { useRouter } from "next/navigation";
 
 type SubCompany = {
@@ -96,11 +96,11 @@ const IndustriesSection: React.FC = () => {
   };
 
   return (
-    <section className="relative bg-zinc-100 py-16">
+    <section className="relative bg-zinc-200 py-16 shadow-md">
       {/* Modern Geometric Background */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute w-96 h-96 -top-48 -left-48 bg-orange-200/20 rounded-full blur-3xl" />
-        <div className="absolute w-96 h-96 -bottom-48 -right-48 bg-orange-300/20 rounded-full blur-3xl" />
+        <div className="absolute w-96 h-96 -top-48 -left-48 bg-blue-200/20 rounded-full blur-3xl" />
+        <div className="absolute w-96 h-96 -bottom-48 -right-48 bg-blue-300/20 rounded-full blur-3xl" />
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -117,7 +117,7 @@ const IndustriesSection: React.FC = () => {
             initial={{ scaleX: 0 }}
             whileInView={{ scaleX: 1 }}
             transition={{ delay: 0.2 }}
-            className="mt-4 h-1 w-20 bg-orange-500 mx-auto"
+            className="mt-4 h-1 w-20 bg-[#2056aeff] mx-auto"
           />
         </div>
 
@@ -138,8 +138,8 @@ const IndustriesSection: React.FC = () => {
                       w-full group relative px-4 py-4 text-left transition-all duration-200
                       ${
                         activeIndustry.id === industry.id
-                          ? "text-orange-600 bg-white shadow-lg rounded-lg border border-orange-100"
-                          : "text-zinc-600 hover:text-orange-600"
+                          ? "text-[#2056aeff] bg-white shadow-lg rounded-lg border border-blue-100"
+                          : "text-zinc-600 hover:text-[#50ade5ff]"
                       }
                     `}
                 >
@@ -151,13 +151,13 @@ const IndustriesSection: React.FC = () => {
                         opacity: activeIndustry.id === industry.id ? 1 : 0,
                       }}
                     >
-                      <ArrowUpRight className="w-5 h-5" />
+                      <ArrowRight className="w-5 h-5 ml-1 transition-transform group-hover:translate-x-2" />
                     </motion.div>
                   </div>
                   {activeIndustry.id === industry.id && (
                     <motion.div
                       layoutId="activeTab"
-                      className="absolute left-0 top-0 w-1 h-full bg-orange-500 rounded-full"
+                      className="absolute left-0 top-0 w-1 h-full bg-[#2056aeff] rounded-full"
                     />
                   )}
                 </button>
@@ -181,7 +181,7 @@ const IndustriesSection: React.FC = () => {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
-                  className="group relative bg-white rounded-lg border border-zinc-200 shadow-lg hover:shadow-2xl transition-all duration-300"
+                  className="group relative bg-white rounded-lg border border-zinc-200 shadow-xl hover:shadow-2xl transition-all duration-300"
                 >
                   {/* Clickable Card Container */}
                   <div
@@ -193,11 +193,11 @@ const IndustriesSection: React.FC = () => {
                       <Image
                         src={company.image}
                         alt={company.name}
-                        width={350}
-                        height={350}
+                        width={320}
+                        height={320}
                         className="object-cover  group-hover:scale-105 transition-transform duration-700 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300" />
                     </div>
 
                     {/* Content */}
@@ -208,7 +208,7 @@ const IndustriesSection: React.FC = () => {
                       <p className="text-zinc-600 text-sm mb-4 line-clamp-2">
                         {company.description}
                       </p>
-                      <div className="inline-flex items-center text-orange-600 hover:text-orange-700 font-medium group">
+                      <div className="inline-flex items-center text-[#2056aeff] hover:text-[#50ade5ff] font-medium group">
                         <span className="mr-2 group-hover:underline">
                           Learn More
                         </span>
@@ -216,17 +216,17 @@ const IndustriesSection: React.FC = () => {
                           whileHover={{ x: 5 }}
                           transition={{ type: "spring", stiffness: 300 }}
                         >
-                          <ArrowUpRight className="w-5 h-5" />
+                          <ArrowRight className="w-5 h-5 ml-1 transition-transform group-hover:translate-x-2" />
                         </motion.div>
                       </div>
 
                       {/* Enhanced Hover Effect */}
-                      <div className="absolute inset-0 ring-1 ring-orange-500 opacity-0 group-hover:opacity-100 rounded-lg transition-opacity duration-300" />
+                      <div className="absolute inset-0 ring-1 ring-[#2056aeff] opacity-0 group-hover:opacity-100 rounded-lg transition-opacity duration-300" />
                     </div>
                   </div>
 
                   {/* Bottom Gradient Line */}
-                  <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-orange-500 to-orange-600 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
+                  <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-[#2056aeff] to-[#50ade5ff] transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
                 </motion.div>
               ))}
             </motion.div>

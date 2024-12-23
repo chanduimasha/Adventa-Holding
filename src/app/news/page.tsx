@@ -144,7 +144,7 @@ export default function NewsPage() {
     <div>
       <NavBar/>
       <div
-        className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-purple-50 
+        className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 
                     dark:from-gray-900 dark:via-gray-800 dark:to-gray-900"
       >
         <div className="relative">
@@ -160,7 +160,7 @@ export default function NewsPage() {
               className="text-center mb-16"
             >
               <h1
-                className="xl:text-6xl text-5xl font-bold mb-6 bg-gradient-to-r from-orange-500 to-purple-600 
+                className="xl:text-6xl text-5xl font-bold mb-6 bg-gradient-to-r from-[#2056aeff] to-[#50ade5ff] 
                          text-transparent bg-clip-text"
               >
                 Latest News & Updates
@@ -181,7 +181,7 @@ export default function NewsPage() {
                   onChange={(e) => setSearchQuery(e.target.value)}
                   className="w-full pl-12 pr-4 py-4 rounded-2xl bg-white dark:bg-gray-800/50 
                          border border-gray-200 dark:border-gray-700 focus:ring-2 
-                         focus:ring-orange-500 focus:border-transparent outline-none
+                         focus:ring-[#2056aeff] focus:border-transparent outline-none
                          transition-all duration-300"
                 />
               </div>
@@ -195,8 +195,8 @@ export default function NewsPage() {
                 className={`px-6 py-1 rounded-full transition-all duration-300 transform
                        ${
                          !selectedCategory
-                           ? "bg-orange-500 text-white shadow-lg shadow-orange-500/30"
-                           : "bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 hover:bg-orange-300 hover:text-white"
+                           ? "bg-[#2056aeff] text-white shadow-lg shadow-[#50ade5ff]"
+                           : "bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 hover:bg-[#50ade5ff] hover:text-white"
                        }`}
               >
                 All News
@@ -210,8 +210,8 @@ export default function NewsPage() {
                   className={`px-6 py-1 rounded-full transition-all duration-300 transform
                          ${
                            selectedCategory === category
-                             ? "bg-orange-500 text-white shadow-lg shadow-orange-500/30"
-                             : "bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 hover:bg-orange-300 hover:text-white"
+                             ? "bg-[#2056aeff] text-white shadow-lg shadow-[#50ade5ff]"
+                             : "bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 hover:bg-[#50ade5ff] hover:text-white"
                          }`}
                 >
                   {category}

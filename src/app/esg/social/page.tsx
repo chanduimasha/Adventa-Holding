@@ -55,7 +55,7 @@ const SocialPage = () => {
   return (
     <div>
       <NavBar/>
-      <div className="min-h-screen bg-gradient-to-b from-gray-100 to-white p-8 xl:pt-32 pt-24 pb-16">
+      <div className="min-h-screen bg-gradient-to-b from-blue-100 to-white p-8 xl:pt-32 pt-24 pb-16">
         <div className="max-w-7xl mx-auto">
           {/* Header Section */}
           <motion.div
@@ -104,7 +104,7 @@ const SocialPage = () => {
                         <p className="text-gray-600 mb-4">{item.description}</p>
                         <div className="w-full bg-gray-200 rounded-full h-2 mb-2">
                           <div
-                            className="bg-orange-500 h-2 rounded-full"
+                            className="bg-[#2056aeff] h-2 rounded-full"
                             style={{ width: `${item.progress}%` }}
                           />
                         </div>
@@ -137,11 +137,11 @@ const SocialPage = () => {
                 <div>
                   <div className="flex justify-between mb-2">
                     <span className="text-gray-600">Employee Satisfaction</span>
-                    <span className="text-orange-500 font-medium">92%</span>
+                    <span className="text-[#2056aeff] font-medium">92%</span>
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-2">
                     <div
-                      className="bg-orange-500 h-2 rounded-full"
+                      className="bg-[#2056aeff] h-2 rounded-full"
                       style={{ width: "92%" }}
                     />
                   </div>
@@ -149,11 +149,11 @@ const SocialPage = () => {
                 <div>
                   <div className="flex justify-between mb-2">
                     <span className="text-gray-600">Community Programs</span>
-                    <span className="text-orange-500 font-medium">85%</span>
+                    <span className="text-[#2056aeff] font-medium">85%</span>
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-2">
                     <div
-                      className="bg-orange-500 h-2 rounded-full"
+                      className="bg-[#2056aeff] h-2 rounded-full"
                       style={{ width: "85%" }}
                     />
                   </div>
@@ -161,11 +161,11 @@ const SocialPage = () => {
                 <div>
                   <div className="flex justify-between mb-2">
                     <span className="text-gray-600">Training Hours</span>
-                    <span className="text-orange-500 font-medium">78%</span>
+                    <span className="text-[#2056aeff] font-medium">78%</span>
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-2">
                     <div
-                      className="bg-orange-500 h-2 rounded-full"
+                      className="bg-[#2056aeff] h-2 rounded-full"
                       style={{ width: "78%" }}
                     />
                   </div>

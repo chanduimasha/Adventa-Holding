@@ -5,7 +5,7 @@ import Stats from "../stats-chart";
 
 const CompanyHighlights = () => {
   return (
-    <motion.section className="py-16 bg-orange-500 shadow-2xl">
+    <motion.section className="py-16 bg-[#2056aeff] shadow-2xl">
       <div className="container mx-auto px-4">
         <motion.h2
           initial={{ opacity: 0, y: 50 }}

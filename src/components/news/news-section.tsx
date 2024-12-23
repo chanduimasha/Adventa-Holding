@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useRef  } from 'react';
+import React, { useState, useRef } from "react";
 import NewsCard from "@/components/news-card";
 import { News } from "../../types/news";
 import { motion } from "framer-motion";
@@ -134,7 +134,10 @@ const NewsSection: React.FC = () => {
 
   const totalPages = Math.ceil(filteredNews.length / ITEMS_PER_PAGE);
   const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
-  const paginatedNews = filteredNews.slice(startIndex, startIndex + ITEMS_PER_PAGE);
+  const paginatedNews = filteredNews.slice(
+    startIndex,
+    startIndex + ITEMS_PER_PAGE
+  );
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -152,8 +155,9 @@ const NewsSection: React.FC = () => {
     if (newsSectionRef.current) {
       const yOffset = -100; // Adjust this value to control the scroll position
       const element = newsSectionRef.current;
-      const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
-      window.scrollTo({ top: y, behavior: 'smooth' });
+      const y =
+        element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      window.scrollTo({ top: y, behavior: "smooth" });
     }
   };
 
@@ -167,9 +171,10 @@ const NewsSection: React.FC = () => {
           whileTap={{ scale: 0.95 }}
           onClick={() => handlePageChange(i)}
           className={`w-10 h-10 rounded-full transition-all duration-300
-            ${currentPage === i 
-              ? "bg-orange-500 text-white shadow-lg shadow-orange-500/30"
-              : "bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 hover:bg-orange-300 hover:text-white"
+            ${
+              currentPage === i
+                ? "bg-[#2056aeff] text-white shadow-lg shadow-[#50ade5ff]"
+                : "bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 hover:bg-[#50ade5ff] hover:text-white"
             }`}
         >
           {i}
@@ -180,12 +185,12 @@ const NewsSection: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-white via-orange-50 to-purple-50 shadow-2xl dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
+    <div className="min-h-screen bg-gradient-to-br from-white via-blue-50 to-purple-50 shadow-2xl dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
       <div className="relative">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          className="container mx-auto px-4 py-32"
+          className="container mx-auto px-4 py-16"
         >
           <motion.div
             initial={{ y: -20, opacity: 0 }}
@@ -193,7 +198,7 @@ const NewsSection: React.FC = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h1 className="xl:text-6xl text-5xl font-bold mb-6 bg-gradient-to-r from-orange-500 to-purple-600 text-transparent bg-clip-text">
+            <h1 className="xl:text-6xl text-5xl font-bold mb-6 bg-gradient-to-r from-[#2056aeff] to-[#50ade5ff] text-transparent bg-clip-text">
               Latest News & Updates
             </h1>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
@@ -210,7 +215,8 @@ const NewsSection: React.FC = () => {
                 placeholder="Search news..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-12 pr-4 py-4 rounded-2xl bg-white dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none transition-all duration-300"
+                className="w-full pl-12 pr-4 py-4 rounded-2xl bg-white dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 focus:ring-2 focus:ring-[
+#2056aeff] focus:border-transparent outline-none transition-all duration-300"
               />
             </div>
           </div>
@@ -224,9 +230,10 @@ const NewsSection: React.FC = () => {
                 setCurrentPage(1);
               }}
               className={`px-6 py-1 rounded-full transition-all duration-300 transform
-                ${!selectedCategory
-                  ? "bg-orange-500 text-white shadow-lg shadow-orange-500/30"
-                  : "bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 hover:bg-orange-300 hover:text-white"
+                ${
+                  !selectedCategory
+                    ? "bg-[#2056aeff] text-white shadow-lg shadow-[#50ade5ff]"
+                    : "bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 hover:bg-[#50ade5ff] hover:text-white"
                 }`}
             >
               All News
@@ -241,9 +248,10 @@ const NewsSection: React.FC = () => {
                   setCurrentPage(1);
                 }}
                 className={`px-6 py-1 rounded-full transition-all duration-300 transform
-                  ${selectedCategory === category
-                    ? "bg-orange-500 text-white shadow-lg shadow-orange-500/30"
-                    : "bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 hover:bg-orange-300 hover:text-white"
+                  ${
+                    selectedCategory === category
+                      ? "bg-[#2056aeff] text-white shadow-lg shadow-[#50ade5ff]"
+                      : "bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 hover:bg-[#50ade5ff] hover:text-white"
                   }`}
               >
                 {category}
@@ -270,19 +278,21 @@ const NewsSection: React.FC = () => {
                 whileTap={{ scale: 0.95 }}
                 onClick={() => handlePageChange(Math.max(1, currentPage - 1))}
                 disabled={currentPage === 1}
-                className="w-10 h-10 rounded-full bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 hover:bg-orange-300 hover:text-white disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
+                className="w-10 h-10 rounded-full bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 hover:bg-[#50ade5ff] hover:text-white disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
               >
                 <ChevronLeft className="w-5 h-5" />
               </motion.button>
-              
+
               {renderPaginationButtons()}
-              
+
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                onClick={() => handlePageChange(Math.min(totalPages, currentPage + 1))}
+                onClick={() =>
+                  handlePageChange(Math.min(totalPages, currentPage + 1))
+                }
                 disabled={currentPage === totalPages}
-                className="w-10 h-10 rounded-full bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 hover:bg-orange-300 hover:text-white disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
+                className="w-10 h-10 rounded-full bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 hover:bg-[#50ade5ff] hover:text-white disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
               >
                 <ChevronRight className="w-5 h-5" />
               </motion.button>

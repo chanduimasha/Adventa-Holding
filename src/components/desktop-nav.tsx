@@ -207,7 +207,7 @@ const Nav: React.FC = () => {
                 flex items-center cursor-pointer 
                 ${pathname.startsWith(link.path)
                   ? "text-black font-semibold"
-                  : "text-black hover:text-orange-600"
+                  : "text-black hover:text-[#2056aeff]"
                 }
                 text-[15px] font-medium
                 transition-colors 
@@ -237,7 +237,7 @@ const Nav: React.FC = () => {
                   layoutId="underline"
                   {...{
                     className:
-                      "absolute bottom-0 left-0 right-0 h-0.5 bg-orange-600",
+                      "absolute bottom-0 left-0 right-0 h-0.5 bg-[#2056aeff]",
                   }}
                   initial={{ scaleX: 0 }}
                   animate={{ scaleX: 1 }}
@@ -257,7 +257,7 @@ const Nav: React.FC = () => {
                 pb-2
                 ${pathname === link.path
                   ? "text-black font-semibold"
-                  : "text-black hover:text-orange-600"
+                  : "text-black hover:text-[#2056aeff]"
                 }
                 transition-colors 
                 duration-300
@@ -268,7 +268,7 @@ const Nav: React.FC = () => {
               {pathname === link.path && (
                 <motion.div
                   layoutId="underline"
-                  className="absolute bottom-0 left-0 right-0 h-0.5 bg-orange-600"
+                  className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#2056aeff]"
                   initial={{ scaleX: 0 }}
                   animate={{ scaleX: 1 }}
                   transition={{ duration: 0.3 }}
@@ -303,7 +303,7 @@ const Nav: React.FC = () => {
                         text-[14px] font-medium
                         ${pathname === subLink.path
                           ? "bg-white text-black font-medium"
-                          : "text-black hover:bg-orange-400"
+                          : "text-black hover:bg-[#50ade5ff]"
                         }
                         transition-colors 
                         duration-200

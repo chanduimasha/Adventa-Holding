@@ -48,7 +48,7 @@ const ContactUsForm = () => {
     <section className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 py-20">
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-16 space-y-4">
-          <h2 className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600">
+          <h2 className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#2056aeff] to-[#50ade5ff]">
             Let us Connect
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
@@ -135,7 +135,7 @@ const ContactUsForm = () => {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-3 rounded-lg font-medium hover:from-blue-700 hover:to-indigo-700 transition-all flex items-center justify-center space-x-2 disabled:opacity-70"
+                    className="w-full bg-gradient-to-r from-[#2056aeff] to-[#50ade5ff] text-white py-3 rounded-lg font-medium hover:from-blue-700 hover:to-indigo-700 transition-all flex items-center justify-center space-x-2 disabled:opacity-70"
                   >
                     {isSubmitting ? (
                       <div className="h-5 w-5 border-2 border-white border-t-transparent rounded-full animate-spin" />

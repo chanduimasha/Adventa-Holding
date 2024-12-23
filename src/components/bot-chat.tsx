@@ -91,7 +91,7 @@ const BotChat: React.FC = () => {
           </span>
           <button
             onClick={() => setIsTextVisible(false)}
-            className="text-orange-500 ml-2 hover:text-gray-800"
+            className="text-[#2056aeff] ml-2 hover:text-gray-800"
           >
             <FaTimes className="text-sm" />
           </button>
@@ -101,17 +101,17 @@ const BotChat: React.FC = () => {
       {/* Bot Icon or Header */}
       {!isExpanded ? (
         <div
-          className="flex items-center justify-center bg-orange-500 rounded-full w-full h-full cursor-pointer"
+          className="flex items-center justify-center bg-[#2056aeff] rounded-full w-full h-full cursor-pointer"
           onClick={toggleExpansion}
         >
           <img
             src="/assets/feedbacks/feedback2.jpeg"
             alt="chat bot"
-            className="mx-auto w-16 h-16 rounded-full object-cover border-2 border-orange-500 shadow-lg"
+            className="mx-auto w-16 h-16 rounded-full object-cover border-2 border-[#2056aeff] shadow-lg"
           />
         </div>
       ) : (
-        <div className="flex items-center justify-between bg-orange-500 text-white px-4 py-2 rounded-t-lg cursor-pointer">
+        <div className="flex items-center justify-between bg-[#2056aeff] text-white px-4 py-2 rounded-t-lg cursor-pointer">
           <span className="flex items-center gap-2">
             <FaRobot className="text-xl" /> Chat Bot
           </span>
@@ -137,7 +137,7 @@ const BotChat: React.FC = () => {
                 <span
                   className={`px-3 py-1 max-w-[75%] rounded-lg text-sm shadow-md break-words ${
                     message.isUser
-                      ? "bg-orange-500 text-white"
+                      ? "bg-[#2056aeff] text-white"
                       : "bg-gray-200 text-gray-800"
                   }`}
                 >
@@ -158,12 +158,12 @@ const BotChat: React.FC = () => {
                   sendMessage();
                 }
               }}
-              className="flex-1 px-2 py-1 border border-gray-300 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm"
+              className="flex-1 px-2 py-1 border border-gray-300 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-[#2056aeff] text-sm"
               placeholder="Type a message..."
             />
             <button
               onClick={sendMessage}
-              className="bg-orange-500 text-white px-3 py-4 rounded-r-lg hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-500 flex items-center justify-center"
+              className="bg-[#2056aeff] text-white px-3 py-4 rounded-r-lg hover:bg-[#50ade5ff] focus:outline-none focus:ring-2 focus:ring-[#2056aeff] flex items-center justify-center"
             >
               <FaPaperPlane className="text-sm" />
             </button>

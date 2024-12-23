@@ -91,7 +91,7 @@ const GovernancePage = () => {
                   </CardHeader>
                   <CardContent>
                     <p className="text-gray-600 mb-4">{pillar.description}</p>
-                    <div className="text-2xl font-bold text-orange-500 mb-4">
+                    <div className="text-2xl font-bold text-[#2056aeff] mb-4">
                       {pillar.metric}
                     </div>
                     <GovernanceVideo url={pillar.videoUrl} />

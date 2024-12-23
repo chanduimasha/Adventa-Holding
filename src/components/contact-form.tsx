@@ -68,7 +68,7 @@ const ContactForm: React.FC = () => {
   };
 
   return (
-    <section className="bg-zinc-200 py-12">
+    <section className="bg-zinc-100 py-12">
       <div className="max-w-6xl mx-auto px-4">
         <h2 className="text-4xl font-bold mb-2">Contact us</h2>
         <p className="text-sm mb-8">(*) Asterisk denotes mandatory fields</p>
@@ -91,14 +91,14 @@ const ContactForm: React.FC = () => {
                 id={input.id}
                 name={input.id}
                 value={formData[input.id] || ""}
-                className="peer w-full border-b bg-transparent border-gray-600 focus:outline-none focus:border-orange-500 py-2 text-sm placeholder-transparent"
+                className="peer w-full border-b bg-transparent border-gray-600 focus:outline-none focus:border-[#50ade5ff] py-2 text-sm placeholder-transparent"
                 placeholder={input.label}
                 onChange={handleChange}
                 required={input.label.includes("*")}
               />
               <label
                 htmlFor={input.id}
-                className="absolute left-0 -top-3.5 text-gray-600 text-sm transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-gray-600 peer-placeholder-shown:text-sm peer-focus:-top-3.5 peer-focus:text-orange-500 peer-focus:text-sm"
+                className="absolute left-0 -top-3.5 text-gray-600 text-sm transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-gray-600 peer-placeholder-shown:text-sm peer-focus:-top-3.5 peer-focus:text-[#2056aeff] peer-focus:text-sm"
               >
                 {input.label}
               </label>
@@ -112,13 +112,13 @@ const ContactForm: React.FC = () => {
               name="message"
               rows={4}
               value={formData.message}
-              className="peer w-full border border-gray-600 bg-transparent focus:outline-none focus:border-orange-500 py-6 px-2 placeholder-transparent"
+              className="peer w-full border border-gray-600 bg-transparent focus:outline-none focus:border-[#50ade5ff] py-6 px-2 placeholder-transparent"
               placeholder="How can we help you?"
               onChange={handleChange}
             />
             <label
               htmlFor="message"
-              className="absolute left-2 top-2 text-gray-600 text-sm transition-all peer-placeholder-shown:top-3 peer-placeholder-shown:text-gray-600 peer-placeholder-shown:text-sm peer-focus:top-2 peer-focus:text-orange-500 peer-focus:text-sm"
+              className="absolute left-2 top-2 text-gray-600 text-sm transition-all peer-placeholder-shown:top-3 peer-placeholder-shown:text-gray-600 peer-placeholder-shown:text-sm peer-focus:top-2 peer-focus:text-[#2056aeff] peer-focus:text-sm"
             >
               How can we help you?
             </label>
@@ -132,7 +132,7 @@ const ContactForm: React.FC = () => {
                 className="h-4 w-4 border border-gray-600 rounded mr-2"
               />
               I agree to the{" "}
-              <a href="#" className="text-orange-500 underline ml-1">
+              <a href="#" className="text-[#2056aeff] underline ml-1">
                 privacy notice
               </a>
             </label>
@@ -149,7 +149,7 @@ const ContactForm: React.FC = () => {
           <div className="md:col-span-2 flex items-center space-x-4">
             <button
               type="submit"
-              className="bg-orange-500 text-white py-1 px-6 rounded-full hover:bg-orange-600"
+              className="bg-[#2056aeff] text-white py-1 px-6 rounded-full hover:bg-[#50ade5ff]"
               disabled={isSubmitting}
             >
               {isSubmitting ? "Sending..." : "Send Message"}
@@ -169,7 +169,7 @@ const ContactForm: React.FC = () => {
 
         <p className="mt-8 text-sm">
           You can also email us directly at{" "}
-          <a href="mailto:info@persistent.com" className="text-orange-500">
+          <a href="mailto:info@persistent.com" className="text-[#2056aeff]">
             info@aventa.com
           </a>
         </p>

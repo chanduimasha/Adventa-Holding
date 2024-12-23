@@ -212,7 +212,7 @@ export default function AuxanoPage() {
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.6 }}
-              className="bg-blue-600 text-white px-8 py-3 rounded-full font-medium hover:bg-blue-700 transition-colors flex items-center mx-auto"
+              className="bg-[#2056aeff] text-white px-8 py-3 rounded-full font-medium hover:bg-blue-700 transition-colors flex items-center mx-auto"
             >
               Learn More
               <ArrowRight className="ml-2 w-5 h-5" />
@@ -256,7 +256,7 @@ export default function AuxanoPage() {
         </section>
 
         {/* Statistics Section */}
-        <section className="relative bg-gradient-to-br from-blue-600 to-blue-800 py-24 overflow-hidden">
+        <section className="relative bg-gradient-to-br from-[#2056aeff] to-blue-500 py-24 overflow-hidden">
           {/* Background animated circles */}
           <motion.div
             className="absolute top-0 left-0 w-96 h-96 bg-blue-400 rounded-full"

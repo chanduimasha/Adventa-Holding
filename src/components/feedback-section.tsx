@@ -108,7 +108,7 @@ const FeedbackSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600 mb-6"
+              className="text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#2056aeff] to-[#50ade5ff] mb-6"
             >
               Client Testimonials
             </motion.h2>
@@ -155,7 +155,7 @@ const FeedbackSection = () => {
                             alt={testimonials[currentIndex].name}
                             className="w-32 h-32 rounded-full object-cover border-4 border-purple-500/30"
                           />
-                          <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full px-4 py-1">
+                          <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 bg-gradient-to-r from-[#2056aeff] to-[#50ade5ff] rounded-full px-4 py-1">
                             <div className="flex items-center gap-1">
                               {[...Array(testimonials[currentIndex].rating)].map((_, i) => (
                                 <Star key={i} size={14} className="text-yellow-300 fill-yellow-300" />
@@ -191,13 +191,13 @@ const FeedbackSection = () => {
             <div className="absolute left-0 right-0 top-1/2 -translate-y-1/2 flex justify-between pointer-events-none">
               <button
                 onClick={prevSlide}
-                className="pointer-events-auto transform -translate-x-4 w-12 h-12 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 text-white flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-300"
+                className="pointer-events-auto transform -translate-x-4 w-12 h-12 rounded-full bg-gradient-to-r from-[#2056aeff] to-[#50ade5ff] text-white flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-300"
               >
                 <ChevronLeft size={24} />
               </button>
               <button
                 onClick={nextSlide}
-                className="pointer-events-auto transform translate-x-4 w-12 h-12 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 text-white flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-300"
+                className="pointer-events-auto transform translate-x-4 w-12 h-12 rounded-full bg-gradient-to-r from-[#2056aeff] to-[#50ade5ff] text-white flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-300"
               >
                 <ChevronRight size={24} />
               </button>
@@ -215,7 +215,7 @@ const FeedbackSection = () => {
                 }}
                 className={`h-2 rounded-full transition-all duration-300 ${
                   index === currentIndex 
-                    ? 'w-8 bg-gradient-to-r from-purple-600 to-pink-600' 
+                    ? 'w-8 bg-gradient-to-r from-[#2056aeff] to-[#50ade5ff]' 
                     : 'w-2 bg-gray-600'
                 }`}
               />

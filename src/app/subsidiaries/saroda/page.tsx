@@ -430,7 +430,7 @@ const SarodaPage = () => {
             </motion.p>
             <motion.button
               variants={fadeInUp}
-              className="bg-blue-600 text-white px-8 py-4 rounded-full font-medium hover:bg-blue-700 transition-colors inline-flex items-center group"
+              className="bg-[#2056aeff] text-white px-8 py-4 rounded-full font-medium hover:bg-blue-700 transition-colors inline-flex items-center group"
             >
               Contact Us
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />

@@ -168,7 +168,7 @@ export default function BlogPage() {
               initial={{ y: -20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.5 }}
-              className="text-5xl font-bold text-center mb-4 bg-gradient-to-r from-yellow-200 to-orange-600 text-transparent bg-clip-text"
+              className="text-5xl font-bold text-center mb-4 bg-gradient-to-r from-[#2056aeff] to-[#50ade5ff] text-transparent bg-clip-text"
             >
               Explore Our Blog
             </motion.h1>
@@ -187,8 +187,8 @@ export default function BlogPage() {
                 onClick={() => setSelectedCategory(null)}
                 className={`px-4 py-2 rounded-full transition-all ${
                   !selectedCategory
-                    ? "bg-orange-500 text-white"
-                    : "bg-gray-200 text-gray-700 hover:bg-orange-300"
+                    ? "bg-[#2056aeff] text-white"
+                    : "bg-gray-200 text-gray-700 hover:bg-[#50ade5ff]"
                 }`}
               >
                 All
@@ -199,8 +199,8 @@ export default function BlogPage() {
                   onClick={() => setSelectedCategory(category)}
                   className={`px-4 py-2 rounded-full transition-all ${
                     selectedCategory === category
-                      ? "bg-orange-500 text-white"
-                      : "bg-gray-200 text-gray-700 hover:bg-orange-300"
+                      ? "bg-[#2056aeff] text-white"
+                      : "bg-gray-200 text-gray-700 hover:bg-[#50ade5ff]"
                   }`}
                 >
                   {category}
