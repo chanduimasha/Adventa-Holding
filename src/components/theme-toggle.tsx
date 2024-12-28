@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 
 export default function ThemeToggle() {
-  const [theme, setTheme] = useState<string>("light");
+  const [theme, setTheme] = useState<string>("dark"); // Default to "dark"
 
   useEffect(() => {
-    const savedTheme = localStorage.getItem("theme") || "light";
+    const savedTheme = localStorage.getItem("theme") || "dark"; // Default to "dark"
     document.documentElement.classList.toggle("dark", savedTheme === "dark");
     setTheme(savedTheme);
   }, []);
@@ -18,10 +18,10 @@ export default function ThemeToggle() {
 
   return (
     <button
-  onClick={toggleTheme}
-  className="flex justify-center items-center p-2 w-8 h-8 rounded-full bg-gray-900 dark:bg-gray-200 text-black dark:text-white"
->
-  {theme === "light" ? "🌙" : "☀️"}
-</button>
+      onClick={toggleTheme}
+      className="flex justify-center items-center p-2 w-8 h-8 rounded-full bg-gray-900 dark:bg-gray-200 text-black dark:text-white"
+    >
+      {theme === "light" ? "🌙" : "☀️"}
+    </button>
   );
 }
