@@ -204,17 +204,17 @@ const JourneySection = () => {
   ];
 
   return (
-    <section className="bg-gray-900 py-16 xl:pt-32 pt-24 pb-16">
+    <section className="dark:bg-neutral-900 bg-zinc-200 py-16 xl:pt-32 pt-24 pb-16">
       <div className="max-w-7xl mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           className="mb-12"
         >
-          <h2 className="text-4xl font-bold text-transparent text-center bg-clip-text bg-gradient-to-r from-[#2056aeff] to-[#50ade5ff]">
+          <h2 className="xl:text-6xl text-4xl font-bold text-transparent text-center bg-clip-text bg-gradient-to-r from-[#2056aeff] to-[#50ade5ff]">
             Journey Through Innovation
           </h2>
-          <p className="mt-8 text-center text-gray-200">
+          <p className="mt-8 text-center dark:text-gray-200 text-neutral-900">
             At Aventa Holdings Pvt Ltd, we are your trusted partner for
             achieving digital success. Our journey is driven by a steadfast
             dedication to delivering cutting-edge technology solutions. We

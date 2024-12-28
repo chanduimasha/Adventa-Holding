@@ -200,7 +200,7 @@ const BlogSection: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-100 via-white to-purple-50 shadow-2xl dark:from-gray-900 dark:via-gray-800 dark:to-indigo-900">
+    <div className="min-h-screen bg-blue-50 dark:bg-neutral-900">
       <div className="relative">
         <motion.div
           initial={{ opacity: 0 }}
@@ -211,7 +211,7 @@ const BlogSection: React.FC = () => {
             initial={{ y: -20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.5 }}
-            className="text-5xl font-bold text-center mb-4 bg-gradient-to-r from-[#2056aeff] to-[#50ade5ff] text-transparent bg-clip-text"
+            className="text-4xl xl:text-6xl font-bold text-center mb-4 bg-gradient-to-r from-[#2056aeff] to-[#50ade5ff] text-transparent bg-clip-text"
           >
             Explore Our Blog
           </motion.h1>

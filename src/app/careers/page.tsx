@@ -11,7 +11,7 @@ import {
   Sparkles
 } from "lucide-react";
 import NavBar from "@/components/nav-bar";
-import FooterNew from "@/components/footer";
+import Footer from "@/components/footer-section";
 
 interface Job {
   title: string;
@@ -364,7 +364,7 @@ const Careers: React.FC = () => {
   return (
     <div>
       <NavBar/>
-      <div className="bg-blue-50 min-h-screen py-10 text-black xl:pt-20 pt-12 pb-12">
+      <div className="bg-blue-50 dark:bg-neutral-900 min-h-screen py-10 text-black xl:pt-20 pt-12 pb-12">
         <div className="container mx-auto px-4 py-12">
           {/* Hero Section */}
           <motion.div
@@ -376,7 +376,7 @@ const Careers: React.FC = () => {
             <h1 className="xl:text-5xl text-4xl font-bold mb-4 bg-gradient-to-r from-[#2056aeff] to-[#50ade5ff] text-transparent bg-clip-text">
               Find Your Next Career Move
             </h1>
-            <p className="text-gray-800 text-lg max-w-2xl mx-auto">
+            <p className="text-gray-800 dark:text-gray-400 text-lg max-w-2xl mx-auto">
               Join our team of innovators and help shape the future of
               technology
             </p>
@@ -398,7 +398,7 @@ const Careers: React.FC = () => {
                 <input
                   type="text"
                   placeholder="Search by job title, department, or skills..."
-                  className="w-full pl-12 pr-4 py-3 bg-gray-50 border border-gray-400 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#2056aeff] text-black placeholder-gray-400"
+                  className="w-full pl-12 pr-4 py-3 bg-gray-50 dark:bg-gray-700 dark:text-white border border-gray-400 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#2056aeff] text-black placeholder-gray-400"
                   value={searchTerm}
                   onChange={handleSearch}
                 />
@@ -411,7 +411,7 @@ const Careers: React.FC = () => {
                     className={`px-4 py-3 rounded-xl whitespace-nowrap transition-all duration-300 ${
                       activeFilter === filter.id
                         ? "bg-[#2056aeff] text-white"
-                        : "bg-white text-black border border-gray-400 hover:bg-[#50ade5ff]"
+                        : "bg-white dark:bg-gray-700 text-black dark:text-gray-200 border border-gray-400 hover:bg-[#50ade5ff]"
                     }`}
                   >
                     {filter.label}
@@ -432,7 +432,7 @@ const Careers: React.FC = () => {
 
           {/* Job Cards Grid */}
           <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 "
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.4 }}
@@ -441,7 +441,7 @@ const Careers: React.FC = () => {
               filteredJobs.map((job, index) => (
                 <motion.div
                   key={index}
-                  className="group relative bg-gradient-to-br shadow-xl from-blue-200 to-white rounded-xl p-6 border border-gray-300 hover:border-indigo-500 transition-all duration-300"
+                  className="group relative dark:hover:shadow-blue-lg bg-blue-50 dark:bg-gray-950 rounded-xl p-6 border border-gray-300 dark:border dark:border-gray-700 hover:border-indigo-500 transition-all duration-300"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
@@ -466,22 +466,22 @@ const Careers: React.FC = () => {
                   </div>
 
                   {/* Job Title and Department */}
-                  <h2 className="text-xl font-semibold mb-2 text-gray-800 group-hover:text-indigo-700 transition-colors">
+                  <h2 className="text-xl font-semibold mb-2 text-gray-800 dark:text-gray-200 group-hover:text-indigo-700 transition-colors">
                     {job.title}
                   </h2>
                   <p className="text-indigo-700 mb-4">{job.department}</p>
 
                   {/* Job Details */}
                   <div className="space-y-3 mb-6">
-                    <div className="flex items-center gap-2 text-gray-600">
+                    <div className="flex items-center gap-2 text-gray-600 dark:text-gray-400">
                       <MapPin size={16} />
                       <span className="text-sm">{job.location}</span>
                     </div>
-                    <div className="flex items-center gap-2 text-gray-600">
+                    <div className="flex items-center gap-2 text-gray-600 dark:text-gray-400">
                       <Briefcase size={16} />
                       <span className="text-sm">{job.employment}</span>
                     </div>
-                    <div className="flex items-center gap-2 text-gray-600">
+                    <div className="flex items-center gap-2 text-gray-600 dark:text-gray-400">
                       <Users size={16} />
                       <span className="text-sm">{job.vacancies} positions</span>
                     </div>
@@ -498,7 +498,7 @@ const Careers: React.FC = () => {
                       </span>
                     ))}
                     {job.skills && job.skills.length > 3 && (
-                      <span className="text-gray-600 text-xs">
+                      <span className="text-gray-600 dark:text-gray-400 text-xs">
                         +{job.skills.length - 3} more
                       </span>
                     )}
@@ -559,7 +559,7 @@ const Careers: React.FC = () => {
           )}
         </AnimatePresence>
       </div>
-      <FooterNew/>
+      <Footer/>
     </div>
   );
 };

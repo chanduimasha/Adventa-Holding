@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import { Search } from "lucide-react";
 import NavBar from "@/components/nav-bar";
-import Footer from "@/components/footer";
+import Footer from "@/components/footer-section";
 
 const news: News[] = [
   // Technology News
@@ -144,8 +144,7 @@ export default function NewsPage() {
     <div>
       <NavBar/>
       <div
-        className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 
-                    dark:from-gray-900 dark:via-gray-800 dark:to-gray-900"
+        className="min-h-screen bg-blue-50 dark:bg-neutral-900"
       >
         <div className="relative">
           <motion.div
@@ -180,7 +179,7 @@ export default function NewsPage() {
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   className="w-full pl-12 pr-4 py-4 rounded-2xl bg-white dark:bg-gray-800/50 
-                         border border-gray-200 dark:border-gray-700 focus:ring-2 
+                         border border-gray-300 dark:border-gray-700 focus:ring-2 
                          focus:ring-[#2056aeff] focus:border-transparent outline-none
                          transition-all duration-300"
                 />

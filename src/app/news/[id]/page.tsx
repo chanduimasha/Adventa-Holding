@@ -15,7 +15,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import NavBar from "@/components/nav-bar";
-import Footer from "@/components/footer";
+import Footer from "@/components/footer-section";
 
 // Sample news data - replace with your actual data source
 const news: News[] = [
@@ -91,7 +91,7 @@ export default function NewsArticle({
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
-        className="min-h-screen bg-gradient-to-br xl:pt-32 pt-20 from-orange-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 pb-16"
+        className="min-h-screen xl:pt-32 pt-20 bg-blue-50 dark:bg-neutral-900 pb-16"
       >
         {/* Hero Section */}
         <div className="relative">
@@ -112,18 +112,18 @@ export default function NewsArticle({
           </div>
 
           {/* Article Info Section - Moved below the image */}
-          <div className="container mx-auto rounded-md px-4 xl:py-8 xl:mt-2 mt-[-150px]  bg-white dark:bg-gray-800/95 shadow-2xl">
+          <div className="container mx-auto rounded-lg px-4 xl:py-4 xl:mt-0 mt-[-200px]  bg-white dark:bg-gray-950 shadow-xl dark:border dark:border-gray-800 dark:hover:shadow-blue-lg">
             <motion.div
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.2 }}
               className="max-w-4xl mx-auto"
             >
-              <h1 className="text-2xl pt-4 xl:text-4xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
+              <h1 className="text-2xl pt-4 xl:text-4xl font-bold text-gray-900 dark:text-gray-200 mb-6 leading-tight">
                 {article.title}
               </h1>
 
-              <div className="flex flex-wrap items-center gap-6 text-gray-600 dark:text-gray-300 pb-4">
+              <div className="flex flex-wrap items-center gap-6 text-gray-600 dark:text-gray-400 pb-4">
                 <div className="flex items-center gap-2">
                   <User size={20} />
                   <span>{article.author}</span>
@@ -142,12 +142,12 @@ export default function NewsArticle({
         </div>
 
         {/* Article Content */}
-        <div className="container mx-auto px-2 max-w-4xl">
+        <div className="container mx-auto px-2 max-w-6xl">
           <motion.div
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="mt-6 bg-white dark:bg-gray-800/50 rounded-3xl p-8 md:p-12 
+            className="mt-6 bg-white dark:bg-gray-950 rounded-3xl p-8 md:p-12 
                    shadow-xl backdrop-blur-lg border border-gray-100 dark:border-gray-700"
           >
             {/* Share buttons */}
@@ -192,7 +192,7 @@ export default function NewsArticle({
 
             {/* Article text */}
             <div
-              className="prose prose-lg dark:prose-invert max-w-none
+              className="prose prose-lg dark:text-gray-300 dark:prose-invert max-w-none
                      prose-headings:text-gray-900 dark:prose-headings:text-white
                      prose-p:text-gray-700 dark:prose-p:text-gray-300
                      prose-a:text-orange-500 hover:prose-a:text-orange-600
@@ -226,7 +226,7 @@ export default function NewsArticle({
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.6 }}
-            className="mt-8 bg-white dark:bg-gray-800/50 rounded-3xl p-8
+            className="mt-8 bg-white dark:bg-gray-950 rounded-3xl p-8
                    shadow-xl backdrop-blur-lg border border-gray-100 dark:border-gray-700"
           >
             <div className="flex items-center gap-6">

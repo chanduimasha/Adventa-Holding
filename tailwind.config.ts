@@ -38,6 +38,9 @@ module.exports = {
       fontFamily: {
         title: ["Roboto", "sans-serif"],
       },
+      boxShadow: {
+        'blue-lg': '0 10px 15px -3px rgba(59, 130, 246, 0.5), 0 4px 6px -2px rgba(59, 130, 246, 0.3)',
+      },
 
       keyframes: {
         "accordion-down": {
@@ -76,4 +79,5 @@ module.exports = {
     },
   },
   plugins: [require("tailwindcss-animate")],
+  // darkMode: "class",
 };

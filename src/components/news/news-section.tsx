@@ -185,7 +185,7 @@ const NewsSection: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-white via-blue-50 to-purple-50 shadow-2xl dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
+    <div className="min-h-screen bg-blue-50 shadow-2xl dark:bg-neutral-900">
       <div className="relative">
         <motion.div
           initial={{ opacity: 0 }}
@@ -215,7 +215,7 @@ const NewsSection: React.FC = () => {
                 placeholder="Search news..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-12 pr-4 py-4 rounded-2xl bg-white dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 focus:ring-2 focus:ring-[
+                className="w-full pl-12 pr-4 py-4 rounded-2xl bg-white dark:text-white dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 focus:ring-2 focus:ring-[
 #2056aeff] focus:border-transparent outline-none transition-all duration-300"
               />
             </div>

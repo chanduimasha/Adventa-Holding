@@ -79,14 +79,14 @@ const BotChat: React.FC = () => {
 
   return (
     <motion.div
-      className={`fixed bottom-4 right-4 bg-white shadow-lg border border-gray-300 transition-all duration-300 rounded-full ${
+      className={`fixed bottom-4 right-4 bg-white dark:bg-gray-950 shadow-lg border border-gray-300 dark:border-gray-700 transition-all duration-300 rounded-full ${
         isExpanded ? "rounded-lg w-80 h-96" : "w-16 h-16"
       }`}
     >
       {/* Header Text Section */}
       {isTextVisible && !isExpanded && (
-        <div className="absolute -top-12 -left-32 bg-white w-auto max-w-[250px] px-2 py-2 rounded-lg flex justify-between items-center shadow-md whitespace-nowrap overflow-hidden">
-          <span className="text-sm text-black font-medium">
+        <div className="absolute -top-12 -left-32 bg-white dark:bg-gray-800 w-auto max-w-[250px] px-2 py-2 rounded-lg flex justify-between items-center shadow-md whitespace-nowrap overflow-hidden">
+          <span className="text-sm text-black dark:text-gray-200 font-medium">
             Hi! What can I do for you?
           </span>
           <button
@@ -158,7 +158,7 @@ const BotChat: React.FC = () => {
                   sendMessage();
                 }
               }}
-              className="flex-1 px-2 py-1 border border-gray-300 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-[#2056aeff] text-sm"
+              className="flex-1 px-2 py-1 border dark:bg-gray-800 dark:text-gray-200 border-gray-300 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-[#2056aeff] text-sm"
               placeholder="Type a message..."
             />
             <button

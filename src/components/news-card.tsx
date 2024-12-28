@@ -17,7 +17,7 @@ const NewsCard = ({ news, index }: NewsCardProps) => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: index * 0.1 }}
-        className="group relative bg-white dark:bg-gray-800/50 backdrop-blur-lg rounded-3xl overflow-hidden 
+        className="group relative bg-white dark:bg-gray-950 backdrop-blur-lg rounded-3xl overflow-hidden 
                  hover:shadow-[0_0_40px_rgba(249,115,22,0.15)] dark:hover:shadow-[0_0_40px_rgba(249,115,22,0.07)]
                  transition-all duration-300 border border-gray-100 dark:border-gray-700 shadow-2xl"
       >
@@ -29,7 +29,7 @@ const NewsCard = ({ news, index }: NewsCardProps) => {
             initial={{ scale: 1 }}
             whileHover={{ scale: 1.1 }}
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300" />
+          <div className="absolute dark:border dark:border-gray-800 inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300" />
 
           {/* <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" /> */}
 

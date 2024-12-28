@@ -81,10 +81,10 @@ const MobileNav = () => {
   return (
     <Sheet open={isOpen} onOpenChange={setIsOpen}>
       <SheetTrigger className="flex justify-center items-center">
-        <CiMenuFries className="text-[32px] text-black" />
+        <CiMenuFries className="text-[32px] text-black dark:text-white" />
       </SheetTrigger>
-      <SheetContent className="flex flex-col bg-white">
-        <div className="text-black mt-16 mb-12 text-center text-2xl">
+      <SheetContent className="flex flex-col bg-white dark:bg-gray-900">
+        <div className="text-black dark:text-white mt-16 mb-12 text-center text-2xl">
           <Link href="/" onClick={closeSheet}>
             <h1 className="text-3xl font-bold text-[#2056aeff] text-center">
               ADVENTA
@@ -95,7 +95,7 @@ const MobileNav = () => {
             </h1>
           </Link>
         </div>
-        <nav className="text-black flex flex-col justify-center items-center gap-4">
+        <nav className="text-black dark:text-gray-200 flex flex-col justify-center items-center gap-4">
           {links.map((link, index) => (
             <div key={index} className="w-full">
               {link.subLinks ? (
@@ -126,7 +126,7 @@ const MobileNav = () => {
                     } ${
                       pathname.startsWith(link.path)
                         ? "text-[#2056aeff]"
-                        : "text-gray-700"
+                        : "text-gray-700 dark:text-gray-400"
                     }`}
                     strokeWidth={2.5}
                   />
@@ -180,7 +180,7 @@ const MobileNav = () => {
                             ${
                               pathname === subLink.path
                                 ? "bg-indigo-50 text-[#2056aeff] font-medium"
-                                : "text-gray-700 hover:text-[#2056aeff]"
+                                : "text-gray-700 dark:text-gray-200 hover:text-[#2056aeff]"
                             }
                             transition-colors 
                             duration-200

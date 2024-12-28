@@ -10,7 +10,7 @@ import {
   ArrowUpRight,
 } from "lucide-react";
 import NavBar from "@/components/nav-bar";
-import FooterNew from "@/components/footer";
+import Footer from "@/components/footer-section";
 
 const SarodaPage = () => {
   const controls = useAnimation();
@@ -50,7 +50,7 @@ const SarodaPage = () => {
   return (
     <div>
       <NavBar/>
-      <div className="bg-white">
+      <div className="bg-white dark:bg-neutral-900">
         {/* Hero Section with Header Image */}
         <section className="relative min-h-screen">
           {/* Background Image with Overlay */}
@@ -122,14 +122,14 @@ const SarodaPage = () => {
         </section>
 
         {/* Stats Section */}
-        <section className="relative py-32 bg-blue-200 overflow-hidden">
-          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0)_0%,rgba(255,255,255,1)_100%)]"></div>
+        <section className="relative py-32 bg-blue-200 dark:bg-neutral-900 overflow-hidden">
+          {/* <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0)_0%,rgba(255,255,255,1)_100%)]"></div> */}
           {/* Decorative Elements */}
-          <div className="absolute inset-0">
+          {/* <div className="absolute inset-0">
             <div className="absolute top-10 left-10 w-72 h-72 bg-blue-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
             <div className="absolute top-0 right-4 w-72 h-72 bg-purple-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
             <div className="absolute -bottom-8 left-20 w-72 h-72 bg-pink-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
-          </div>
+          </div> */}
 
           <motion.div
             initial="hidden"
@@ -185,10 +185,10 @@ const SarodaPage = () => {
                   }}
                   className="relative group"
                 >
-                  <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                  <div className="bg-white dark:bg-gray-950 dark:border dark:border-gray-800 dark:hover:shadow-blue-lg rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
                     {/* Gradient Border */}
                     <div className="absolute inset-0 bg-gradient-to-r opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl p-[2px]">
-                      <div className="bg-white w-full h-full rounded-2xl"></div>
+                      <div className="bg-white dark:bg-gray-900 w-full h-full rounded-2xl"></div>
                     </div>
 
                     <div className="relative">
@@ -204,16 +204,16 @@ const SarodaPage = () => {
                         initial={{ opacity: 0, scale: 0.5 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.5, delay: index * 0.1 }}
-                        className="text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600 mb-3"
+                        className="text-5xl font-bold bg-clip-text text-transparent bg-gray-900 dark:bg-gray-200"
                       >
                         {stat.number}
                       </motion.h3>
 
-                      <h4 className="text-xl font-semibold text-gray-900 mb-2">
+                      <h4 className="text-xl font-semibold text-gray-900 dark:text-gray-400 mb-2">
                         {stat.label}
                       </h4>
 
-                      <p className="text-gray-600 leading-relaxed">
+                      <p className="text-gray-600 dark:text-gray-500 leading-relaxed">
                         {stat.description}
                       </p>
 
@@ -255,7 +255,7 @@ const SarodaPage = () => {
         </section>
 
         {/* Services Grid */}
-        <section className="py-24 bg-gray-50">
+        <section className="py-24 bg-gray-50 dark:bg-neutral-900">
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -264,10 +264,10 @@ const SarodaPage = () => {
             className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
           >
             <motion.div variants={fadeInUp} className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-gray-900 mb-4">
+              <h2 className="text-4xl font-bold text-gray-900 dark:text-gray-200 mb-4">
                 Our Expertise
               </h2>
-              <p className="text-xl text-gray-600">
+              <p className="text-xl text-gray-600 dark:text-gray-400">
                 Comprehensive solutions tailored to your business needs
               </p>
             </motion.div>
@@ -325,7 +325,7 @@ const SarodaPage = () => {
                 <motion.div
                   key={index}
                   variants={scaleUp}
-                  className="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 group overflow-hidden"
+                  className="bg-white dark:bg-gray-950 dark:hover:shadow-blue-lg rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 group overflow-hidden"
                 >
                   <div className="relative h-48 overflow-hidden">
                     <img
@@ -339,10 +339,10 @@ const SarodaPage = () => {
                   <div className="p-8">
                     <div className="flex items-start justify-between">
                       <div>
-                        <h3 className="text-xl font-bold text-gray-900 mb-3">
+                        <h3 className="text-xl font-bold text-gray-900 dark:text-gray-200 mb-3">
                           {service.title}
                         </h3>
-                        <p className="text-gray-600 leading-relaxed">
+                        <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
                           {service.description}
                         </p>
                       </div>
@@ -356,7 +356,7 @@ const SarodaPage = () => {
         </section>
 
         {/* Featured Work */}
-        <section className="py-24 bg-white">
+        <section className="py-24 bg-white dark:bg-neutral-900">
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -365,10 +365,10 @@ const SarodaPage = () => {
             className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
           >
             <motion.div variants={fadeInUp} className="mb-16">
-              <h2 className="text-4xl font-bold text-gray-900 mb-4">
+              <h2 className="text-4xl font-bold text-gray-900 dark:text-gray-200 mb-4">
                 Featured Projects
               </h2>
-              <p className="text-xl text-gray-600">
+              <p className="text-xl text-gray-600 dark:text-gray-400">
                 Showcasing our best work and innovations
               </p>
             </motion.div>
@@ -380,7 +380,7 @@ const SarodaPage = () => {
               {[1, 2].map((project) => (
                 <div
                   key={project}
-                  className="relative group overflow-hidden rounded-2xl"
+                  className="relative group overflow-hidden rounded-2xl dark:hover:shadow-blue-lg"
                 >
                   <img
                     src={`/assets/blogs/11.jpg`}
@@ -407,7 +407,7 @@ const SarodaPage = () => {
         </section>
 
         {/* Call to Action */}
-        <section className="py-24 bg-blue-950 text-white">
+        <section className="py-24 bg-blue-950 dark:bg-neutral-900 text-white">
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -438,7 +438,7 @@ const SarodaPage = () => {
           </motion.div>
         </section>
       </div>
-      <FooterNew/>
+      <Footer/>
     </div>
   );
 };

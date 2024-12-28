@@ -5,7 +5,7 @@ import { Leaf, Droplets, Wind, Sun, Trees, Recycle } from "lucide-react";
 import { motion } from "framer-motion";
 import dynamic from "next/dynamic";
 import NavBar from "@/components/nav-bar";
-import FooterNew from "@/components/footer";
+import Footer from "@/components/footer-section";
 
 const EnvironmentalVideo = dynamic(
   () => import("@/components/environmental-video"),
@@ -72,7 +72,7 @@ const EnvironmentalPage = () => {
   return (
     <div>
       <NavBar/>
-      <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white p-8 xl:pt-32 pt-24 pb-16">
+      <div className="min-h-screen bg-blue-50 dark:bg-neutral-900 p-8 xl:pt-32 pt-24 pb-16">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial="initial"
@@ -81,13 +81,13 @@ const EnvironmentalPage = () => {
           >
             <motion.h1
               variants={fadeInUp}
-              className="xl:text-5xl text-4xl font-bold text-gray-900 mb-4"
+              className="xl:text-6xl text-4xl font-bold bg-gradient-to-r from-[#2056aeff] to-[#50ade5ff] text-transparent bg-clip-text mb-4"
             >
               Environmental Initiatives
             </motion.h1>
             <motion.p
               variants={fadeInUp}
-              className="text-xl text-gray-600 max-w-3xl mx-auto"
+              className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto"
             >
               Our commitment to environmental sustainability through innovative
               technology solutions and responsible business practices.
@@ -105,17 +105,17 @@ const EnvironmentalPage = () => {
                 variants={fadeInUp}
                 whileHover={{ scale: 1.05 }}
               >
-                <Card className="shadow-lg h-full flex flex-col">
+                <Card className="shadow-lg h-full flex flex-col dark:hover:shadow-blue-lg">
                   <CardContent className="p-6 flex-grow">
                     <div className="flex items-start space-x-4">
-                      <div className="bg-white p-3 rounded-lg shadow-sm">
+                      <div className="bg-white dark:bg-gray-950 p-3 rounded-lg shadow-sm">
                         {item.icon}
                       </div>
                       <div>
-                        <h3 className="text-2xl font-semibold text-gray-900 mb-2">
+                        <h3 className="text-2xl font-semibold text-gray-900 dark:text-gray-200 mb-2">
                           {item.title}
                         </h3>
-                        <p className="text-gray-600 mb-4">{item.description}</p>
+                        <p className="text-gray-600 dark:text-gray-400 mb-4">{item.description}</p>
                         <div className="inline-block bg-blue-100 px-4 py-2 rounded-full">
                           <span className="text-[#2056aeff] font-medium">
                             {item.stats}
@@ -136,9 +136,9 @@ const EnvironmentalPage = () => {
             initial="initial"
             animate="animate"
             variants={fadeInUp}
-            className="bg-white rounded-2xl shadow-xl p-8 mb-12"
+            className="bg-white dark:bg-neutral-900 rounded-2xl shadow-xl p-8 mb-12 dark:border dark:border-gray-800 dark:hover:shadow-blue-lg"
           >
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">
+            <h2 className="text-3xl font-bold text-gray-900 dark:text-gray-400 mb-6">
               Environmental Impact Overview
             </h2>
             <div className="grid md:grid-cols-3 gap-8">
@@ -167,13 +167,13 @@ const EnvironmentalPage = () => {
             initial="initial"
             animate="animate"
             variants={fadeInUp}
-            className="relative rounded-xl overflow-hidden shadow-xl"
+            className="relative rounded-xl overflow-hidden shadow-xl dark:hover:shadow-blue-lg"
           >
             <EnvironmentalVideo url="/videos/environmental-overview.mp4" />
           </motion.div>
         </div>
       </div>
-      <FooterNew/>
+      <Footer/>
     </div>
   );
 };

@@ -50,7 +50,7 @@ import { Blog } from "../../types/blog";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import NavBar from "@/components/nav-bar";
-import Footer from "@/components/footer";
+import Footer from "@/components/footer-section";
 
 const blogs: Blog[] = [
   {
@@ -120,7 +120,7 @@ const blogs: Blog[] = [
     author: "Michael Lee",
     date: "Nov 10, 2023",
     content:
-      "Your domain is a valuable asset. Learn how to protect it from potential cyber threats...",
+      "Choosing the right hosting provider is crucial for your website's performance. Here are the top options to consider this year...",
     image: "/assets/blogs/7.jpg",
   },
   {
@@ -157,7 +157,7 @@ export default function BlogPage() {
   return (
     <div>
       <NavBar/>
-      <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-indigo-900">
+      <div className="min-h-screen bg-gradient-to-br bg-blue-50 dark:bg-neutral-900">
         <div className="relative">
           <motion.div
             initial={{ opacity: 0 }}
@@ -185,11 +185,12 @@ export default function BlogPage() {
             <div className="flex justify-center gap-4 mb-12 flex-wrap">
               <button
                 onClick={() => setSelectedCategory(null)}
-                className={`px-4 py-2 rounded-full transition-all ${
-                  !selectedCategory
-                    ? "bg-[#2056aeff] text-white"
-                    : "bg-gray-200 text-gray-700 hover:bg-[#50ade5ff]"
-                }`}
+                className={`px-4 py-2 rounded-full transition-all 
+                  ${
+                    !selectedCategory
+                      ? "bg-[#2056aeff] text-white shadow-lg shadow-[#50ade5ff]"
+                      : "bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 hover:bg-[#50ade5ff] hover:text-white"
+                  }`}
               >
                 All
               </button>
@@ -197,11 +198,12 @@ export default function BlogPage() {
                 <button
                   key={category}
                   onClick={() => setSelectedCategory(category)}
-                  className={`px-4 py-2 rounded-full transition-all ${
-                    selectedCategory === category
-                      ? "bg-[#2056aeff] text-white"
-                      : "bg-gray-200 text-gray-700 hover:bg-[#50ade5ff]"
-                  }`}
+                  className={`px-4 py-2 rounded-full transition-all 
+                    ${
+                      selectedCategory === category
+                        ? "bg-[#2056aeff] text-white shadow-lg shadow-[#50ade5ff]"
+                        : "bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 hover:bg-[#50ade5ff] hover:text-white"
+                    }`}
                 >
                   {category}
                 </button>
