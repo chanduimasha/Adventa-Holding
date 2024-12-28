@@ -21,7 +21,7 @@ export default function ThemeToggle() {
       onClick={toggleTheme}
       className="flex justify-center items-center p-2 w-8 h-8 rounded-full bg-gray-900 dark:bg-gray-200 text-black dark:text-white"
     >
-      {theme === "light" ? "🌙" : "☀️"}
+      {theme === "dark" ? "🌙" : "☀️"}
     </button>
   );
 }
