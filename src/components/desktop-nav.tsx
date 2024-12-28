@@ -206,8 +206,8 @@ const Nav: React.FC = () => {
               className={`
                 flex items-center cursor-pointer 
                 ${pathname.startsWith(link.path)
-                  ? "text-black font-semibold"
-                  : "text-black hover:text-[#2056aeff]"
+                  ? "text-black dark:text-gray-300 font-semibold"
+                  : "text-black dark:text-gray-300 hover:text-[#2056aeff]"
                 }
                 text-[15px] font-medium
                 transition-colors 
@@ -226,8 +226,8 @@ const Nav: React.FC = () => {
                   duration-300 
                   ${openDropdown === link.name ? "rotate-180" : ""}
                   ${pathname.startsWith(link.path)
-                    ? "text-black"
-                    : "text-black"
+                    ? "text-black dark:text-gray-300"
+                    : "text-black dark:text-gray-300"
                   }
                 `}
                 strokeWidth={2.5}
@@ -256,8 +256,8 @@ const Nav: React.FC = () => {
                 relative
                 pb-2
                 ${pathname === link.path
-                  ? "text-black font-semibold"
-                  : "text-black hover:text-[#2056aeff]"
+                  ? "text-black dark:text-gray-300 font-semibold"
+                  : "text-black dark:text-gray-300 hover:text-[#2056aeff]"
                 }
                 transition-colors 
                 duration-300

@@ -260,13 +260,13 @@ const TestimonialSection: React.FC = () => {
   };
 
   return (
-    <section className="bg-gradient-to-br from-blue-50 to-blue-100 py-14">
+    <section className="bg-blue-50 dark:bg-neutral-900 py-14">
       <div className="container mx-auto px-4 max-w-5xl">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-extrabold text-[#2056aeff] mb-4">
             What Our Clients Say
           </h2>
-          <p className="text-black max-w-xl mx-auto">
+          <p className="text-black dark:text-gray-300 max-w-xl mx-auto">
             Hear directly from our valued clients about their transformative
             experiences.
           </p>
@@ -289,7 +289,7 @@ const TestimonialSection: React.FC = () => {
                 initial="initial"
                 animate="animate"
                 exit="exit"
-                className="bg-white rounded-xl shadow-2xl p-8 text-center relative overflow-hidden"
+                className="bg-white dark:bg-gray-950 rounded-xl shadow-2xl p-8 text-center relative overflow-hidden"
               >
                 <div className="absolute top-4 left-4 text-[#50ade5ff]">
                   <Star size={32} fill="currentColor" />
@@ -304,7 +304,7 @@ const TestimonialSection: React.FC = () => {
                   className="mx-auto mb-6 w-32 h-32 rounded-full object-cover border-4 border-[#2056aeff] shadow-lg"
                 />
 
-                <p className="text-black italic mb-6 text-lg">
+                <p className="text-black dark:text-gray-200 italic mb-6 text-lg">
                   {testimonials[currentIndex].feedback}
                 </p>
 
@@ -312,7 +312,7 @@ const TestimonialSection: React.FC = () => {
                   <h3 className="text-2xl font-bold text-[#2056aeff]">
                     {testimonials[currentIndex].name}
                   </h3>
-                  <p className="text-gray-500">
+                  <p className="text-gray-500 dark:text-gray-400">
                     {testimonials[currentIndex].role}
                   </p>
                 </div>

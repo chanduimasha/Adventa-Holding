@@ -1,8 +1,8 @@
 "use client";
 
-import FooterNew from "@/components/footer";
 import ContactForm from "@/components/contact-form";
 import NavBar from "@/components/nav-bar";
+import Footer from "@/components/footer-section";
 
 const Contact = () => {
 
@@ -17,7 +17,7 @@ const Contact = () => {
       </div>
 
       {/* Footer Section */}
-      <FooterNew />
+      <Footer />
     </div>
   );
 };

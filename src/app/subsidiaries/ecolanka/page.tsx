@@ -11,7 +11,7 @@ import {
   MapPin,
 } from "lucide-react";
 import NavBar from "@/components/nav-bar";
-import FooterNew from "@/components/footer";
+import Footer from "@/components/footer-section";
 
 const EcoLankaPage = () => {
   const fadeInUp = {
@@ -31,7 +31,7 @@ const EcoLankaPage = () => {
   return (
     <div>
       <NavBar/>
-      <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
+      <div className="min-h-screen bg-blue-50 dark:bg-neutral-900">
         {/* Hero Section */}
         <section className="relative h-screen flex items-center justify-center overflow-hidden">
           <div className="absolute inset-0">
@@ -67,7 +67,7 @@ const EcoLankaPage = () => {
 
         {/* Services Section */}
         <motion.section
-          className="py-20 bg-gray-200"
+          className="py-20 bg-gray-200 dark:bg-neutral-900"
           variants={staggerContainer}
           initial="initial"
           whileInView="animate"
@@ -75,7 +75,7 @@ const EcoLankaPage = () => {
         >
           <div className="container mx-auto px-4">
             <motion.h2
-              className="text-4xl font-bold text-center mb-16"
+              className="text-4xl font-bold text-center mb-16 dark:text-gray-200"
               variants={fadeInUp}
             >
               Our Services
@@ -104,14 +104,14 @@ const EcoLankaPage = () => {
               ].map((service, index) => (
                 <motion.div
                   key={index}
-                  className="bg-gray-50 p-8 rounded-xl hover:shadow-lg transition-shadow shadow-2xl"
+                  className="bg-gray-50 p-8 rounded-xl hover:shadow-lg transition-shadow shadow-2xl dark:bg-gray-950 dark:border dark:border-gray-800 dark:hover:shadow-blue-lg"
                   variants={fadeInUp}
                 >
                   <div className="mb-6">{service.icon}</div>
-                  <h3 className="text-xl font-semibold mb-4">
+                  <h3 className="text-xl font-semibold mb-4 dark:text-gray-200">
                     {service.title}
                   </h3>
-                  <p className="text-gray-600">{service.description}</p>
+                  <p className="text-gray-600 dark:text-gray-400">{service.description}</p>
                 </motion.div>
               ))}
             </div>
@@ -119,7 +119,7 @@ const EcoLankaPage = () => {
         </motion.section>
 
         {/* About Section */}
-        <section className="py-20 bg-gray-50">
+        <section className="py-20 bg-gray-50 dark:bg-neutral-900">
           <div className="container mx-auto px-4">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <motion.div
@@ -141,8 +141,8 @@ const EcoLankaPage = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
               >
-                <h2 className="text-4xl font-bold mb-6">About Us</h2>
-                <p className="text-gray-600 mb-6">
+                <h2 className="text-4xl font-bold mb-6 dark:text-gray-200">About Us</h2>
+                <p className="text-gray-600 dark:text-gray-400 mb-6">
                   At Eco Lanka, we are committed to delivering innovative
                   networking solutions while maintaining our commitment to
                   environmental sustainability. Our expertise spans across
@@ -158,7 +158,7 @@ const EcoLankaPage = () => {
                   ].map((item, index) => (
                     <motion.li
                       key={index}
-                      className="flex items-center gap-3 text-gray-700"
+                      className="flex items-center gap-3 text-gray-700 dark:text-gray-300"
                       initial={{ opacity: 0, x: 20 }}
                       whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true }}
@@ -175,16 +175,16 @@ const EcoLankaPage = () => {
         </section>
 
         {/* Contact Section */}
-        <section className="py-20 bg-gray-200">
+        <section className="py-20 bg-gray-200 dark:bg-neutral-900">
           <div className="container mx-auto px-4">
             <motion.div
-              className="max-w-4xl mx-auto bg-gray-50 rounded-2xl p-8 md:p-12 shadow-lg"
+              className="max-w-4xl mx-auto bg-gray-50 dark:bg-gray-950 rounded-2xl p-8 md:p-12 shadow-lg dark:border dark:border-gray-800 dark:hover:shadow-blue-lg"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <h2 className="text-4xl font-bold text-center mb-12">
+              <h2 className="text-4xl font-bold text-center mb-12 dark:text-gray-200">
                 Get in Touch
               </h2>
               <div className="grid md:grid-cols-2 gap-8">
@@ -192,22 +192,22 @@ const EcoLankaPage = () => {
                   <div className="flex items-center gap-4">
                     <Mail className="w-6 h-6 text-blue-600" />
                     <div>
-                      <h3 className="font-semibold">Email</h3>
-                      <p className="text-gray-600">contact@ecolanka.com</p>
+                      <h3 className="font-semibold dark:text-gray-300">Email</h3>
+                      <p className="text-gray-600 dark:text-gray-400">contact@ecolanka.com</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-4">
                     <Phone className="w-6 h-6 text-blue-600" />
                     <div>
-                      <h3 className="font-semibold">Phone</h3>
-                      <p className="text-gray-600">+94 11 2345678</p>
+                      <h3 className="font-semibold dark:text-gray-300">Phone</h3>
+                      <p className="text-gray-600 dark:text-gray-400">+94 11 2345678</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-4">
                     <MapPin className="w-6 h-6 text-blue-600" />
                     <div>
-                      <h3 className="font-semibold">Address</h3>
-                      <p className="text-gray-600">
+                      <h3 className="font-semibold dark:text-gray-300">Address</h3>
+                      <p className="text-gray-600 dark:text-gray-400">
                         123 Main Street, Colombo, Sri Lanka
                       </p>
                     </div>
@@ -218,17 +218,17 @@ const EcoLankaPage = () => {
                   <input
                     type="text"
                     placeholder="Your Name"
-                    className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-600"
+                    className="w-full px-4 py-2 rounded-lg dark:bg-gray-800 dark:text-gray-200 border border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-600"
                   />
                   <input
                     type="email"
                     placeholder="Your Email"
-                    className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-600"
+                    className="w-full px-4 py-2 rounded-lg dark:bg-gray-800 dark:text-gray-200 border border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-600"
                   />
                   <textarea
                     placeholder="Your Message"
                     rows={4}
-                    className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-600"
+                    className="w-full px-4 py-2 rounded-lg dark:bg-gray-800 dark:text-gray-200 border border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-600"
                   />
                   <motion.button
                     whileHover={{ scale: 1.02 }}
@@ -243,7 +243,7 @@ const EcoLankaPage = () => {
           </div>
         </section>
       </div>
-      <FooterNew/>
+      <Footer/>
     </div>
   );
 };

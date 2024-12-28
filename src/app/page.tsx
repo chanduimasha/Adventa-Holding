@@ -68,7 +68,6 @@ import NavBar from "@/components/nav-bar";
 // import AchievmentSection from "@/components/achievment-section";
 // import ServiceSection from "@/components/services-section";
 // import ClientSection from "@/components/client-success";
-import FooterNew from "@/components/footer";
 // import CompanySummary from "@/components/company-summary";
 // import IndustrySection from "@/components/industry-solutions";
 import ContactForm from "@/components/contact-form";
@@ -83,10 +82,11 @@ import NewsSection from "@/components/news/news-section";
 import IndustriesSection from "@/components/industries";
 // import SubCompanies from "@/components/sub-companies";
 // import TestimonialSection from "@/components/testimonial-section";
-// import Footer from "@/components/footer-section";
+import Footer from "@/components/footer-section";
 // import FeedbackSection from "@/components/feedback-section";
 
 export default function Home() {
+ 
   // const [showSlideBar, setShowSlideBar] = useState(false);
   // const isMobile = useMediaQuery({ maxWidth: 767 }); // Assuming mobile devices have a max width of 767px
 
@@ -123,7 +123,7 @@ export default function Home() {
   // }, []);
 
   return (
-    <div className="relative">
+    <div className= "relative">
       {/* Navigation Bar */}
       <NavBar />
 
@@ -280,9 +280,11 @@ export default function Home() {
       <NewsSection />
       <BlogSection />
       <ContactForm />
-      {/* <Footer/> */}
-      <FooterNew />
+      <Footer/>
+      {/* <FooterNew /> */}
       <BotChat />
+
+      
     </div>
   );
 }

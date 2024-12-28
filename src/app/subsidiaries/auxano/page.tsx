@@ -1,5 +1,4 @@
 "use client";
-"use client";
 import {
   ArrowRight,
   Server,
@@ -13,9 +12,9 @@ import {
 import { motion } from "framer-motion";
 import { JSX, useEffect, useState } from "react";
 import FeedbackSection from "@/components/feedback-section";
-import ContactUsForm from "@/components/contact-us-form";
+// import ContactUsForm from "@/components/contact-us-form";
 import NavBar from "@/components/nav-bar";
-import FooterNew from "@/components/footer";
+import Footer from "@/components/footer-section";
 
 interface Service {
   icon: JSX.Element;
@@ -175,7 +174,7 @@ export default function AuxanoPage() {
   return (
     <div>
       <NavBar/>
-      <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+      <div className="min-h-screen bg-blue-50 dark:bg-neutral-900">
         {/* Hero Section */}
         <motion.section
           initial={{ opacity: 0 }}
@@ -229,10 +228,10 @@ export default function AuxanoPage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-4xl font-bold text-gray-900 dark:text-gray-200 mb-4">
               Our Services
             </h2>
-            <p className="text-xl text-gray-600">
+            <p className="text-xl text-gray-600 dark:text-gray-400">
               Comprehensive networking solutions for your business
             </p>
           </motion.div>
@@ -245,21 +244,21 @@ export default function AuxanoPage() {
                 whileInView={{ y: 0, opacity: 1 }}
                 transition={{ delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow"
+                className="bg-white dark:bg-gray-950 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow dark:border dark:border-gray-800 dark:hover:shadow-blue-lg"
               >
                 <div className="text-blue-600 mb-4">{service.icon}</div>
-                <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
-                <p className="text-gray-600">{service.description}</p>
+                <h3 className="text-xl font-semibold mb-2 dark:text-gray-200">{service.title}</h3>
+                <p className="text-gray-600 dark:text-gray-400">{service.description}</p>
               </motion.div>
             ))}
           </div>
         </section>
 
         {/* Statistics Section */}
-        <section className="relative bg-gradient-to-br from-[#2056aeff] to-blue-500 py-24 overflow-hidden">
+        <section className="relative bg-indigo-700 dark:bg-indigo-950 py-24 overflow-hidden">
           {/* Background animated circles */}
           <motion.div
-            className="absolute top-0 left-0 w-96 h-96 bg-blue-400 rounded-full"
+            className="absolute top-0 left-0 w-96 h-96 bg-blue-400 dark:bg-blue-900 rounded-full"
             animate={{
               x: [0, 100, 0],
               y: [0, 50, 0],
@@ -273,7 +272,7 @@ export default function AuxanoPage() {
             style={{ filter: "blur(100px)", opacity: 0.2 }}
           />
           <motion.div
-            className="absolute bottom-0 right-0 w-96 h-96 bg-blue-300 rounded-full"
+            className="absolute bottom-0 right-0 w-96 h-96 bg-blue-300 dark:bg-blue-800 rounded-full"
             animate={{
               x: [0, -100, 0],
               y: [0, -50, 0],
@@ -306,9 +305,9 @@ export default function AuxanoPage() {
         <FeedbackSection />
 
         {/* Contact Section */}
-        <ContactUsForm />
+        {/* <ContactUsForm /> */}
       </div>
-      <FooterNew/>
+      <Footer/>
     </div>
   );
 }

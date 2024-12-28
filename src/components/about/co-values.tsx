@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const CoValues = () => {
   return (
-    <section className="bg-zinc-200 py-20">
+    <section className="bg-zinc-100 dark:bg-neutral-900 py-20">
       <div className="container mx-auto px-4">
         <motion.h2
           initial={{ opacity: 0, y: 50 }}
@@ -13,10 +13,10 @@ const CoValues = () => {
           transition={{ duration: 0.6 }}
           {...{
             className:
-              "text-black xl:text-5xl text-3xl font-bold mb-16 text-center",
+              "bg-gradient-to-r from-[#2056aeff] to-[#50ade5ff] text-transparent bg-clip-text xl:text-6xl text-4xl font-bold mb-16 text-center",
           }}
         >
-          Our <span className="text-[#2056aeff]">Core</span> Values
+          Our Core Values
         </motion.h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="text-black cursor-pointer transform transition-transform duration-200 hover:scale-105">
@@ -25,7 +25,7 @@ const CoValues = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 1.6 }}
-              className="bg-white p-6 h-[300px] flex flex-col items-center shadow-xl"
+              className="bg-white dark:bg-gray-950 dark:hover:shadow-blue-lg rounded-xl p-6 h-[300px] flex flex-col items-center shadow-xl"
             >
               <Image
                 src="/assets/covalues/1.png" // Replace with your image path
@@ -34,10 +34,10 @@ const CoValues = () => {
                 height={50}
                 className="rounded-lg pb-2 mt-0"
               />
-              <h3 className="text-2xl font-bold mb-6 text-center">
+              <h3 className="text-2xl font-bold mb-6 text-center dark:text-gray-200">
                 Innovation
               </h3>
-              <p className="text-center">
+              <p className="text-center dark:text-gray-200">
                 We strive to stay ahead of the curve by adopting the latest
                 technologies and methods. This commitment to innovation enables
                 us to develop creative solutions that propel our progress and
@@ -53,7 +53,7 @@ const CoValues = () => {
               transition={{ duration: 1.6 }}
               {...{
                 className:
-                  "bg-white p-6 h-[300px] flex flex-col items-center shadow-xl",
+                  "bg-white dark:bg-gray-950 dark:hover:shadow-blue-lg rounded-xl p-6 h-[300px] flex flex-col items-center shadow-xl",
               }}
             >
               <Image
@@ -63,10 +63,10 @@ const CoValues = () => {
                 height={45}
                 className="rounded-lg pb-2"
               />
-              <h3 className="text-2xl font-bold mb-6 text-center">
+              <h3 className="text-2xl font-bold mb-6 text-center dark:text-gray-200">
                 Customer Focus
               </h3>
-              <p className="text-center">
+              <p className="text-center dark:text-gray-200">
                 Our customers are at the core of everything we do. We aim to
                 exceed expectations by understanding their needs, providing
                 exceptional service, and building lasting relationships through
@@ -82,7 +82,7 @@ const CoValues = () => {
               transition={{ duration: 1.6 }}
               {...{
                 className:
-                  "bg-white p-6 h-[300px] flex flex-col items-center shadow-xl",
+                  "bg-white dark:bg-gray-950 dark:hover:shadow-blue-lg rounded-xl p-6 h-[300px] flex flex-col items-center shadow-xl",
               }}
             >
               <Image
@@ -92,10 +92,10 @@ const CoValues = () => {
                 height={65}
                 className="rounded-lg pb-2"
               />
-              <h3 className="text-2xl font-bold mb-6 text-center">
+              <h3 className="text-2xl font-bold mb-6 text-center dark:text-gray-200">
                 Sustainability
               </h3>
-              <p className="text-center">
+              <p className="text-center dark:text-gray-200">
                 We are dedicated to preserving the environment by implementing
                 eco-friendly practices and minimizing our ecological footprint.
                 Sustainability guides our decisions to ensure a better future
@@ -111,7 +111,7 @@ const CoValues = () => {
               transition={{ duration: 1.6 }}
               {...{
                 className:
-                  "bg-white p-6 h-[300px] flex flex-col items-center shadow-xl",
+                  "bg-white dark:bg-gray-950 dark:hover:shadow-blue-lg rounded-xl p-6 h-[300px] flex flex-col items-center shadow-xl",
               }}
             >
               <Image
@@ -121,8 +121,8 @@ const CoValues = () => {
                 height={60}
                 className="rounded-lg pb-0"
               />
-              <h3 className="text-2xl font-bold mb-6 text-center">Teamwork</h3>
-              <p className="text-center">
+              <h3 className="text-2xl font-bold mb-6 text-center dark:text-gray-200">Teamwork</h3>
+              <p className="text-center dark:text-gray-200">
                 Our strength lies in our people. By fostering collaboration,
                 mutual respect, and transparent communication, we create an
                 inclusive environment where diverse ideas thrive, driving our

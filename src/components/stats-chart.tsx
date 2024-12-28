@@ -50,9 +50,9 @@ const Stats: React.FC = () => {
           {stats.map((item, index) => (
             <div
               key={index}
-              className="bg-white rounded-2xl shadow-2xl p-6 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 flex flex-col items-center justify-center h-32 w-full"
+              className="bg-white dark:hover:shadow-blue-lg dark:bg-gray-950 dark:border dark:border-gray-700 rounded-2xl shadow-2xl p-6 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 flex flex-col items-center justify-center h-32 w-full"
             >
-              <div className="text-4xl font-bold text-black mb-4">
+              <div className="text-4xl font-bold text-black dark:text-gray-200 mb-4">
                 <CountUp
                   end={item.num}
                   duration={300}
@@ -60,7 +60,7 @@ const Stats: React.FC = () => {
                   suffix={item.text === "Success Ratio" ? "%" : ""}
                 />+
               </div>
-              <h3 className="text-gray-500 text-lg font-medium text-center leading-tight">
+              <h3 className="text-gray-500 dark:text-gray-300 text-lg font-medium text-center leading-tight">
                 {item.text}
               </h3>
             </div>

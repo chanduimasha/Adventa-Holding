@@ -4,10 +4,11 @@ import Link from "next/link";
 import Nav from "./desktop-nav";
 import MobileNav from "./mobile-nav";
 import Image from "next/image";
+import ThemeToggle from "./theme-toggle";
 
 const Header: React.FC = () => {
   return (
-    <header className="py-1 xl:py-2 text-black bg-white shadow-md">
+    <header className="py-1 xl:py-2 text-black bg-white dark:bg-neutral-900 dark:text-white shadow-md">
       <div className="container mx-auto flex justify-between items-center">
         <Link href="/">
           <div className="flex items-center space-x-4">
@@ -19,7 +20,8 @@ const Header: React.FC = () => {
               className="rounded-lg transform transition-transform duration-300 group-hover:scale-125"
             />
             <h1 className="text-xl xl:text-3xl font-bold text-[#2056aeff] text-center">
-              ADVENTA<br/>
+              ADVENTA
+              <br />
               <p className="text-sm xl:text-sm font-bold text-gray-700">
                 Infinite Possibilities
               </p>
@@ -28,7 +30,7 @@ const Header: React.FC = () => {
         </Link>
 
         <div className="hidden xl:flex items-center gap-8">
-          <Nav />
+          <Nav /> <ThemeToggle />
         </div>
 
         <div className="xl:hidden">

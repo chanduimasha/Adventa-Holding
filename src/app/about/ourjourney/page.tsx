@@ -1,11 +1,11 @@
 "use client";
 import React from "react";
-import FooterNew from "@/components/footer";
 import NavBar from "@/components/nav-bar";
 import JourneySection from "@/components/about/journey-section";
 import CoValues from "@/components/about/co-values";
 import VisionMissionSection from "@/components/about/vision-mission";
 import CompanyHighlights from "@/components/about/company-highlights";
+import Footer from "@/components/footer-section";
 
 const OurJourney = () => {
   // const controls = useAnimation();
@@ -47,7 +47,7 @@ const OurJourney = () => {
       <CompanyHighlights/>
 
       <VisionMissionSection/>
-      <FooterNew/>
+      <Footer/>
     </div>
     // <div className="bg-black text-white">
     //   <AnimatePresence>

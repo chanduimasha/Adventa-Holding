@@ -55,17 +55,17 @@ const bottomLinks = [
 
 const Footer = () => {
   return (
-    <footer className="bg-gradient-to-r from-blue-950 via-blue-500 to-[#50ade5ff] text-white py-10">
+    <footer className="bg-indigo-950 dark:bg-neutral-900 text-white py-10">
       {/* Main Container */}
       <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
         {/* Column 1: General Links */}
         <div>
-          <h2 className="text-lg font-semibold text-indigo-950 mb-4">General</h2>
+          <h2 className="text-lg font-semibold text-white mb-4">General</h2>
           <ul className="space-y-2">
             {generalLinks.map((link) => (
               <li
                 key={link.name}
-                className="hover:text-indigo-950 transition-colors"
+                className="hover:text-[#50ade5ff] transition-colors"
               >
                 <Link href={link.href}>{link.name}</Link>
               </li>
@@ -75,14 +75,14 @@ const Footer = () => {
 
         {/* Column 2: Industries */}
         <div>
-          <h2 className="text-lg font-semibold text-indigo-950 mb-4">
+          <h2 className="text-lg font-semibold text-white mb-4">
             Industries
           </h2>
           <ul className="space-y-2">
             {industriesLinks.map((link) => (
               <li
                 key={link.name}
-                className="hover:text-indigo-950 transition-colors"
+                className="hover:text-[#50ade5ff] transition-colors"
               >
                 <Link href={link.href}>{link.name}</Link>
               </li>
@@ -92,14 +92,14 @@ const Footer = () => {
 
         {/* Column 3: Services */}
         <div>
-          <h2 className="text-lg font-semibold text-indigo-950 mb-4">
+          <h2 className="text-lg font-semibold text-white mb-4">
             Services
           </h2>
           <ul className="space-y-2">
             {servicesLinks.map((link) => (
               <li
                 key={link.name}
-                className="hover:text-indigo-950 transition-colors"
+                className="hover:text-[#50ade5ff] transition-colors"
               >
                 <Link href={link.href}>{link.name}</Link>
               </li>
@@ -109,7 +109,7 @@ const Footer = () => {
       </div>
 
       {/* Bottom Divider */}
-      <hr className="border-t-1 border-indigo-950 my-8 mx-auto w-10/12" />
+      <hr className="border-t-1 border-gray-300 my-8 mx-auto w-10/12" />
 
       {/* Footer Bottom: Social Media Icons */}
       <div className="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center text-white">
@@ -118,7 +118,7 @@ const Footer = () => {
             {bottomLinks.map((link) => (
               <li
                 key={link.name}
-                className="hover:text-indigo-950 transition-colors"
+                className="hover:text-[#50ade5ff] transition-colors"
               >
                 <Link href={link.href}>{link.name}</Link>
               </li>
@@ -129,7 +129,7 @@ const Footer = () => {
             href="https://linkedin.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-indigo-950 transition-colors"
+            className="hover:text-[#50ade5ff] transition-colors"
           >
             <FaLinkedin size={20} />
           </a>
@@ -137,7 +137,7 @@ const Footer = () => {
             href="https://twitter.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-indigo-950 transition-colors"
+            className="hover:text-[#50ade5ff] transition-colors"
           >
             <FaTwitter size={20} />
           </a>
@@ -145,7 +145,7 @@ const Footer = () => {
             href="https://youtube.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-indigo-950 transition-colors"
+            className="hover:text-[#50ade5ff] transition-colors"
           >
             <FaYoutube size={20} />
           </a>
@@ -153,7 +153,7 @@ const Footer = () => {
             href="https://facebook.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-indigo-950 transition-colors"
+            className="hover:text-[#50ade5ff] transition-colors"
           >
             <FaFacebookF size={20} />
           </a>
@@ -161,7 +161,7 @@ const Footer = () => {
             href="https://instagram.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-indigo-950 transition-colors"
+            className="hover:text-[#50ade5ff] transition-colors"
           >
             <FaInstagram size={20} />
           </a>

@@ -25,17 +25,17 @@ const industries: Industry[] = [
     subCompanies: [
       {
         id: 1,
-        name: "TechCorp",
-        image: "/assets/subcompanies/1.png",
-        link: "/companies/techcorp",
+        name: "Auxano",
+        image: "/assets/subcompanies/Auxano.png",
+        link: "/subsidiaries/auxano",
         description:
           "Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo quia esse cupiditate tempore magnam cumque vero maxime veritatis? Recusandae optio!",
       },
       {
         id: 2,
-        name: "Innovatech",
-        image: "/assets/subcompanies/4.png",
-        link: "/companies/innovatech",
+        name: "NetworkStore",
+        image: "/assets/subcompanies/Networkstore.png",
+        link: "/subsidiaries/networkstore",
         description:
           "Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo quia esse cupiditate tempore magnam cumque vero maxime veritatis? Recusandae optio!",
       },
@@ -47,44 +47,44 @@ const industries: Industry[] = [
     subCompanies: [
       {
         id: 3,
-        name: "BuildIt",
-        image: "/assets/subcompanies/3.png",
-        link: "/companies/buildit",
+        name: "Eco Lanka",
+        image: "/assets/subcompanies/ECOLANKA.png",
+        link: "/subsidiaries/ecolanka",
         description:
           "Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo quia esse cupiditate tempore magnam cumque vero maxime veritatis? Recusandae optio!",
       },
       {
         id: 4,
-        name: "Fabricators Inc.",
-        image: "/assets/subcompanies/5.png",
-        link: "/companies/fabricators",
+        name: "Sarodha",
+        image: "/assets/subcompanies/Sarodha.png",
+        link: "/subsidiaries/saroda",
         description:
           "Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo quia esse cupiditate tempore magnam cumque vero maxime veritatis? Recusandae optio!",
       },
     ],
   },
-  {
-    id: 3,
-    name: "Real Estate",
-    subCompanies: [
-      {
-        id: 5,
-        name: "Urban Estates",
-        image: "/assets/subcompanies/2.png",
-        link: "/companies/urban-estates",
-        description:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo quia esse cupiditate tempore magnam cumque vero maxime veritatis? Recusandae optio!",
-      },
-      {
-        id: 6,
-        name: "Dream Homes",
-        image: "/assets/subcompanies/6.png",
-        link: "/companies/dream-homes",
-        description:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo quia esse cupiditate tempore magnam cumque vero maxime veritatis? Recusandae optio!",
-      },
-    ],
-  },
+  // {
+  //   id: 3,
+  //   name: "Real Estate",
+  //   subCompanies: [
+  //     {
+  //       id: 5,
+  //       name: "Urban Estates",
+  //       image: "/assets/subcompanies/2.png",
+  //       link: "/companies/urban-estates",
+  //       description:
+  //         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo quia esse cupiditate tempore magnam cumque vero maxime veritatis? Recusandae optio!",
+  //     },
+  //     {
+  //       id: 6,
+  //       name: "Dream Homes",
+  //       image: "/assets/subcompanies/6.png",
+  //       link: "/companies/dream-homes",
+  //       description:
+  //         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo quia esse cupiditate tempore magnam cumque vero maxime veritatis? Recusandae optio!",
+  //     },
+  //   ],
+  // },
 ];
 
 const IndustriesSection: React.FC = () => {
@@ -96,23 +96,23 @@ const IndustriesSection: React.FC = () => {
   };
 
   return (
-    <section className="relative bg-zinc-200 py-16 shadow-md">
+    <section className="relative bg-zinc-200 dark:bg-neutral-900 py-16">
       {/* Modern Geometric Background */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute w-96 h-96 -top-48 -left-48 bg-blue-200/20 rounded-full blur-3xl" />
-        <div className="absolute w-96 h-96 -bottom-48 -right-48 bg-blue-300/20 rounded-full blur-3xl" />
-      </div>
+      {/* <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute w-96 h-96 -top-48 -left-48 bg-blue-200/20 dark:bg-neutral-800 rounded-full blur-3xl" />
+        <div className="absolute w-96 h-96 -bottom-48 -right-48 dark:bg-neutral-800 rounded-full blur-3xl" />
+      </div> */}
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header Section */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <motion.h2
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            className="text-4xl xl:text-5xl font-bold text-zinc-900 tracking-tight"
+            className="text-4xl xl:text-6xl font-bold tracking-tight"
           >
-            Industries We Serve
-          </motion.h2>
+            <h2 className="bg-gradient-to-r from-[#2056aeff] to-[#50ade5ff] text-transparent bg-clip-text">Industries We Serve</h2>
+          </motion.div>
           <motion.div
             initial={{ scaleX: 0 }}
             whileInView={{ scaleX: 1 }}
@@ -129,7 +129,7 @@ const IndustriesSection: React.FC = () => {
             whileInView={{ opacity: 1, x: 0 }}
             className="lg:w-72"
           >
-            <nav className="sticky top-8 space-y-1">
+            <nav className="sticky top-8 space-y-2">
               {industries.map((industry) => (
                 <button
                   key={industry.id}
@@ -138,8 +138,8 @@ const IndustriesSection: React.FC = () => {
                       w-full group relative px-4 py-4 text-left transition-all duration-200
                       ${
                         activeIndustry.id === industry.id
-                          ? "text-[#2056aeff] bg-white shadow-lg rounded-lg border border-blue-100"
-                          : "text-zinc-600 hover:text-[#50ade5ff]"
+                          ? "text-[#2056aeff] bg-white dark:bg-indigo-950 shadow-lg rounded-lg border border-blue-100"
+                          : "text-zinc-600 dark:text-white hover:text-[#50ade5ff] dark:hover:text-blue-700"
                       }
                     `}
                 >
@@ -181,7 +181,7 @@ const IndustriesSection: React.FC = () => {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
-                  className="group relative bg-white rounded-lg border border-zinc-200 shadow-xl hover:shadow-2xl transition-all duration-300"
+                  className="group relative bg-white dark:bg-gray-950 rounded-2xl border border-zinc-200 dark:border-gray-800 shadow-xl transition-all duration-300"
                 >
                   {/* Clickable Card Container */}
                   <div
@@ -189,23 +189,23 @@ const IndustriesSection: React.FC = () => {
                     className="cursor-pointer"
                   >
                     {/* Image Container */}
-                    <div className="relative h-64 rounded-t-lg overflow-hidden">
+                    <div className="relative h-64 rounded-t-3xl overflow-hidden">
                       <Image
                         src={company.image}
                         alt={company.name}
                         width={320}
                         height={320}
-                        className="object-cover  group-hover:scale-105 transition-transform duration-700 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+                        className="object-cover group-hover:scale-105 transition-transform duration-700 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300" />
                     </div>
 
                     {/* Content */}
-                    <div className="relative p-6 bg-white rounded-b-lg">
-                      <h3 className="text-xl font-semibold text-zinc-900 mb-3">
+                    <div className="relative p-6 bg-white dark:bg-gray-950 rounded-b-2xl">
+                      <h3 className="text-xl dark:text-gray-200 font-semibold text-zinc-900 mb-3">
                         {company.name}
                       </h3>
-                      <p className="text-zinc-600 text-sm mb-4 line-clamp-2">
+                      <p className="text-zinc-600 dark:text-gray-400 text-sm mb-4 line-clamp-2">
                         {company.description}
                       </p>
                       <div className="inline-flex items-center text-[#2056aeff] hover:text-[#50ade5ff] font-medium group">

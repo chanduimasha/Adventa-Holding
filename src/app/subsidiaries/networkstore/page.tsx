@@ -14,7 +14,7 @@ import {
 } from "lucide-react";
 import TestimonialSection from "@/components/testimonial-section";
 import NavBar from "@/components/nav-bar";
-import FooterNew from "@/components/footer";
+import Footer from "@/components/footer-section";
 
 const stats = [
   {
@@ -22,28 +22,28 @@ const stats = [
     label: "Clients Served",
     icon: Users2,
     description: "Trusted by businesses across Sri Lanka",
-    color: "from-blue-400 to-blue-600",
+    color: "from-blue-400 to-blue-600 dark:from-blue-700 dark:to-blue-950",
   },
   {
     value: "15+",
     label: "Years Experience",
     icon: Clock,
     description: "Industry expertise since 2009",
-    color: "from-indigo-400 to-indigo-600",
+    color: "from-indigo-400 to-indigo-600 dark:from-indigo-700 dark:to-indigo-950",
   },
   {
     value: "24/7",
     label: "Support",
     icon: Activity,
     description: "Round-the-clock technical assistance",
-    color: "from-purple-400 to-purple-600",
+    color: "from-purple-400 to-purple-600 dark:from-purple-700 dark:to-purple-950",
   },
   {
     value: "99.9%",
     label: "Uptime",
     icon: Gauge,
     description: "Guaranteed network reliability",
-    color: "from-violet-400 to-violet-600",
+    color: "from-violet-400 to-violet-600 dark:from-violet-700 dark:to-violet-950",
   },
 ];
 
@@ -91,7 +91,7 @@ const NetworkStorePage = () => {
   return (
     <div>
       <NavBar/>
-      <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 pt-4">
+      <div className="min-h-screen bg-blue-50 dark:bg-neutral-900 pt-4">
         {/* Hero Section */}
         <motion.section
           initial={{ opacity: 0, y: 20 }}
@@ -129,18 +129,18 @@ const NetworkStorePage = () => {
         </motion.section>
 
         {/* Services Section */}
-        <section className="py-20 px-4 md:px-8">
+        <section className="py-20 px-4 md:px-8 dark:bg-neutral-900">
           <div className="max-w-7xl mx-auto">
             <motion.h2
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              className="text-3xl md:text-4xl font-bold text-center mb-16"
+              className="text-3xl md:text-4xl font-bold text-center mb-16 dark:text-gray-200"
             >
               Our Services
             </motion.h2>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 ">
               {services.map((service, index) => (
                 <motion.div
                   key={service.title}
@@ -148,13 +148,13 @@ const NetworkStorePage = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.2 }}
-                  className="bg-white rounded-lg p-6 shadow-xl hover:shadow-xl transition-shadow"
+                  className="bg-white dark:bg-gray-950 rounded-lg p-6 shadow-xl hover:shadow-xl transition-shadow dark:border dark:border-gray-800 dark:hover:shadow-blue-lg"
                 >
                   <service.icon className="w-12 h-12 text-blue-600 mb-4 transform transition-transform duration-300 hover:scale-105" />
-                  <h3 className="text-xl font-semibold mb-3">
+                  <h3 className="text-xl font-semibold mb-3 dark:text-gray-200">
                     {service.title}
                   </h3>
-                  <p className="text-gray-600">{service.description}</p>
+                  <p className="text-gray-600 dark:text-gray-400">{service.description}</p>
                 </motion.div>
               ))}
             </div>
@@ -166,7 +166,7 @@ const NetworkStorePage = () => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="py-24 px-4 bg-gradient-to-b from-blue-950 to-black relative overflow-hidden"
+          className="py-24 px-4 bg-indigo-950 dark:bg-neutral-900 relative overflow-hidden"
         >
           {/* Animated background pattern */}
           <div className="absolute inset-0 opacity-10">
@@ -236,7 +236,7 @@ const NetworkStorePage = () => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="bg-blue-950 text-white py-16 px-4"
+          className="bg-blue-950 dark:bg-neutral-900 text-white py-16 px-4"
         >
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
@@ -254,7 +254,7 @@ const NetworkStorePage = () => {
         </motion.section>
 
       </div>
-      <FooterNew/>
+      <Footer/>
     </div>
   );
 };

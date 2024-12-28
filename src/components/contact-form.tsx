@@ -68,13 +68,13 @@ const ContactForm: React.FC = () => {
   };
 
   return (
-    <section className="bg-zinc-100 py-12">
+    <section className="bg-zinc-100 dark:bg-neutral-900 py-12">
       <div className="max-w-6xl mx-auto px-4">
-        <h2 className="text-4xl font-bold mb-2">Contact us</h2>
-        <p className="text-sm mb-8">(*) Asterisk denotes mandatory fields</p>
+        <h2 className="text-4xl xl:text-6xl text-center font-bold mb-12 xl:mb-20 bg-gradient-to-r from-[#2056aeff] to-[#50ade5ff] text-transparent bg-clip-text">Contact us</h2>
+        {/* <p className="text-sm xl:text-xl mb-8 text-center dark:text-white/80">(*) Asterisk denotes mandatory fields</p> */}
         <form
           onSubmit={handleSubmit}
-          className="grid grid-cols-1 md:grid-cols-2 gap-6"
+          className="dark:hover:shadow-blue-lg grid grid-cols-1 md:grid-cols-2 gap-6 p-8 border dark:border-gray-800 dark:bg-gray-950 shadow-xl dark:shadow-xl border-gray-300 bg-gray-200 rounded-xl"
         >
           {/* Form Group */}
           {[
@@ -91,7 +91,7 @@ const ContactForm: React.FC = () => {
                 id={input.id}
                 name={input.id}
                 value={formData[input.id] || ""}
-                className="peer w-full border-b bg-transparent border-gray-600 focus:outline-none focus:border-[#50ade5ff] py-2 text-sm placeholder-transparent"
+                className="peer w-full border-b bg-transparent border-gray-600 dark:border-gray-400 dark:text-white focus:outline-none focus:border-[#50ade5ff] py-2 text-sm placeholder-transparent"
                 placeholder={input.label}
                 onChange={handleChange}
                 required={input.label.includes("*")}
@@ -112,7 +112,7 @@ const ContactForm: React.FC = () => {
               name="message"
               rows={4}
               value={formData.message}
-              className="peer w-full border border-gray-600 bg-transparent focus:outline-none focus:border-[#50ade5ff] py-6 px-2 placeholder-transparent"
+              className="peer w-full border border-gray-600 dark:border-gray-400 dark:text-white bg-transparent focus:outline-none focus:border-[#50ade5ff] py-6 px-2 placeholder-transparent"
               placeholder="How can we help you?"
               onChange={handleChange}
             />
@@ -126,7 +126,7 @@ const ContactForm: React.FC = () => {
 
           {/* Checkbox */}
           <div className="md:col-span-1 space-y-4">
-            <label className="inline-flex items-center text-sm">
+            <label className="inline-flex items-center text-sm dark:text-gray-200">
               <input
                 type="checkbox"
                 className="h-4 w-4 border border-gray-600 rounded mr-2"
@@ -136,7 +136,7 @@ const ContactForm: React.FC = () => {
                 privacy notice
               </a>
             </label>
-            <label className="inline-flex items-center text-sm">
+            <label className="inline-flex items-center text-sm dark:text-gray-200">
               <input
                 type="checkbox"
                 className="h-4 w-4 border border-gray-600 rounded mr-2"
@@ -167,7 +167,7 @@ const ContactForm: React.FC = () => {
           </p>
         )}
 
-        <p className="mt-8 text-sm">
+        <p className="mt-8 text-sm dark:text-gray-200">
           You can also email us directly at{" "}
           <a href="mailto:info@persistent.com" className="text-[#2056aeff]">
             info@aventa.com

@@ -4,7 +4,6 @@ import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import NavBar from "@/components/nav-bar";
-import FooterNew from "@/components/footer";
 import { useRouter } from "next/navigation";
 
 import {
@@ -14,6 +13,7 @@ import {
   PlayCircle,
   ArrowRight,
 } from "lucide-react";
+import Footer from "@/components/footer-section";
 
 // Types
 interface Leader {
@@ -121,14 +121,14 @@ const LeadershipPage = () => {
   return (
     <div>
       <NavBar />
-      <div className="min-h-screen bg-gray-50 xl:pt-16 pt-12">
+      <div className="min-h-screen bg-gray-50 dark:bg-neutral-900 xl:pt-16 pt-12">
         {/* Hero Section */}
-        <section className="bg-white">
+        <section className="bg-white dark:bg-neutral-900">
           <div className="container mx-auto px-4 py-16">
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 text-center">
-              Our <span className="text-[#2056aeff]">Leadership</span> Team
+            <h1 className="text-4xl xl:text-6xl font-bold bg-gradient-to-r from-[#2056aeff] to-[#50ade5ff] text-transparent bg-clip-text mb-6 text-center">
+              Our Leadership Team
             </h1>
-            <p className="text-xl text-gray-600 pt-4 text-center">
+            <p className="text-xl text-gray-600 dark:text-gray-300 pt-4 text-center">
               Meet the visionaries and industry experts driving innovation and
               excellence at our company. Our leadership team brings decades of
               combined experience in technology, business, and transformation.
@@ -137,32 +137,32 @@ const LeadershipPage = () => {
         </section>
 
         {/* Executive Team Section */}
-        <section className="py-4 bg-white pb-16">
+        <section className="py-4 bg-white dark:bg-neutral-900 pb-16">
           <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold text-black mb-12 text-center">
+            <h2 className="text-3xl xl:text-4xl font-bold bg-gradient-to-r from-[#2056aeff] to-[#50ade5ff] text-transparent bg-clip-text mb-12 text-center">
               Executive Team
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
               {executives.map((executive) => (
-                <Card key={executive.id} className="bg-white shadow-xl ">
+                <Card key={executive.id} className="bg-white dark:bg-gray-950 shadow-xl rounded-xl dark:hover:shadow-blue-lg">
                   <CardContent className="p-6">
                     <img
                       src={executive.photoUrl}
                       alt={executive.name}
-                      className="w-full h-72 rounded-lg mb-6 shadow-xl transform hover:scale-105 transition-transform"
+                      className="w-full h-72 rounded-xl mb-6 shadow-2xl transform hover:scale-105 transition-transform"
                     />
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">
+                    <h3 className="text-xl font-bold text-gray-900 dark:text-gray-200 mb-2">
                       {executive.name}
                     </h3>
                     <p className="text-[#2056aeff] font-medium mb-4">
                       {executive.title}
                     </p>
-                    <p className="text-gray-600 mb-6">{executive.bio}</p>
+                    <p className="text-gray-600 dark:text-gray-300 mb-6">{executive.bio}</p>
                     <div className="flex space-x-4 mb-6">
                       {executive.linkedIn && (
                         <a
                           href={executive.linkedIn}
-                          className="text-gray-600 hover:text-[#2056aeff]"
+                          className="text-gray-600 dark:text-gray-300 hover:text-[#2056aeff]"
                         >
                           <LinkedinIcon size={20} />
                         </a>
@@ -170,21 +170,21 @@ const LeadershipPage = () => {
                       {executive.twitter && (
                         <a
                           href={executive.twitter}
-                          className="text-gray-600 hover:text-[#2056aeff]"
+                          className="text-gray-600 dark:text-gray-300 hover:text-[#2056aeff]"
                         >
                           <TwitterIcon size={20} />
                         </a>
                       )}
                     </div>
                     <div className="border-t pt-4">
-                      <h4 className="font-medium text-gray-900 mb-2">
+                      <h4 className="font-medium text-gray-900 dark:text-gray-200 mb-2">
                         Key Achievements
                       </h4>
                       <ul className="space-y-2">
                         {executive.achievements.map((achievement, index) => (
                           <li
                             key={index}
-                            className="text-gray-600 flex items-start"
+                            className="text-gray-600 dark:text-gray-300 flex items-start"
                           >
                             <ArrowRight
                               size={16}
@@ -203,24 +203,24 @@ const LeadershipPage = () => {
         </section>
 
         {/* Advisory Board Section */}
-        <section className="py-16 bg-gray-200 shadow-xl">
+        <section className="py-16 bg-gray-200 dark:bg-neutral-900 shadow-xl">
           <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">
+            <h2 className="text-3xl xl:text-4xl font-bold bg-gradient-to-r from-[#2056aeff] to-[#50ade5ff] text-transparent bg-clip-text mb-12 text-center">
               Advisory Board
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {advisoryBoard.map((advisor) => (
                 <Card
                   key={advisor.id}
-                  className="bg-white transform hover:scale-105 transition-transform"
+                  className="bg-white dark:bg-gray-950 dark:hover:shadow-blue-lg transform hover:scale-105 transition-transform"
                 >
                   <CardContent className="p-6">
                     <img
                       src={advisor.photoUrl}
                       alt={advisor.name}
-                      className="w-32 h-32 rounded-full mx-auto mb-4"
+                      className="w-32 h-32 rounded-full mx-auto mb-4 shadow-2xl"
                     />
-                    <h3 className="text-xl font-bold text-center text-gray-900 mb-2">
+                    <h3 className="text-xl font-bold text-center text-gray-900 dark:text-gray-200 mb-2">
                       {advisor.name}
                     </h3>
                     <p className="text-[#2056aeff] text-center font-medium">
@@ -234,13 +234,13 @@ const LeadershipPage = () => {
         </section>
 
         {/* Team Philosophy Section */}
-        <section className="py-16 bg-white shadow-2xl">
+        <section className="py-16 bg-white dark:bg-neutral-900 shadow-xl">
           <div className="container mx-auto px-4">
-            <div className="max-w-3xl mx-auto text-center">
-              <h2 className="text-3xl font-bold text-gray-900 mb-8">
+            <div className="max-w-4xl mx-auto text-center">
+              <h2 className="text-3xl xl:text-4xl font-bold bg-gradient-to-r from-[#2056aeff] to-[#50ade5ff] text-transparent bg-clip-text mb-8">
                 Our Philosophy
               </h2>
-              <p className="text-xl text-gray-600 mb-8">
+              <p className="text-xl text-gray-600 dark:text-gray-200 mb-8">
                 We believe in fostering a culture of innovation, collaboration,
                 and continuous learning. Our leadership team is committed to
                 creating an inclusive environment where diverse perspectives
@@ -255,14 +255,14 @@ const LeadershipPage = () => {
         </section>
 
         {/* Vision and Goals Section */}
-        <section className="py-16 bg-gray-200 shadow-xl">
+        <section className="py-16 bg-gray-200 dark:bg-neutral-900 shadow-xl">
           <div className="container mx-auto px-4">
-            <div className="max-w-3xl mx-auto">
-              <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-3xl xl:text-4xl font-bold bg-gradient-to-r from-[#2056aeff] to-[#50ade5ff] text-transparent bg-clip-text mb-8 text-center">
                 Vision & Goals
               </h2>
               <div className="space-y-6">
-                <p className="text-gray-600">
+                <p className="text-gray-600 dark:text-gray-200">
                   Our vision is to revolutionize the technology landscape
                   through innovative solutions that empower businesses and
                   individuals alike. We are committed to sustainable growth,
@@ -271,20 +271,20 @@ const LeadershipPage = () => {
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <Card>
-                    <CardContent className="p-6">
-                      <h3 className="text-xl font-bold text-gray-900 mb-4">
+                    <CardContent className="p-6 dark:hover:shadow-blue-lg">
+                      <h3 className="text-xl font-bold text-gray-900 dark:text-gray-200 mb-4">
                         Strategic Objectives
                       </h3>
                       <ul className="space-y-3">
                         <li className="flex items-start">
                           <ChevronDown className="mr-2 mt-1" size={16} />
-                          <span className="text-gray-600">
+                          <span className="text-gray-600 dark:text-gray-300">
                             Expand global presence in key markets
                           </span>
                         </li>
                         <li className="flex items-start">
                           <ChevronDown className="mr-2 mt-1" size={16} />
-                          <span className="text-gray-600">
+                          <span className="text-gray-600 dark:text-gray-300">
                             Drive innovation in AI and machine learning
                           </span>
                         </li>
@@ -292,20 +292,20 @@ const LeadershipPage = () => {
                     </CardContent>
                   </Card>
                   <Card>
-                    <CardContent className="p-6">
-                      <h3 className="text-xl font-bold text-gray-900 mb-4">
+                    <CardContent className="p-6 dark:hover:shadow-blue-lg">
+                      <h3 className="text-xl font-bold text-gray dark:text-gray-200-900 mb-4">
                         2024 Initiatives
                       </h3>
                       <ul className="space-y-3">
                         <li className="flex items-start">
                           <ChevronDown className="mr-2 mt-1" size={16} />
-                          <span className="text-gray-600">
+                          <span className="text-gray-600 dark:text-gray-300">
                             Launch next-gen platform
                           </span>
                         </li>
                         <li className="flex items-start">
                           <ChevronDown className="mr-2 mt-1" size={16} />
-                          <span className="text-gray-600">
+                          <span className="text-gray-600 dark:text-gray-300">
                             Expand R&D investments
                           </span>
                         </li>
@@ -319,12 +319,12 @@ const LeadershipPage = () => {
         </section>
 
         {/* Call to Action Section */}
-        <section className="py-16 bg-white shadow-lg">
+        <section className="py-16 bg-white dark:bg-neutral-900 shadow-xl">
           <div className="container mx-auto px-4 text-center">
-            <h2 className="text-3xl font-bold text-black mb-8">
+            <h2 className="text-3xl xl:text-4xl font-bold bg-gradient-to-r from-[#2056aeff] to-[#50ade5ff] text-transparent bg-clip-text mb-8">
               Join Our Journey
             </h2>
-            <p className="text-xl text-black/90 mb-8 max-w-2xl mx-auto">
+            <p className="text-xl text-black/90 dark:text-gray-200 mb-8 max-w-5xl mx-auto">
               We are always looking for talented individuals to join our team and
               help shape the future of technology.
             </p>
@@ -345,7 +345,7 @@ const LeadershipPage = () => {
           </div>
         </section>
       </div>
-      <FooterNew />
+      <Footer />
     </div>
   );
 };
