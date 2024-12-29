@@ -74,7 +74,7 @@ const ContactForm: React.FC = () => {
         {/* <p className="text-sm xl:text-xl mb-8 text-center dark:text-white/80">(*) Asterisk denotes mandatory fields</p> */}
         <form
           onSubmit={handleSubmit}
-          className="dark:hover:shadow-blue-lg grid grid-cols-1 md:grid-cols-2 gap-6 p-8 border dark:border-gray-800 dark:bg-gray-950 shadow-xl dark:shadow-xl border-gray-300 bg-gray-200 rounded-xl"
+          className="dark:hover:shadow-blue-lg grid grid-cols-1 md:grid-cols-2 gap-6 p-8 border dark:border-gray-800 dark:bg-gray-950 shadow-xl dark:shadow-xl border-gray-300 bg-gray-200 rounded-3xl"
         >
           {/* Form Group */}
           {[

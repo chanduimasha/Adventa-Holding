@@ -1,56 +1,8 @@
-// import BlogCard from "@/components/blog-card";
-// import { Blog } from "../../types/blog";
-
-// const blogs: Blog[] = [
-//   {
-//     id: 1,
-//     title: "How to host a website on any hosting provider?",
-//     category: "Domain & Hosting",
-//     author: "William Bla",
-//     date: "Feb 1, 2022",
-//     content: "In this blog, we will explore step-by-step how you can host your website..."
-//   },
-//   {
-//     id: 2,
-//     title: "How to create ads on Google AdWords?",
-//     category: "Advertisement",
-//     author: "Jobi Ret",
-//     date: "Oct 5, 2022",
-//     content: "Creating ads on Google AdWords is essential for reaching the right audience..."
-//   },
-//   {
-//     id: 3,
-//     title: "What is digital marketing and why is it important?",
-//     category: "Marketing",
-//     author: "Main Dow",
-//     date: "Dec 22, 2022",
-//     content: "Digital marketing helps businesses grow by reaching online audiences..."
-//   },
-// ];
-
-// export default function BlogPage() {
-//   return (
-//     <div className="bg-gray-100 min-h-screen">
-//       <div className="container mx-auto p-6">
-//         <h1 className="text-3xl font-bold mb-8 text-center">Our Blogs</h1>
-//         <div className="grid md:grid-cols-3 gap-8">
-//           {blogs.map((blog) => (
-//             <BlogCard key={blog.id} blog={blog} />
-//           ))}
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }
-
 "use client";
 
 import BlogCard from "@/components/blog-card";
 import { Blog } from "../../types/blog";
 import { motion } from "framer-motion";
-import { useState, useRef } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
-
 
 const blogs: Blog[] = [
   {
@@ -108,7 +60,7 @@ const blogs: Blog[] = [
     title: "The Future of Digital Marketing: Trends to Watch",
     category: "Marketing",
     author: "Ella Hart",
-    date: "Jul 7, 2023",
+    date: "Jul 7, 2024",
     content:
       "Digital marketing is evolving rapidly. These trends will dominate the industry in the coming years...",
     image: "/assets/blogs/6.png",
@@ -118,7 +70,7 @@ const blogs: Blog[] = [
     title: "How to Secure Your Domain Against Cyber Threats",
     category: "Hosting",
     author: "Michael Lee",
-    date: "Nov 10, 2023",
+    date: "Nov 10, 2022",
     content:
       "Your domain is a valuable asset. Learn how to protect it from potential cyber threats...",
     image: "/assets/blogs/7.jpg",
@@ -145,153 +97,84 @@ const blogs: Blog[] = [
   },
 ];
 
-const categories = [...new Set(blogs.map((blog) => blog.category))];
-const ITEMS_PER_PAGE = 3;
-
 const BlogSection: React.FC = () => {
-  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
-  const [currentPage, setCurrentPage] = useState(1);
-  const blogSectionRef = useRef<HTMLDivElement>(null);
-
-  const filteredBlogs = selectedCategory
-    ? blogs.filter((blog) => blog.category === selectedCategory)
-    : blogs;
-
-  const totalPages = Math.ceil(filteredBlogs.length / ITEMS_PER_PAGE);
-  const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
-  const paginatedBlogs = filteredBlogs.slice(startIndex, startIndex + ITEMS_PER_PAGE);
-
-  const handlePageChange = (page: number) => {
-    setCurrentPage(page);
-    // Scroll to the blog grid section with offset
-    if (blogSectionRef.current) {
-      const yOffset = -100;
-      const element = blogSectionRef.current;
-      const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
-      window.scrollTo({ top: y, behavior: 'smooth' });
-    }
-  };
-
-  const handleCategoryChange = (category: string | null) => {
-    setSelectedCategory(category);
-    setCurrentPage(1);
-  };
-
-  const renderPaginationButtons = () => {
-    const buttons = [];
-    for (let i = 1; i <= totalPages; i++) {
-      buttons.push(
-        <motion.button
-          key={i}
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          onClick={() => handlePageChange(i)}
-          className={`w-10 h-10 rounded-full transition-all duration-300
-            ${currentPage === i 
-              ? "bg-[#3871c1ff] text-white shadow-xl shadow-[#50ade5ff]"
-              : "bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 hover:bg-[#50ade5ff] hover:text-white"
-            }`}
-        >
-          {i}
-        </motion.button>
-      );
-    }
-    return buttons;
-  };
+  // Sort blogs by date and take the latest 3
+  const latestBlogs = blogs
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+    .slice(0, 3);
 
   return (
     <div className="min-h-screen bg-blue-50 dark:bg-neutral-900">
       <div className="relative">
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        className="container mx-auto px-4 py-16"
+      >
+        <motion.h1
+          initial={{ y: -20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.5 }}
+          className="text-4xl xl:text-6xl font-bold text-center mb-4 bg-gradient-to-r from-[#2056aeff] to-[#50ade5ff] text-transparent bg-clip-text"
+        >
+          Explore Our Blog
+        </motion.h1>
+
+        <motion.p
+          initial={{ y: -20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+          className="text-xl text-center text-gray-600 dark:text-gray-300 mb-12"
+        >
+          Discover insights, tutorials, and industry updates
+        </motion.p>
+
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          className="container mx-auto px-4 py-16"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
-          <motion.h1
-            initial={{ y: -20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.5 }}
-            className="text-4xl xl:text-6xl font-bold text-center mb-4 bg-gradient-to-r from-[#2056aeff] to-[#50ade5ff] text-transparent bg-clip-text"
-          >
-            Explore Our Blog
-          </motion.h1>
-
-          <motion.p
-            initial={{ y: -20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-xl text-center text-gray-600 dark:text-gray-300 mb-12"
-          >
-            Discover insights, tutorials, and industry updates
-          </motion.p>
-
-          <div className="flex justify-center gap-4 mb-12 flex-wrap">
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={() => handleCategoryChange(null)}
-              className={`px-6 py-1 rounded-full transition-all duration-300 transform
-                ${!selectedCategory
-                  ? "bg-[#2056aeff] text-white shadow-lg shadow-[#50ade5ff]"
-                  : "bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 hover:bg-[#50ade5ff] hover:text-white"
-                }`}
-            >
-              All
-            </motion.button>
-            {categories.map((category) => (
-              <motion.button
-                key={category}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                onClick={() => handleCategoryChange(category)}
-                className={`px-6 py-1 rounded-full transition-all duration-300 transform
-                  ${selectedCategory === category
-                    ? "bg-[#2056aeff] text-white shadow-lg shadow-[#50ade5ff]"
-                    : "bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 hover:bg-[#50ade5ff] hover:text-white"
-                  }`}
-              >
-                {category}
-              </motion.button>
-            ))}
-          </div>
-
-          <motion.div
-            ref={blogSectionRef}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-          >
-            {paginatedBlogs.map((blog, index) => (
-              <BlogCard key={blog.id} blog={blog} index={index} />
-            ))}
-          </motion.div>
-
-          {totalPages > 1 && (
-            <div className="flex justify-center items-center gap-4 mt-16">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                onClick={() => handlePageChange(Math.max(1, currentPage - 1))}
-                disabled={currentPage === 1}
-                className="w-10 h-10 rounded-full bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 hover:bg-[#50ade5ff] hover:text-white disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
-              >
-                <ChevronLeft className="w-5 h-5" />
-              </motion.button>
-              
-              {renderPaginationButtons()}
-              
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                onClick={() => handlePageChange(Math.min(totalPages, currentPage + 1))}
-                disabled={currentPage === totalPages}
-                className="w-10 h-10 rounded-full bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 hover:bg-[#50ade5ff] hover:text-white disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
-              >
-                <ChevronRight className="w-5 h-5" />
-              </motion.button>
-            </div>
-          )}
+          {latestBlogs.map((blog, index) => (
+            <BlogCard key={blog.id} blog={blog} index={index} />
+          ))}
         </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className="mt-12 flex justify-center items-center"
+        >
+          <a
+            href="/blogs"
+            className="text-xl text-[#2056aeff] dark:text-[#2056aeff] font-semibold flex items-center hover:text-[#50ade5ff] dark:hover:text-[#50ade5ff]"
+          >
+            Read more blogs
+            <motion.div
+              initial={{ x: 0 }}
+              animate={{ x: [0, 5, 0] }}
+              transition={{ repeat: Infinity, duration: 1 }}
+              className="ml-2"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="w-5 h-5 text-[#2056aeff] dark:text-[#2056aeff] hover:text-[#50ade5ff] dark:hover:text-[#50ade5ff]"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M14 5l7 7m0 0l-7 7m7-7H3"
+                />
+              </svg>
+            </motion.div>
+          </a>
+        </motion.div>
+      </motion.div>
+
       </div>
     </div>
   );

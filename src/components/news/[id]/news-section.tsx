@@ -24,7 +24,7 @@ const news: News[] = [
     title: "The Evolution of Artificial Intelligence in Modern Healthcare",
     category: "Technology",
     author: "Sarah",
-    date: "Mar 15, 2024",
+    date: "Mar 15, 2025",
     readTime: 5,
     excerpt:
       "Exploring how AI is revolutionizing healthcare delivery and patient outcomes through innovative applications...",
@@ -43,7 +43,6 @@ const news: News[] = [
       <p>While the benefits are clear, the implementation of AI in healthcare faces several challenges. Data privacy, algorithmic bias, and the need for human oversight remain crucial considerations as we advance in this field.</p>
     `,
   },
-  // Add more news items...
 ];
 
 // interface NewsArticleProps {
