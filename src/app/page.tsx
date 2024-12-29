@@ -76,7 +76,7 @@ import ContactForm from "@/components/contact-form";
 // import ModernizeSection from "@/components/modernize-section";
 // import ManageSection from "@/components/manage-section";
 // import { useMediaQuery } from "react-responsive";
-import BotChat from "@/components/bot-chat";
+// import BotChat from "@/components/bot-chat";
 import BlogSection from "@/components/blogs/blog-section";
 import NewsSection from "@/components/news/news-section";
 import IndustriesSection from "@/components/industries";
@@ -282,7 +282,7 @@ export default function Home() {
       <ContactForm />
       <Footer/>
       {/* <FooterNew /> */}
-      <BotChat />
+      {/* <BotChat /> */}
 
       
     </div>

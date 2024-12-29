@@ -19,13 +19,13 @@ const NewsCard = ({ news, index }: NewsCardProps) => {
         transition={{ duration: 0.6, delay: index * 0.1 }}
         className="group relative bg-white dark:bg-gray-950 backdrop-blur-lg rounded-3xl overflow-hidden 
                  hover:shadow-[0_0_40px_rgba(249,115,22,0.15)] dark:hover:shadow-[0_0_40px_rgba(249,115,22,0.07)]
-                 transition-all duration-300 border border-gray-100 dark:border-gray-700 shadow-2xl"
+                 transition-all duration-300 border border-gray-100 dark:border-gray-700 shadow-xl"
       >
         <div className="relative h-72 overflow-hidden shadow-xl">
           <motion.img
             src={news.image}
             alt={news.title}
-            className="w-full h-full transition-transform duration-700 ease-out"
+            className="w-full h-full transition-transform duration-700 ease-out shadow-2xl"
             initial={{ scale: 1 }}
             whileHover={{ scale: 1.1 }}
           />

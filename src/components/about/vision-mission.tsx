@@ -2,8 +2,8 @@ import { motion } from "framer-motion";
 
 const VisionMissionSection: React.FC = () => {
   return (
-    <div className="bg-dark-blue text-white dark:bg-neutral-900 py-16 px-8 ">
-      <div className="max-w-4xl mx-auto rounded-2xl p-16 dark:bg-gray-950 dark:hover:shadow-blue-lg">
+    <div className="bg-gray-100 text-black dark:text-gray-200 dark:bg-neutral-900 py-16 px-8 ">
+      <div className="max-w-5xl mx-auto rounded-2xl p-16 bg-white shadow-xl dark:bg-gray-950 dark:hover:shadow-blue-lg">
         {/* Vision Section */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
