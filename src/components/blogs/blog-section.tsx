@@ -3,6 +3,7 @@
 import BlogCard from "@/components/blog-card";
 import { Blog } from "../../types/blog";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const blogs: Blog[] = [
   {
@@ -145,7 +146,7 @@ const BlogSection: React.FC = () => {
           transition={{ duration: 0.5, delay: 0.3 }}
           className="mt-12 flex justify-center items-center"
         >
-          <a
+          <Link
             href="/blogs"
             className="text-xl text-[#2056aeff] dark:text-[#2056aeff] font-semibold flex items-center hover:text-[#50ade5ff] dark:hover:text-[#50ade5ff]"
           >
@@ -171,7 +172,7 @@ const BlogSection: React.FC = () => {
                 />
               </svg>
             </motion.div>
-          </a>
+          </Link>
         </motion.div>
       </motion.div>
 
