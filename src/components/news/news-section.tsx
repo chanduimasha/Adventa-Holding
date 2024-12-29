@@ -3,6 +3,7 @@
 import NewsCard from "@/components/news-card";
 import { News } from "../../types/news";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const news: News[] = [
   {
@@ -151,7 +152,7 @@ const NewsSection: React.FC = () => {
           transition={{ duration: 0.5, delay: 0.3 }}
           className="mt-12 flex justify-center items-center"
         >
-          <a
+          <Link
             href="/news"
             className="text-xl text-[#2056aeff] dark:text-[#2056aeff] font-semibold flex items-center hover:text-[#50ade5ff] dark:hover:text-[#50ade5ff]"
           >
@@ -177,7 +178,7 @@ const NewsSection: React.FC = () => {
                 />
               </svg>
             </motion.div>
-          </a>
+          </Link>
         </motion.div>
         </motion.div>
       </div>
