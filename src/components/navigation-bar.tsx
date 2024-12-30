@@ -13,19 +13,19 @@ const Header: React.FC = () => {
         <Link href="/">
           <div className="flex items-center space-x-4">
             <Image
-              src="/assets/logo/5.png"
+              src="/assets/logo/6.png"
               alt="Company Logo"
-              width={50}
-              height={50}
+              width={180}
+              height={180}
               className="rounded-lg transform transition-transform duration-300 group-hover:scale-125"
             />
-            <h1 className="text-xl xl:text-3xl font-bold text-[#2056aeff] text-center">
+            {/* <h1 className="text-xl xl:text-3xl font-bold text-[#2056aeff] text-center">
               ADVENTA
               <br />
               <p className="text-sm xl:text-sm font-bold text-gray-700">
                 Infinite Possibilities
               </p>
-            </h1>
+            </h1> */}
           </div>
         </Link>
 
