@@ -420,8 +420,6 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import CompanyCard from "@/components/company-card";
 import { industries } from "@/data/industries";
-import NavBar from "@/components/nav-bar";
-import Footer from "@/components/footer-section";
 
 export default function IndustriesPage() {
   const [selectedIndustry, setSelectedIndustry] = useState(industries[0]);
