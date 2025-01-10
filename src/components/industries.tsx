@@ -288,7 +288,7 @@ const IndustriesSection = () => {
   };
 
   return (
-    <section className="relative bg-blue-50 dark:bg-neutral-900 py-16">
+    <section className="relative bg-blue-50 dark:bg-neutral-950 py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header Section */}
         <motion.div

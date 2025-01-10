@@ -21,15 +21,15 @@ import Footer from "@/components/footer";
 const news: News[] = [
   {
     id: 1,
-    title: "The Evolution of Artificial Intelligence in Modern Healthcare",
-    category: "Technology",
-    author: "Sarah",
-    date: "Mar 15, 2025",
+    title1: "The Evolution of Artificial Intelligence in Modern Healthcare",
+    category1: "Technology",
+    author1: "Sarah",
+    date1: "Mar 15, 2025",
     readTime: 5,
     excerpt:
       "Exploring how AI is revolutionizing healthcare delivery and patient outcomes through innovative applications...",
-    image: "/assets/blogs/1.jpg",
-    content: `
+    image1: "/assets/blogs/1.jpg",
+    content1: `
       <h2>The Revolutionary Impact of AI in Healthcare</h2>
       <p>Artificial Intelligence is fundamentally transforming the healthcare industry, bringing unprecedented changes to how medical professionals diagnose, treat, and monitor patients. This technological revolution is not just about automation; it's about enhancing human capabilities and improving patient outcomes.</p>
       
@@ -66,7 +66,7 @@ export default function NewsArticle({
 
   const handleShare = (platform: string) => {
     const shareText = encodeURIComponent(
-      `Check out this article: ${article.title}`
+      `Check out this article: ${article.title1}`
     );
     const shareUrls = {
       facebook: `https://www.facebook.com/sharer/sharer.php?u=${shareUrl}`,
@@ -103,8 +103,8 @@ export default function NewsArticle({
               className="h-full"
             >
               <img
-                src={article.image}
-                alt={article.title}
+                src={article.image1}
+                alt={article.title1}
                 className="w-full xl:h-full h-60 py-4 object-cover xl:px-40 px-4 shadow-xl"
               />
             </motion.div>
@@ -119,17 +119,17 @@ export default function NewsArticle({
               className="max-w-4xl mx-auto"
             >
               <h1 className="text-2xl pt-4 xl:text-4xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
-                {article.title}
+                {article.title1}
               </h1>
 
               <div className="flex flex-wrap items-center gap-6 text-gray-600 dark:text-gray-300 pb-4">
                 <div className="flex items-center gap-2">
                   <User size={20} />
-                  <span>{article.author}</span>
+                  <span>{article.author1}</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Calendar size={20} />
-                  <span>{article.date}</span>
+                  <span>{article.date1}</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Clock size={20} />
@@ -196,7 +196,7 @@ export default function NewsArticle({
                      prose-p:text-gray-700 dark:prose-p:text-gray-300
                      prose-a:text-orange-500 hover:prose-a:text-orange-600
                      prose-img:rounded-2xl"
-              dangerouslySetInnerHTML={{ __html: article.content || "" }}
+              dangerouslySetInnerHTML={{ __html: article.content1 || "" }}
             />
 
             {/* Tags */}
@@ -231,12 +231,12 @@ export default function NewsArticle({
             <div className="flex items-center gap-6">
               <img
                 src="/assets/feedbacks/feedback2.jpeg"
-                alt={article.author}
+                alt={article.author1}
                 className="w-20 h-20 rounded-full object-cover"
               />
               <div>
                 <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
-                  {article.author}
+                  {article.author1}
                 </h3>
                 <p className="text-gray-600 dark:text-gray-400">
                   Technology writer and researcher specializing in AI and

@@ -1,11 +1,11 @@
 export interface News {
     id: number;
-    title: string;
-    category: string;
-    author: string;
-    date: string;
+    title1: string;
+    category1: string;
+    author1: string;
+    date1: string;
     readTime: number;
     excerpt: string;
-    image: string;
-    content?: string;
+    image1: string;
+    content1?: string;
   }

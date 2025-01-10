@@ -11,7 +11,7 @@ export default function HeroSection() {
   // }
   return (
     <div className="">
-      <div className="relative bg-zinc-100 dark:bg-neutral-900 min-h-screen flex items-center justify-center shadow-md">
+      <div className="relative bg-zinc-100 dark:bg-neutral-950 min-h-screen flex items-center justify-center shadow-md">
         <div className="flex flex-col md:flex-row items-center max-w-7xl mx-auto px-6">
           {/* Text Section */}
           <div className="flex-1 text-center md:text-left mb-10 md:mb-0 xl:order-none order-2 xl:mt-0 mt-[-10px] xl:ml-20">
