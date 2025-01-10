@@ -26,7 +26,7 @@ const info = [
 
 const Footer = () => {
   return (
-    <footer className="bg-white dark:bg-[#2056aeff] dark:text-white text-gray-900 py-12 relative overflow-hidden shadow-2xl">
+    <footer className="bg-white dark:bg-indigo-950 dark:text-white text-gray-900 py-12 relative overflow-hidden shadow-2xl">
       {/* Background Animation */}
       {/* <div className="absolute inset-0 opacity-20">
         <div className="bg-gradient-to-r from-blue-800 via-purple-500 to-blue-200 animate-pulse h-full w-full"></div>
@@ -89,7 +89,7 @@ const Footer = () => {
 
         {/* Services Section */}
         <div>
-          <h2 className="text-lg font-semibold text-gray-900">Services</h2>
+          <h2 className="text-lg font-semibold dark:text-white">Services</h2>
           <ul className="mt-4 space-y-2 text-gray-900 dark:text-white">
             <li className="hover:text-[#2056aeff] dark:hover:text-[#50ade5ff] transition-colors">
               <Link href="/">Web Design</Link>
@@ -114,7 +114,7 @@ const Footer = () => {
 
         {/* Information Section */}
         <div>
-          <h2 className="text-lg font-semibold text-gray-900">Information</h2>
+          <h2 className="text-lg font-semibold dark:text-white">Information</h2>
           <ul className="mt-4 space-y-2">
             <li className="hover:text-[#2056aeff] dark:hover:text-[#50ade5ff] transition-colors">
               <Link href="/">About</Link>
@@ -139,7 +139,7 @@ const Footer = () => {
 
         {/* Contact Section */}
         <div>
-          <h2 className="text-lg font-semibold text-gray-900">Contacts</h2>
+          <h2 className="text-lg font-semibold dark:text-white">Contacts</h2>
           <div className="flex-1 flex items-center xl:justify-end order-1 xl:order-none mb-8 xl:mb-0 mt-5">
             <ul className="flex flex-col gap-5">
               {info.map((item, index) => (
@@ -158,7 +158,7 @@ const Footer = () => {
             </ul>
           </div>
 
-          <h2 className="mt-6 text-lg font-semibold text-gray-900">
+          <h2 className="mt-6 text-lg font-semibold dark:text-white">
             Newsletter
           </h2>
           <p className="text-sm mt-2">

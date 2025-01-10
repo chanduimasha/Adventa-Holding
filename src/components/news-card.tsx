@@ -23,8 +23,8 @@ const NewsCard = ({ news, index }: NewsCardProps) => {
       >
         <div className="relative h-72 overflow-hidden shadow-xl">
           <motion.img
-            src={news.image}
-            alt={news.title}
+            src={news.image1}
+            alt={news.title1}
             className="w-full h-full transition-transform duration-700 ease-out shadow-2xl"
             initial={{ scale: 1 }}
             whileHover={{ scale: 1.1 }}
@@ -43,20 +43,26 @@ const NewsCard = ({ news, index }: NewsCardProps) => {
               className="px-3 py-1 text-xs font-medium text-white bg-[#2056aeff] backdrop-blur-md 
                          rounded-full shadow-lg transform hover:scale-105 transition-transform"
             >
-              {news.category}
+              {news.category1}
             </span>
           </motion.div>
         </div>
 
         <div className="p-8">
+          <h3
+            className="text-xl font-bold text-gray-900 dark:text-white mb-3 
+                       group-hover:text-[#2056aeff] transition-colors duration-300 line-clamp-2"
+          >
+            {news.title1}
+          </h3>
           <div className="flex items-center gap-4 text-sm text-gray-600 dark:text-gray-400 mb-4">
             <div className="flex items-center gap-2">
               <User size={16} className="text-[#2056aeff]" />
-              <span>{news.author}</span>
+              <span>{news.author1}</span>
             </div>
             <div className="flex items-center gap-2">
               <Calendar size={16} className="text-[#2056aeff]" />
-              <span>{news.date}</span>
+              <span>{news.date1}</span>
             </div>
             <div className="flex items-center gap-2">
               <Clock size={16} className="text-[#2056aeff]" />
@@ -64,15 +70,8 @@ const NewsCard = ({ news, index }: NewsCardProps) => {
             </div>
           </div>
 
-          <h3
-            className="text-2xl font-bold text-gray-900 dark:text-white mb-3 
-                       group-hover:text-[#2056aeff] transition-colors duration-300 line-clamp-2"
-          >
-            {news.title}
-          </h3>
-
           <p className="text-gray-600 dark:text-gray-300 mb-6 line-clamp-3 text-base leading-relaxed">
-            {news.excerpt}
+            {news.content1}
           </p>
 
           <motion.div
