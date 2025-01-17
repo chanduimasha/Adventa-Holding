@@ -49,21 +49,6 @@ const services: Service[] = [
   },
 ];
 
-// const testimonials = [
-//   {
-//     name: "Sarah Chen",
-//     position: "CTO, TechCorp",
-//     content:
-//       "Auxano transformed our network infrastructure, delivering unprecedented performance and reliability.",
-//   },
-//   {
-//     name: "Michael Perera",
-//     position: "IT Director, Global Solutions",
-//     content:
-//       "Their expertise in network security and support has been invaluable to our operations.",
-//   },
-// ];
-
 interface StatProps {
   endValue: number;
   suffix?: string;

@@ -74,19 +74,6 @@ const services = [
   },
 ];
 
-// const testimonials = [
-//   {
-//     name: "John Smith",
-//     company: "Tech Solutions Ltd",
-//     text: "NetworkStore.lk transformed our infrastructure with their excellent service and expertise.",
-//   },
-//   {
-//     name: "Sarah Chen",
-//     company: "Global Systems",
-//     text: "Outstanding support and cutting-edge solutions that helped scale our operations.",
-//   },
-// ];
-
 const NetworkStorePage = () => {
   return (
     <div>

@@ -1,5 +1,3 @@
-"use client";
-
 import { FaGithub, FaLinkedinIn, FaTwitter, FaYoutube } from "react-icons/fa";
 
 const socials = [
@@ -18,9 +16,6 @@ const Social: React.FC<SocialProps> = ({ containerStyles = "", iconStyles = "" }
   return (
     <div className={containerStyles}>
       {socials.map((item, index) => (
-        // <Link key={index} href={item.path} className={iconStyles}>
-        //   {item.icon}
-        // </Link>
         <a key={index} href={item.path} className={iconStyles} target="_blank" rel="noopener noreferrer">
           {item.icon}
         </a>

@@ -1,14 +1,7 @@
-"use client";
-
 import { motion } from "framer-motion";
 import Image from "next/image";
 
 export default function HeroSection() {
-  // const [darkMode, setdarkMode] = useState(false);
-
-  // const toggleDarkMode = () => {
-  //   setdarkMode(!darkMode);
-  // }
   return (
     <div className="">
       <div className="relative bg-zinc-100 dark:bg-neutral-950 min-h-screen flex items-center justify-center shadow-md">
@@ -23,7 +16,6 @@ export default function HeroSection() {
             >
               Sustainability <span className="text-[#2056aeff]"> &</span>
               <span className="xl:text-6xl text-3xl"> Technology</span> <br />
-              {/* <p className="text-6xl mt-6 font-normal">Powering Infinite Possibilities</p> */}
             </motion.h1>
             <motion.p
               className="xl:text-3xl text-2xl text-[#2056aeff] mt-4"
@@ -64,12 +56,6 @@ export default function HeroSection() {
           </div>
         </div>
       </div>
-      {/* <button
-        className="absolute w-16 h-16 bottom-16 right-16 bg-neutral-900 dark:bg-white rounded-full text-white dark:text-black font-semibold"
-        onClick={toggleDarkMode}
-      >
-        {darkMode ? "LHT" : "DRK"}
-      </button> */}
     </div>
   );
 }

@@ -1,22 +1,48 @@
-// app/api/submit-application/route.ts
-import { NextResponse } from 'next/server';
-import nodemailer from 'nodemailer';
+'use server';
+
 import { writeFile } from 'fs/promises';
 import path from 'path';
+import nodemailer from 'nodemailer';
 
-// Configure nodemailer
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: process.env.EMAIL_USER, // Your Gmail address
-    pass: process.env.EMAIL_PASS, // Your Gmail app password
+    user: process.env.SMTP_USER,
+    pass: process.env.SMTP_PASS,
   },
 });
 
-export async function POST(req: Request) {
+async function verifyRecaptcha(token: string): Promise<boolean> {
   try {
-    // Get form data
+    const response = await fetch('https://www.google.com/recaptcha/api/siteverify', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: `secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${token}`,
+    });
+
+    const data = await response.json();
+    return data.success;
+  } catch (error) {
+    console.error('reCAPTCHA verification failed:', error);
+    return false;
+  }
+}
+
+export async function POST(req: Request): Promise<Response> {
+  try {
     const formData = await req.formData();
+
+    const recaptchaToken = formData.get('recaptchaToken') as string;
+    const isValid = await verifyRecaptcha(recaptchaToken);
+
+    if (!isValid) {
+      return new Response(JSON.stringify({ error: 'reCAPTCHA verification failed' }), {
+        status: 400,
+      });
+    }
+
     const name = formData.get('name') as string;
     const email = formData.get('email') as string;
     const phone = formData.get('phone') as string;
@@ -24,20 +50,17 @@ export async function POST(req: Request) {
     const jobTitle = formData.get('jobTitle') as string;
     const resumeFile = formData.get('resume') as File;
 
-    // Save resume file
     if (resumeFile) {
       const bytes = await resumeFile.arrayBuffer();
       const buffer = Buffer.from(bytes);
-      
-      // Create unique filename
+
       const filename = `${Date.now()}-${resumeFile.name}`;
       const filepath = path.join(process.cwd(), 'public', 'uploads', filename);
-      
+
       await writeFile(filepath, buffer);
-      
-      // Send email with attachment
+
       await transporter.sendMail({
-        from: process.env.EMAIL_USER,
+        from: process.env.SMTP_USER,
         to: 'lamborghinilovers001@gmail.com',
         subject: `New Job Application: ${jobTitle}`,
         html: `
@@ -52,18 +75,19 @@ export async function POST(req: Request) {
         attachments: [
           {
             filename: resumeFile.name,
-            path: filepath
-          }
-        ]
+            path: filepath,
+          },
+        ],
       });
     }
 
-    return NextResponse.json({ message: 'Application submitted successfully' });
+    return new Response(JSON.stringify({ success: true }), {
+      status: 200,
+    });
   } catch (error) {
     console.error('Error submitting application:', error);
-    return NextResponse.json(
-      { error: 'Failed to submit application' },
-      { status: 500 }
-    );
+    return new Response(JSON.stringify({ error: 'Failed to submit application' }), {
+      status: 500,
+    });
   }
 }

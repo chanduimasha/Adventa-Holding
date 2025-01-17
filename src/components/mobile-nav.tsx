@@ -1,5 +1,3 @@
-"use client";
-
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { AnimatePresence, motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";

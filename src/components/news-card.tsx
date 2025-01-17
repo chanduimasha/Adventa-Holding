@@ -1,5 +1,3 @@
-"use client";
-
 import { News } from "../types/news";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -30,8 +28,6 @@ const NewsCard = ({ news, index }: NewsCardProps) => {
             whileHover={{ scale: 1.1 }}
           />
           <div className="absolute dark:border dark:border-gray-800 inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300" />
-
-          {/* <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" /> */}
 
           <motion.div
             initial={{ y: 20, opacity: 0 }}

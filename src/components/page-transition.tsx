@@ -1,5 +1,3 @@
-"use client";
-
 import { ReactNode } from "react"; // Import ReactNode for typing children
 import { AnimatePresence, motion } from "framer-motion";
 import { usePathname } from "next/navigation";

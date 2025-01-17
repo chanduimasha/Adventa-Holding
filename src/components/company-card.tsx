@@ -48,21 +48,6 @@ const CompanyCard = ({ company, industryName, index }: CompanyCardProps) => {
           {company.name}
         </h3>
 
-        {/* <div className="flex items-center gap-4 text-sm text-gray-600 dark:text-gray-400 mb-4">
-          <div className="flex items-center gap-1">
-            <User size={16} className="text-[#2056aeff]" />
-            <span>Admin</span>
-          </div>
-          <div className="flex items-center gap-1">
-            <Calendar size={16} className="text-[#2056aeff]" />
-            <span>2024</span>
-          </div>
-          <div className="flex items-center gap-1">
-            <Tag size={16} className="text-[#2056aeff]" />
-            <span>{industryName}</span>
-          </div>
-        </div> */}
-
         <p className="text-gray-600 dark:text-gray-300 mb-4 line-clamp-3">
           {company.description}
         </p>

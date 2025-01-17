@@ -1,4 +1,3 @@
-"use client";
 import React from "react";
 import Link from "next/link";
 import Social from "./social-media";
@@ -27,34 +26,8 @@ const info = [
 const Footer = () => {
   return (
     <footer className="bg-white dark:bg-indigo-950 dark:text-white text-gray-900 py-12 relative overflow-hidden shadow-2xl">
-      {/* Background Animation */}
-      {/* <div className="absolute inset-0 opacity-20">
-        <div className="bg-gradient-to-r from-blue-800 via-purple-500 to-blue-200 animate-pulse h-full w-full"></div>
-      </div> */}
 
       <div className="container mx-auto px-6 relative z-10 grid grid-cols-1 md:grid-cols-4 gap-8 pb-8">
-        {/* Logo and About Section */}
-        {/* <div>
-          <div className="flex items-center space-x-4">
-            <Image
-              src="/assets/logo/4.png"
-              alt="Company Logo"
-              width={220}
-              height={220}
-              className="rounded-lg transform transition-transform duration-300 group-hover:scale-125"
-            />
-          </div>
-          <p className="mt-4 text-sm leading-relaxed text-gray-900 dark:text-white">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          </p>
-          <div>
-            <Social
-              containerStyles="flex gap-8 justify-left pt-10"
-              iconStyles="xl:w-[30px] xl:h-[30px] w-9 h-9 border border-blue-100 rounded-full flex justify-center items-center bg-[#2056aeff] text-blue-100 text-base hover:bg-[#50ade5ff] hover:text-primary hover:transition-all duration-500"
-            />
-          </div>
-        </div> */}
 
         <div>
           <div className="flex items-center space-x-4">

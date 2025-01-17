@@ -43,12 +43,9 @@ const news: News[] = [
       <p>While the benefits are clear, the implementation of AI in healthcare faces several challenges. Data privacy, algorithmic bias, and the need for human oversight remain crucial considerations as we advance in this field.</p>
     `,
   },
-  // Add more news items...
 ];
 
-// interface NewsArticleProps {
-//   params: Promise<{ id: string }>;
-// }
+
 
 export default function NewsArticle({
   params,

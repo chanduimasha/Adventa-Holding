@@ -71,9 +71,6 @@ const SubCompanies = () => {
               />
               {/* Hover Content */}
               <div className="absolute inset-0 flex flex-col items-center justify-center bg-orange-600 bg-opacity-90 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                {/* <h3 className="text-lg font-bold text-white mb-2">
-                    {company.title}
-                  </h3> */}
                 <p className="text-sm text-white text-center mb-4 px-4">
                   {company.content}
                 </p>
