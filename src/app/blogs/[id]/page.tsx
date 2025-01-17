@@ -1,59 +1,3 @@
-// import { notFound } from "next/navigation";
-// import { Blog } from "../../../types/blog";
-
-// const blogs: Blog[] = [
-//   {
-//     id: 1,
-//     title: "How to host a website on any hosting provider?",
-//     category: "Domain & Hosting",
-//     author: "William Bla",
-//     date: "Feb 1, 2022",
-//     content: "In this blog, we will explore step-by-step how you can host your website..."
-//   },
-//   {
-//     id: 2,
-//     title: "How to create ads on Google AdWords?",
-//     category: "Advertisement",
-//     author: "Jobi Ret",
-//     date: "Oct 5, 2022",
-//     content: "Creating ads on Google AdWords is essential for reaching the right audience..."
-//   },
-//   {
-//     id: 3,
-//     title: "What is digital marketing and why is it important?",
-//     category: "Marketing",
-//     author: "Main Dow",
-//     date: "Dec 22, 2022",
-//     content: "Digital marketing helps businesses grow by reaching online audiences..."
-//   },
-// ];
-
-// interface BlogPostProps {
-//   params: Promise<{ id: string }>;
-// }
-
-// export default async function BlogPost({ params }: BlogPostProps) {
-//   const resolvedParams = await params; // Resolve the params promise
-//   const blogId = Number(resolvedParams.id); // Convert id to a number
-//   const blog = blogs.find((b) => b.id === blogId);
-
-//   if (!blog) {
-//     return notFound();
-//   }
-
-//   return (
-//     <div className="bg-gray-100 min-h-screen">
-//       <div className="container mx-auto p-6">
-//         <h1 className="text-4xl font-bold mb-4">{blog.title}</h1>
-//         <p className="text-gray-500 mb-6">
-//           {blog.author} • {blog.date} • {blog.category}
-//         </p>
-//         <p className="text-gray-700 leading-relaxed">{blog.content}</p>
-//       </div>
-//     </div>
-//   );
-// }
-
 "use client";
 
 import { notFound } from "next/navigation";
@@ -191,17 +135,9 @@ export default function BlogPost({ params }: BlogPostProps) {
               alt={blog.title}
               className="w-full xl:h-[500px] h-[250px]"
             />
-            {/* <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" /> */}
 
             <div className="absolute bottom-0 left-0 right-0 xl:p-8 p-1">
-              {/* <motion.h1
-              initial={{ y: 20, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="text-4xl md:text-5xl font-bold text-white mb-4"
-            >
-              {blog.title}
-            </motion.h1> */}
+              
 
               <div className="flex flex-wrap items-center xl:gap-6 gap-1 text-white/90">
                 <div className="flex items-center gap-2">

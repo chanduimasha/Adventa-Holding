@@ -1,5 +1,3 @@
-"use client";
-
 import { notFound } from "next/navigation";
 import { News } from "../../../types/news";
 import { use } from "react";
@@ -44,10 +42,6 @@ const news: News[] = [
     `,
   },
 ];
-
-// interface NewsArticleProps {
-//   params: Promise<{ id: string }>;
-// }
 
 export default function NewsArticle({
   params,

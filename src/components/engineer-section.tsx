@@ -1,4 +1,3 @@
-"use client";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
@@ -41,9 +40,6 @@ const EngineerSection = () => {
         className="absolute inset-0 bg-cover bg-center bg-no-repeat animate-zoom"
         style={{ backgroundImage: "url('/assets/achievements/2.jpg')" }}
       ></div>
-
-      {/* Overlay */}
-      {/* <div className="absolute inset-0 bg-indigo-900 bg-opacity-70"></div> */}
 
       {/* Content */}
       <div className="relative z-10">

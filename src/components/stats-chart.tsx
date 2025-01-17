@@ -1,5 +1,3 @@
-"use client";
-
 import CountUp from "react-countup";
 
 interface Stat {

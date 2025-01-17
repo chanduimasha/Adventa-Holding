@@ -1,5 +1,3 @@
-"use client";
-
 import Link from "next/link";
 import Nav from "./desktop-nav";
 import MobileNav from "./mobile-nav";
@@ -19,13 +17,6 @@ const Header: React.FC = () => {
               height={180}
               className="rounded-lg transform transition-transform duration-300 group-hover:scale-125"
             />
-            {/* <h1 className="text-xl xl:text-3xl font-bold text-[#2056aeff] text-center">
-              ADVENTA
-              <br />
-              <p className="text-sm xl:text-sm font-bold text-gray-700">
-                Infinite Possibilities
-              </p>
-            </h1> */}
           </div>
         </Link>
 

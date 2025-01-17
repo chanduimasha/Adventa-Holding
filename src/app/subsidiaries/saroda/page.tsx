@@ -60,7 +60,6 @@ const SarodaPage = () => {
               alt="Saroda Company Header"
               className="w-full h-full object-cover "
             />
-            {/* <div className="absolute inset-0 bg-gradient-to-r from-gray-900/90 to-gray-900/60"></div> */}
           </div>
 
           {/* Content */}
@@ -123,13 +122,6 @@ const SarodaPage = () => {
 
         {/* Stats Section */}
         <section className="relative py-32 bg-blue-200 dark:bg-neutral-900 overflow-hidden">
-          {/* <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0)_0%,rgba(255,255,255,1)_100%)]"></div> */}
-          {/* Decorative Elements */}
-          {/* <div className="absolute inset-0">
-            <div className="absolute top-10 left-10 w-72 h-72 bg-blue-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
-            <div className="absolute top-0 right-4 w-72 h-72 bg-purple-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
-            <div className="absolute -bottom-8 left-20 w-72 h-72 bg-pink-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
-          </div> */}
 
           <motion.div
             initial="hidden"
