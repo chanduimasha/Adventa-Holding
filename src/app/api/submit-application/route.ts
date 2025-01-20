@@ -225,12 +225,12 @@
 
 'use server';
 
-import { writeFile, mkdir } from 'fs/promises';
+import { writeFile } from 'fs/promises';
 import path from 'path';
 import nodemailer from 'nodemailer';
 import { z } from 'zod';
 
-// Validation schema for incoming data
+// Define schema for form data validation
 const careerFormSchema = z.object({
   name: z.string().min(1, "Name is required"),
   email: z.string().email("Invalid email address"),
@@ -242,12 +242,12 @@ const careerFormSchema = z.object({
     .object({
       name: z.string().min(1, "File name is required"),
       type: z.string().min(1, "File type is required"),
-      size: z.number().max(2 * 1024 * 1024, "File size exceeds 2MB"),
+      size: z.number().max(2 * 1024 * 1024, "File size exceeds 2MB"), // Validate max file size
     })
     .optional(),
 });
 
-// Configure email transporter
+// Initialize email transporter
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
@@ -266,6 +266,7 @@ async function verifyRecaptcha(token: string): Promise<boolean> {
       },
       body: `secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${token}`,
     });
+
     const data = await response.json();
     return data.success;
   } catch (error) {
@@ -274,11 +275,11 @@ async function verifyRecaptcha(token: string): Promise<boolean> {
   }
 }
 
+// Handle the form submission
 export async function POST(req: Request): Promise<Response> {
   try {
     const formData = await req.formData();
 
-    // Extract form data
     const parsedData = {
       name: formData.get('name'),
       email: formData.get('email'),
@@ -293,35 +294,40 @@ export async function POST(req: Request): Promise<Response> {
       } : undefined,
     };
 
-    // Validate form data
+    // Validate the form data
     const validatedData = careerFormSchema.parse(parsedData);
 
     // Verify reCAPTCHA
     const isRecaptchaValid = await verifyRecaptcha(validatedData.recaptchaToken);
     if (!isRecaptchaValid) {
-      return new Response(
-        JSON.stringify({ error: 'reCAPTCHA verification failed' }),
-        { status: 400 }
-      );
+      return new Response(JSON.stringify({ error: 'reCAPTCHA verification failed' }), {
+        status: 400,
+      });
     }
 
-    // Prepare resume file if provided
+    // Save the resume file in a temporary directory
     let resumePath = '';
     if (formData.get('resume')) {
       const resumeFile = formData.get('resume') as File;
       const bytes = await resumeFile.arrayBuffer();
       const buffer = Buffer.from(bytes);
 
-      const uploadsDir = path.join(process.cwd(), 'public', 'uploads');
-      await mkdir(uploadsDir, { recursive: true }); // Ensure uploads directory exists
-
+      // Using '/tmp/uploads' directory instead of '/public/uploads'
+      const tempDir = '/tmp/uploads'; // This is a temporary writable directory
       const filename = `${Date.now()}-${resumeFile.name}`;
-      resumePath = path.join(uploadsDir, filename);
+      resumePath = path.join(tempDir, filename);
 
+      // Ensure the temporary directory exists
+      const fs = require('fs');
+      if (!fs.existsSync(tempDir)) {
+        fs.mkdirSync(tempDir, { recursive: true });
+      }
+
+      // Write the file to the temporary directory
       await writeFile(resumePath, buffer);
     }
 
-    // Send email with the application
+    // Send email with resume attachment
     await transporter.sendMail({
       from: process.env.SMTP_USER,
       to: 'lamborghinilovers001@gmail.com',
@@ -346,28 +352,15 @@ export async function POST(req: Request): Promise<Response> {
     });
 
     return new Response(JSON.stringify({ success: true }), { status: 200 });
-  } catch (error: unknown) {
+  } catch (error) {
     console.error('Error submitting application:', error);
-  
-    // Narrow the error type
-    if (error instanceof Error) {
-      return new Response(
-        JSON.stringify({
-          success: false,
-          error: error.message || 'Failed to submit application',
-        }),
-        { status: 500 }
-      );
-    }
-  
-    // If error is not an instance of Error, return a generic error message
+
     return new Response(
       JSON.stringify({
         success: false,
-        error: 'An unknown error occurred',
+        error: error instanceof Error ? error.message : 'Failed to submit application',
       }),
       { status: 500 }
     );
   }
 }
-
