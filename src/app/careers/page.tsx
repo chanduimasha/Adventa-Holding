@@ -347,7 +347,7 @@ const Careers: React.FC = () => {
                     name="resume"
                     type="file"
                     required
-                    accept=".pdf,.doc,.docx"
+                    accept=".pdf"
                     className="w-full text-gray-300 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
                   />
                 </div>

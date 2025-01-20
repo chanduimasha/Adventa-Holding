@@ -73,7 +73,7 @@ const NewsSection: React.FC = () => {
         });
         
         setNews(news);
-        console.log("Processed news:", news);
+        // console.log("Processed news:", news);
       })
       .catch((error) => {
         console.error("Error fetching news:", error);
