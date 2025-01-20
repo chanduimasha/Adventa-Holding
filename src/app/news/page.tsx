@@ -78,7 +78,7 @@ export default function NewsPage() {
         });
 
         setNews(news);
-        console.log("Processed news:", news);
+        // console.log("Processed news:", news);
       })
       .catch((error) => {
         console.error("Error fetching news:", error);

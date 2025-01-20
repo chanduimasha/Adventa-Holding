@@ -65,7 +65,7 @@ const BlogSection: React.FC = () => {
         });
         
         setBlogs(blogs);
-        console.log("Processed blogs:", blogs);
+        // console.log("Processed blogs:", blogs);
       })
       .catch((error) => {
         console.error("Error fetching blogs:", error);

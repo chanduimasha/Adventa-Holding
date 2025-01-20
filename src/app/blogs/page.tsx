@@ -83,7 +83,7 @@ export default function BlogPage() {
         
 
         setBlogs(blogs);
-        console.log("Processed blogs:", blogs);
+        // console.log("Processed blogs:", blogs);
       })
       .catch((error) => {
         console.error("Error fetching blogs:", error);
@@ -159,3 +159,84 @@ export default function BlogPage() {
     </div>
   );
 }
+
+// "use client"
+
+// import BlogCard from "@/components/blog-card";
+// import NavBar from "@/components/nav-bar";
+// import Footer from "@/components/footer-section";
+// import { Blog } from "../../types/blog";
+
+// async function fetchBlogs(): Promise<Blog[]> {
+//   const response = await fetch(
+//     "https://cdn.contentful.com/spaces/qpoyn7haps0t/environments/master/entries?access_token=_R9BOpOvC4cN_MGJb3ohY6tQowHI7BHQkWFza4N15w4&content_type=author",
+//     { next: { revalidate: 60 } } // Enables caching and ISR for faster performance.
+//   );
+//   const data = await response.json();
+
+//   const assetMap = new Map<string, string>();
+//   if (data.includes?.Asset) {
+//     data.includes.Asset.forEach((asset: any) => {
+//       assetMap.set(asset.sys.id, asset.fields.file.url);
+//     });
+//   }
+
+//   return data.items.map((item: any) => {
+//     const imageAssetId = item.fields.image?.sys?.id;
+//     const imageUrl = imageAssetId ? assetMap.get(imageAssetId) : null;
+
+//     return {
+//       id: item.sys.id,
+//       title: item.fields.title,
+//       category: item.fields.category,
+//       author: item.fields.author,
+//       date: item.fields.date,
+//       content: item.fields.content,
+//       image: imageUrl ? `https:${imageUrl}` : "/placeholder-image.jpg",
+//     };
+//   });
+// }
+
+// export default async function BlogPage() {
+//   const blogs = await fetchBlogs();
+//   const categories = [...new Set(blogs.map((blog) => blog.category))];
+
+//   return (
+//     <div>
+//       <NavBar />
+//       <div className="min-h-screen bg-gradient-to-br bg-blue-50 dark:bg-neutral-900">
+//         <div className="relative">
+//           <div className="container mx-auto px-4 py-32">
+//             <h1 className="text-5xl font-bold text-center mb-4 bg-gradient-to-r from-[#2056aeff] to-[#50ade5ff] text-transparent bg-clip-text">
+//               Explore Our Blog
+//             </h1>
+//             <p className="text-xl text-center text-gray-600 dark:text-gray-300 mb-12">
+//               Discover insights, tutorials, and industry updates
+//             </p>
+
+//             {/* Category Filters */}
+//             <div className="flex justify-center gap-4 mb-12 flex-wrap">
+//               {categories.map((category) => (
+//                 <button
+//                   key={category}
+//                   onClick={() => console.log(`Filter by ${category}`)}
+//                   className="px-4 py-2 rounded-full transition-all bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 hover:bg-[#50ade5ff] hover:text-white"
+//                 >
+//                   {category}
+//                 </button>
+//               ))}
+//             </div>
+
+//             {/* Blog Grid */}
+//             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+//               {blogs.map((blog, index) => (
+//                 <BlogCard key={blog.id} blog={blog} index={index} />
+//               ))}
+//             </div>
+//           </div>
+//         </div>
+//       </div>
+//       <Footer />
+//     </div>
+//   );
+// }
