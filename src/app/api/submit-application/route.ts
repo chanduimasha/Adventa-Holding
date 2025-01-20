@@ -93,136 +93,6 @@
 // }
 
 
-// 'use server';
-
-// import { writeFile } from 'fs/promises';
-// import path from 'path';
-// import nodemailer from 'nodemailer';
-// import { z } from 'zod';
-
-// const careerFormSchema = z.object({
-//   name: z.string().min(1, "Name is required"),
-//   email: z.string().email("Invalid email address"),
-//   phone: z.string().optional(),
-//   coverLetter: z.string().optional(),
-//   jobTitle: z.string().min(1, "Job title is required"),
-//   recaptchaToken: z.string().min(1, "reCAPTCHA token is required"),
-//   resume: z
-//     .object({
-//       name: z.string().min(1, "File name is required"),
-//       type: z.string().min(1, "File type is required"),
-//       size: z.number().max(2 * 1024 * 1024, "File size exceeds 2MB"), // Validate max file size
-//     })
-//     .optional(),
-// });
-
-// const transporter = nodemailer.createTransport({
-//   service: 'gmail',
-//   auth: {
-//     user: process.env.SMTP_USER,
-//     pass: process.env.SMTP_PASS,
-//   },
-// });
-
-// async function verifyRecaptcha(token: string): Promise<boolean> {
-//   try {
-//     const response = await fetch('https://www.google.com/recaptcha/api/siteverify', {
-//       method: 'POST',
-//       headers: {
-//         'Content-Type': 'application/x-www-form-urlencoded',
-//       },
-//       body: `secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${token}`,
-//     });
-
-//     const data = await response.json();
-//     return data.success;
-//   } catch (error) {
-//     console.error('reCAPTCHA verification failed:', error);
-//     return false;
-//   }
-// }
-
-// export async function POST(req: Request): Promise<Response> {
-//   try {
-//     const formData = await req.formData();
-
-//     const parsedData = {
-//       name: formData.get('name'),
-//       email: formData.get('email'),
-//       phone: formData.get('phone'),
-//       coverLetter: formData.get('coverLetter'),
-//       jobTitle: formData.get('jobTitle'),
-//       recaptchaToken: formData.get('recaptchaToken'),
-//       resume: formData.get('resume') ? {
-//         name: (formData.get('resume') as File).name,
-//         type: (formData.get('resume') as File).type,
-//         size: (formData.get('resume') as File).size,
-//       } : undefined,
-//     };
-
-//     // Validate form data
-//     const validatedData = careerFormSchema.parse(parsedData);
-
-//     // Verify reCAPTCHA
-//     const isRecaptchaValid = await verifyRecaptcha(validatedData.recaptchaToken);
-//     if (!isRecaptchaValid) {
-//       return new Response(JSON.stringify({ error: 'reCAPTCHA verification failed' }), {
-//         status: 400,
-//       });
-//     }
-
-//     // Save resume file if provided
-//     let resumePath = '';
-//     if (formData.get('resume')) {
-//       const resumeFile = formData.get('resume') as File;
-//       const bytes = await resumeFile.arrayBuffer();
-//       const buffer = Buffer.from(bytes);
-
-//       const filename = `${Date.now()}-${resumeFile.name}`;
-//       resumePath = path.join(process.cwd(), 'public', 'uploads', filename);
-
-//       await writeFile(resumePath, buffer);
-//     }
-
-//     // Send email
-//     await transporter.sendMail({
-//       from: process.env.SMTP_USER,
-//       to: 'lamborghinilovers001@gmail.com',
-//       subject: `New Job Application: ${validatedData.jobTitle}`,
-//       html: `
-//         <h2>New Job Application Received</h2>
-//         <p><strong>Position:</strong> ${validatedData.jobTitle}</p>
-//         <p><strong>Applicant Name:</strong> ${validatedData.name}</p>
-//         <p><strong>Email:</strong> ${validatedData.email}</p>
-//         <p><strong>Phone:</strong> ${validatedData.phone || 'Not provided'}</p>
-//         <h3>Cover Letter:</h3>
-//         <p>${validatedData.coverLetter || 'No cover letter provided'}</p>
-//       `,
-//       attachments: resumePath
-//         ? [
-//             {
-//               filename: validatedData.resume?.name,
-//               path: resumePath,
-//             },
-//           ]
-//         : [],
-//     });
-
-//     return new Response(JSON.stringify({ success: true }), { status: 200 });
-//   } catch (error) {
-//     console.error('Error submitting application:', error);
-
-//     return new Response(
-//       JSON.stringify({
-//         success: false,
-//         error: error instanceof z.ZodError ? error.errors : 'Failed to submit application',
-//       }),
-//       { status: 500 }
-//     );
-//   }
-// }
-
-
 'use server';
 
 import { writeFile } from 'fs/promises';
@@ -230,7 +100,6 @@ import path from 'path';
 import nodemailer from 'nodemailer';
 import { z } from 'zod';
 
-// Define schema for form data validation
 const careerFormSchema = z.object({
   name: z.string().min(1, "Name is required"),
   email: z.string().email("Invalid email address"),
@@ -247,7 +116,6 @@ const careerFormSchema = z.object({
     .optional(),
 });
 
-// Initialize email transporter
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
@@ -256,7 +124,6 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-// Verify reCAPTCHA token
 async function verifyRecaptcha(token: string): Promise<boolean> {
   try {
     const response = await fetch('https://www.google.com/recaptcha/api/siteverify', {
@@ -275,7 +142,6 @@ async function verifyRecaptcha(token: string): Promise<boolean> {
   }
 }
 
-// Handle the form submission
 export async function POST(req: Request): Promise<Response> {
   try {
     const formData = await req.formData();
@@ -294,7 +160,7 @@ export async function POST(req: Request): Promise<Response> {
       } : undefined,
     };
 
-    // Validate the form data
+    // Validate form data
     const validatedData = careerFormSchema.parse(parsedData);
 
     // Verify reCAPTCHA
@@ -305,29 +171,20 @@ export async function POST(req: Request): Promise<Response> {
       });
     }
 
-    // Save the resume file in a temporary directory
+    // Save resume file if provided
     let resumePath = '';
     if (formData.get('resume')) {
       const resumeFile = formData.get('resume') as File;
       const bytes = await resumeFile.arrayBuffer();
       const buffer = Buffer.from(bytes);
 
-      // Using '/tmp/uploads' directory instead of '/public/uploads'
-      const tempDir = '/tmp/uploads'; // This is a temporary writable directory
       const filename = `${Date.now()}-${resumeFile.name}`;
-      resumePath = path.join(tempDir, filename);
+      resumePath = path.join(process.cwd(), 'public', 'uploads', filename);
 
-      // Ensure the temporary directory exists
-      const fs = require('fs');
-      if (!fs.existsSync(tempDir)) {
-        fs.mkdirSync(tempDir, { recursive: true });
-      }
-
-      // Write the file to the temporary directory
       await writeFile(resumePath, buffer);
     }
 
-    // Send email with resume attachment
+    // Send email
     await transporter.sendMail({
       from: process.env.SMTP_USER,
       to: 'lamborghinilovers001@gmail.com',
@@ -358,7 +215,7 @@ export async function POST(req: Request): Promise<Response> {
     return new Response(
       JSON.stringify({
         success: false,
-        error: error instanceof Error ? error.message : 'Failed to submit application',
+        error: error instanceof z.ZodError ? error.errors : 'Failed to submit application',
       }),
       { status: 500 }
     );
