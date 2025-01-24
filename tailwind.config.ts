@@ -26,7 +26,7 @@ module.exports = {
     extend: {
       colors: {
         primary: "#ffffff",
-        'dark-blue': '#0a192f',
+        "dark-blue": "#0a192f",
         //   accent: {
         // 	DEFAULT: "#00ff99",
         // 	hover: "#00e187",
@@ -39,7 +39,8 @@ module.exports = {
         title: ["Roboto", "sans-serif"],
       },
       boxShadow: {
-        'blue-lg': '0 10px 15px -3px rgba(59, 130, 246, 0.5), 0 4px 6px -2px rgba(59, 130, 246, 0.3)',
+        "blue-lg":
+          "0 10px 15px -3px rgba(59, 130, 246, 0.5), 0 4px 6px -2px rgba(59, 130, 246, 0.3)",
       },
 
       keyframes: {
