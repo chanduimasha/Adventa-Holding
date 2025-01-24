@@ -1,5 +1,5 @@
 export interface Blog {
-  id: number;
+  id: string | number;  // Allow both string and number
   title: string;
   category: string;
   author: string;
