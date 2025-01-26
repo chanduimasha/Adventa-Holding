@@ -263,9 +263,6 @@ async function fetchNews(): Promise<News[]> {
 export default async function NewsPage() {
   const news = await fetchNews();
   
-  // Get unique categories
-  const categories = [...new Set(news.map((item) => item.category1))];
-
   return (
     <div>
       <NavBar />
