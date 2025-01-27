@@ -32,20 +32,18 @@
 //     content1: `
 //       <h2>The Revolutionary Impact of AI in Healthcare</h2>
 //       <p>Artificial Intelligence is fundamentally transforming the healthcare industry, bringing unprecedented changes to how medical professionals diagnose, treat, and monitor patients. This technological revolution is not just about automation; it's about enhancing human capabilities and improving patient outcomes.</p>
-      
+
 //       <h2>Key Applications in Modern Healthcare</h2>
 //       <p>From diagnostic assistance to personalized treatment plans, AI is being deployed across various healthcare domains. Machine learning algorithms are now capable of detecting diseases from medical images with accuracy that rivals, and sometimes exceeds, human experts.</p>
-      
+
 //       <h2>The Future of AI in Healthcare</h2>
 //       <p>As we look to the future, the potential applications of AI in healthcare continue to expand. Predictive analytics, robot-assisted surgery, and automated administrative tasks are just the beginning. The integration of AI promises to make healthcare more efficient, accurate, and accessible to all.</p>
-      
+
 //       <h2>Challenges and Considerations</h2>
 //       <p>While the benefits are clear, the implementation of AI in healthcare faces several challenges. Data privacy, algorithmic bias, and the need for human oversight remain crucial considerations as we advance in this field.</p>
 //     `,
 //   },
 // ];
-
-
 
 // export default function NewsArticle({
 //   params,
@@ -144,12 +142,12 @@
 //             initial={{ y: 20, opacity: 0 }}
 //             animate={{ y: 0, opacity: 1 }}
 //             transition={{ duration: 0.5, delay: 0.4 }}
-//             className="mt-6 bg-white dark:bg-gray-950 rounded-3xl p-8 md:p-12 
+//             className="mt-6 bg-white dark:bg-gray-950 rounded-3xl p-8 md:p-12
 //                    shadow-xl backdrop-blur-lg border border-gray-100 dark:border-gray-700"
 //           >
 //             {/* Share buttons */}
 //             <div
-//               className="flex justify-between items-center mb-8 pb-8 
+//               className="flex justify-between items-center mb-8 pb-8
 //                        border-b border-gray-200 dark:border-gray-700"
 //             >
 //               <h2 className="text-xl font-semibold text-gray-700 dark:text-gray-300">
@@ -158,28 +156,28 @@
 //               <div className="flex gap-4">
 //                 <button
 //                   onClick={() => handleShare("facebook")}
-//                   className="p-2 rounded-full bg-gray-100 dark:bg-gray-700 
+//                   className="p-2 rounded-full bg-gray-100 dark:bg-gray-700
 //                          hover:bg-blue-100 dark:hover:bg-blue-900/30 transition-colors"
 //                 >
 //                   <Facebook className="w-5 h-5 text-gray-600 dark:text-gray-400" />
 //                 </button>
 //                 <button
 //                   onClick={() => handleShare("twitter")}
-//                   className="p-2 rounded-full bg-gray-100 dark:bg-gray-700 
+//                   className="p-2 rounded-full bg-gray-100 dark:bg-gray-700
 //                          hover:bg-blue-100 dark:hover:bg-blue-900/30 transition-colors"
 //                 >
 //                   <Twitter className="w-5 h-5 text-gray-600 dark:text-gray-400" />
 //                 </button>
 //                 <button
 //                   onClick={() => handleShare("linkedin")}
-//                   className="p-2 rounded-full bg-gray-100 dark:bg-gray-700 
+//                   className="p-2 rounded-full bg-gray-100 dark:bg-gray-700
 //                          hover:bg-blue-100 dark:hover:bg-blue-900/30 transition-colors"
 //                 >
 //                   <Linkedin className="w-5 h-5 text-gray-600 dark:text-gray-400" />
 //                 </button>
 //                 <button
 //                   onClick={copyToClipboard}
-//                   className="p-2 rounded-full bg-gray-100 dark:bg-gray-700 
+//                   className="p-2 rounded-full bg-gray-100 dark:bg-gray-700
 //                          hover:bg-blue-100 dark:hover:bg-blue-900/30 transition-colors"
 //                 >
 //                   <LinkIcon className="w-5 h-5 text-gray-600 dark:text-gray-400" />
@@ -251,153 +249,313 @@
 //   );
 // }
 
+// "use client";
 
-"use client";
+// import { useState, useEffect } from 'react';
+// import { useParams } from 'next/navigation';
+// import { News } from '../../../types/news';
+// import NavBar from "@/components/nav-bar";
+// import Footer from "@/components/footer-section";
+// import { motion } from 'framer-motion';
+// import { ArrowLeft, Calendar, User, Clock } from 'lucide-react';
+// import Link from 'next/link';
 
-import { useState, useEffect } from 'react';
-import { useParams } from 'next/navigation';
-import { News } from '../../../types/news';
+// export default function NewsDetailPage() {
+//   const params = useParams();
+//   const id = params.id as string;
+//   const [news, setNews] = useState<News | null>(null);
+//   const [loading, setLoading] = useState(true);
+//   const [error, setError] = useState<string | null>(null);
+
+//   useEffect(() => {
+//     if (!id) return;
+
+//     async function fetchNewsDetail() {
+//       try {
+//         // Fetch specific news entry from Contentful
+//         const res = await fetch(
+//           `https://cdn.contentful.com/spaces/qpoyn7haps0t/environments/master/entries/${id}?access_token=_R9BOpOvC4cN_MGJb3ohY6tQowHI7BHQkWFza4N15w4`
+//         );
+//         const data = await res.json();
+
+//         // Fetch associated assets
+//         const assetRes = await fetch(
+//           `https://cdn.contentful.com/spaces/qpoyn7haps0t/environments/master/assets/${data.fields.image1.sys.id}?access_token=_R9BOpOvC4cN_MGJb3ohY6tQowHI7BHQkWFza4N15w4`
+//         );
+//         const assetData = await assetRes.json();
+
+//         const newsDetail: News = {
+//           id: data.sys.id,
+//           title1: data.fields.title1,
+//           category1: data.fields.category1,
+//           author1: data.fields.author1,
+//           date1: data.fields.date1,
+//           content1: data.fields.content1,
+//           image1: `https:${assetData.fields.file.url}`,
+//           readTime: Math.ceil(data.fields.content1.split(' ').length / 200), // Estimate read time
+//           excerpt: data.fields.content1.substring(0, 200) // Create excerpt
+//         };
+
+//         setNews(newsDetail);
+//         setLoading(false);
+//       } catch (err) {
+//         console.error('Error fetching news detail:', err);
+//         setError('Failed to load news details');
+//         setLoading(false);
+//       }
+//     }
+
+//     fetchNewsDetail();
+//   }, [id]);
+
+//   if (loading) {
+//     return (
+//       <div className="min-h-screen flex items-center justify-center bg-blue-50 dark:bg-neutral-900">
+//         <div className="text-center">
+//           <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-[#2056aeff]"></div>
+//           <p className="mt-4 text-gray-600 dark:text-gray-300">Loading news details...</p>
+//         </div>
+//       </div>
+//     );
+//   }
+
+//   if (error) {
+//     return (
+//       <div className="min-h-screen flex items-center justify-center bg-blue-50 dark:bg-neutral-900">
+//         <div className="text-center">
+//           <p className="text-red-500">{error}</p>
+//           <Link href="/news">
+//             <button className="mt-4 px-4 py-2 bg-[#2056aeff] text-white rounded-full hover:bg-[#50ade5ff] transition-colors">
+//               Back to News
+//             </button>
+//           </Link>
+//         </div>
+//       </div>
+//     );
+//   }
+
+//   if (!news) return null;
+
+//   return (
+//     <div>
+//       <NavBar />
+//       <div className="min-h-screen bg-gradient-to-br bg-blue-50 dark:bg-neutral-900 py-28 xl:py-32">
+//         <motion.div
+//           initial={{ opacity: 0 }}
+//           animate={{ opacity: 1 }}
+//           className="container mx-auto px-4 max-w-4xl"
+//         >
+//           <Link href="/news">
+//             <motion.div
+//               whileHover={{ x: -5 }}
+//               className="inline-flex items-center text-[#2056aeff] font-semibold mb-8 hover:text-[#50ade5ff]"
+//             >
+//               <ArrowLeft className="w-5 h-5 mr-2" />
+//               Back to News
+//             </motion.div>
+//           </Link>
+
+//           <motion.div
+//             initial={{ y: 20, opacity: 0 }}
+//             animate={{ y: 0, opacity: 1 }}
+//             className="bg-white dark:bg-gray-950 rounded-3xl shadow-2xl overflow-hidden"
+//           >
+//             <div className="relative h-[500px] overflow-hidden">
+//               <img
+//                 src={news.image1}
+//                 alt={news.title1}
+//                 className="w-full h-full object-cover"
+//               />
+//               <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+//               <div className="absolute bottom-8 left-8 right-8 text-white">
+//                 <h1 className="text-4xl font-bold mb-4">{news.title1}</h1>
+//                 <div className="flex items-center gap-4 text-sm">
+//                   <div className="flex items-center gap-2">
+//                     <User size={16} />
+//                     <span>{news.author1}</span>
+//                   </div>
+//                   <div className="flex items-center gap-2">
+//                     <Calendar size={16} />
+//                     <span>{news.date1}</span>
+//                   </div>
+//                   <div className="flex items-center gap-2">
+//                     <Clock size={16} />
+//                     <span>{news.readTime} min read</span>
+//                   </div>
+//                 </div>
+//               </div>
+//             </div>
+
+//             <div className="p-12">
+//               <div
+//                 className="prose dark:prose-invert max-w-none text-gray-800 dark:text-gray-200"
+//                 dangerouslySetInnerHTML={{ __html: news.content1 || '' }}
+//               />
+//             </div>
+//           </motion.div>
+//         </motion.div>
+//       </div>
+//       <Footer />
+//     </div>
+//   );
+// }
+
+import type { Metadata } from "next";
+import { notFound } from "next/navigation";
+import { ArrowLeft, Calendar, User, Clock } from "lucide-react";
+import Link from "next/link";
 import NavBar from "@/components/nav-bar";
 import Footer from "@/components/footer-section";
-import { motion } from 'framer-motion';
-import { ArrowLeft, Calendar, User, Clock } from 'lucide-react';
-import Link from 'next/link';
+import { News } from "@/types/news";
 
-export default function NewsDetailPage() {
-  const params = useParams();
-  const id = params.id as string;
-  const [news, setNews] = useState<News | null>(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
 
-  useEffect(() => {
-    if (!id) return;
+interface PageProps {
+  params: Promise<{ id: string }>;
+}
 
-    async function fetchNewsDetail() {
-      try {
-        // Fetch specific news entry from Contentful
-        const res = await fetch(
-          `https://cdn.contentful.com/spaces/qpoyn7haps0t/environments/master/entries/${id}?access_token=_R9BOpOvC4cN_MGJb3ohY6tQowHI7BHQkWFza4N15w4`
-        );
-        const data = await res.json();
+async function fetchNewsDetails(id: string): Promise<News | null> {
+  try {
+    const response = await fetch(
+      `https://cdn.contentful.com/spaces/qpoyn7haps0t/environments/master/entries/${id}?access_token=_R9BOpOvC4cN_MGJb3ohY6tQowHI7BHQkWFza4N15w4`,
+      { next: { revalidate: 3600 } }
+    );
 
-        // Fetch associated assets
-        const assetRes = await fetch(
-          `https://cdn.contentful.com/spaces/qpoyn7haps0t/environments/master/assets/${data.fields.image1.sys.id}?access_token=_R9BOpOvC4cN_MGJb3ohY6tQowHI7BHQkWFza4N15w4`
-        );
-        const assetData = await assetRes.json();
-
-        const newsDetail: News = {
-          id: data.sys.id,
-          title1: data.fields.title1,
-          category1: data.fields.category1,
-          author1: data.fields.author1,
-          date1: data.fields.date1,
-          content1: data.fields.content1,
-          image1: `https:${assetData.fields.file.url}`,
-          readTime: Math.ceil(data.fields.content1.split(' ').length / 200), // Estimate read time
-          excerpt: data.fields.content1.substring(0, 200) // Create excerpt
-        };
-
-        setNews(newsDetail);
-        setLoading(false);
-      } catch (err) {
-        console.error('Error fetching news detail:', err);
-        setError('Failed to load news details');
-        setLoading(false);
-      }
+    if (!response.ok) {
+      return null;
     }
 
-    fetchNewsDetail();
-  }, [id]);
-
-  if (loading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-blue-50 dark:bg-neutral-900">
-        <div className="text-center">
-          <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-[#2056aeff]"></div>
-          <p className="mt-4 text-gray-600 dark:text-gray-300">Loading news details...</p>
-        </div>
-      </div>
+    const data = await response.json();
+    const assetResponse = await fetch(
+      `https://cdn.contentful.com/spaces/qpoyn7haps0t/environments/master/assets/${data.fields.image1?.sys?.id}?access_token=_R9BOpOvC4cN_MGJb3ohY6tQowHI7BHQkWFza4N15w4`,
+      { next: { revalidate: 3600 } }
     );
+
+    const assetData = await assetResponse.json();
+    const imageUrl = assetData?.fields?.file?.url || "/placeholder-image.jpg";
+
+    return {
+      id: data.sys.id,
+      title1: data.fields.title1,
+      category1: data.fields.category1,
+      author1: data.fields.author1,
+      date1: data.fields.date1,
+      content1: data.fields.content1,
+      image1: `https:${imageUrl}`,
+      readTime: Math.ceil(data.fields.content1.split(" ").length / 200), // Approximate read time
+      excerpt: data.fields.content1.substring(0, 160) + "...",
+    };
+  } catch (error) {
+    console.error("Error fetching news details:", error);
+    return null;
+  }
+}
+
+export async function generateMetadata({
+  params,
+}: PageProps): Promise<Metadata> {
+  const resolvedParams = await params;
+  const news = await fetchNewsDetails(resolvedParams.id);
+
+  if (!news) {
+    return {
+      title: "News Article Not Found",
+      description: "The requested news article could not be found.",
+    };
   }
 
-  if (error) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-blue-50 dark:bg-neutral-900">
-        <div className="text-center">
-          <p className="text-red-500">{error}</p>
-          <Link href="/news">
-            <button className="mt-4 px-4 py-2 bg-[#2056aeff] text-white rounded-full hover:bg-[#50ade5ff] transition-colors">
-              Back to News
-            </button>
-          </Link>
-        </div>
-      </div>
-    );
-  }
+  return {
+    title: `${news.title1} | Latest News`,
+    description: news.content1?.substring(0, 160),
+    openGraph: {
+      title: news.title1,
+      description: news.content1?.substring(0, 160),
+      images: [news.image1],
+    },
+  };
+}
 
-  if (!news) return null;
+export default async function NewsDetails({ params }: PageProps) {
+  const resolvedParams = await params;
+  const news = await fetchNewsDetails(resolvedParams.id);
+
+  if (!news) {
+    notFound();
+  }
 
   return (
-    <div>
+    <div className="min-h-screen flex flex-col">
       <NavBar />
-      <div className="min-h-screen bg-gradient-to-br bg-blue-50 dark:bg-neutral-900 py-28 xl:py-32">
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          className="container mx-auto px-4 max-w-4xl"
-        >
-          <Link href="/news">
-            <motion.div
-              whileHover={{ x: -5 }}
-              className="inline-flex items-center text-[#2056aeff] font-semibold mb-8 hover:text-[#50ade5ff]"
-            >
-              <ArrowLeft className="w-5 h-5 mr-2" />
-              Back to News
-            </motion.div>
+
+      <main className="flex-grow bg-blue-50 dark:bg-neutral-900">
+        <div className="container mx-auto px-4 py-28 xl:py-32">
+          <Link
+            href="/news"
+            className="inline-flex items-center text-[#2056aeff] hover:text-[#50ade5ff] transition-colors duration-300 mb-8"
+          >
+            <ArrowLeft className="w-5 h-5 mr-2" />
+            Back to News
           </Link>
 
-          <motion.div
-            initial={{ y: 20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            className="bg-white dark:bg-gray-950 rounded-3xl shadow-2xl overflow-hidden"
-          >
+          <article className="bg-white dark:bg-gray-950 rounded-3xl overflow-hidden shadow-xl border border-gray-100 dark:border-gray-700">
             <div className="relative h-[500px] overflow-hidden">
               <img
                 src={news.image1}
                 alt={news.title1}
-                className="w-full h-full object-cover"
+                className="w-full h-full"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-              <div className="absolute bottom-8 left-8 right-8 text-white">
-                <h1 className="text-4xl font-bold mb-4">{news.title1}</h1>
-                <div className="flex items-center gap-4 text-sm">
-                  <div className="flex items-center gap-2">
-                    <User size={16} />
-                    <span>{news.author1}</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Calendar size={16} />
-                    <span>{news.date1}</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Clock size={16} />
-                    <span>{news.readTime} min read</span>
-                  </div>
-                </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+              <div className="absolute top-6 right-6">
+                <span className="px-4 py-2 text-sm font-semibold text-white bg-[#2056aeff] rounded-full backdrop-blur-md shadow-lg">
+                  {news.category1}
+                </span>
               </div>
             </div>
 
-            <div className="p-12">
-              <div 
-                className="prose dark:prose-invert max-w-none text-gray-800 dark:text-gray-200"
-                dangerouslySetInnerHTML={{ __html: news.content1 || '' }}
-              />
+            <div className="p-8 md:p-12">
+              <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+                {news.title1}
+              </h1>
+
+              <div className="flex flex-wrap items-center gap-6 text-sm text-gray-600 dark:text-gray-400 mb-8 border-b border-gray-200 dark:border-gray-800 pb-6">
+                <div className="flex items-center gap-2">
+                  <User size={18} className="text-[#2056aeff]" />
+                  <span>{news.author1}</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Calendar size={18} className="text-[#2056aeff]" />
+                  <span>{news.date1}</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Clock size={18} className="text-[#2056aeff]" />
+                  <span>{news.readTime} min read</span>
+                </div>
+              </div>
+
+              <div className="prose prose-lg dark:prose-invert max-w-none">
+                {news.content1?.split("\n").map((paragraph, index) => (
+                  <p
+                    key={index}
+                    className="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed"
+                  >
+                    {paragraph}
+                  </p>
+                ))}
+              </div>
+
+              {/* Social Share Section */}
+              <div className="mt-12 pt-6 border-t border-gray-200 dark:border-gray-800">
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
+                  Share this article
+                </h3>
+                <div className="flex gap-4">
+                  {/* Add your social share buttons here */}
+                </div>
+              </div>
             </div>
-          </motion.div>
-        </motion.div>
-      </div>
+          </article>
+        </div>
+      </main>
+
       <Footer />
     </div>
   );
